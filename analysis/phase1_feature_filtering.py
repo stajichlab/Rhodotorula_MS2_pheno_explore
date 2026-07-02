@@ -7,6 +7,7 @@ Reduces 16,332 features to ~5,000 high-quality metabolites
 import pandas as pd
 import numpy as np
 import json
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -14,15 +15,19 @@ print("="*80)
 print("PHASE 1: FEATURE FILTERING & PREPROCESSING")
 print("="*80)
 
+# Setup paths relative to this script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
 # Load decision from Phase 0
-with open('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase0_decision.json', 'r') as f:
+decision_file = os.path.join(script_dir, 'phase0_decision.json')
+with open(decision_file, 'r') as f:
     decision = json.load(f)
 
 print(f"\nUsing Phase 0 decision: {decision['strategy']}")
 
-# Load aligned data from Phase 0
-df_ms2 = pd.read_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase0_ms2_aligned.csv')
-df_meta = pd.read_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase0_metadata_aligned.csv')
+# Load aligned data from Phase 0 (compressed)
+df_ms2 = pd.read_csv(os.path.join(script_dir, 'phase0_ms2_aligned.csv.gz'), compression='gzip')
+df_meta = pd.read_csv(os.path.join(script_dir, 'phase0_metadata_aligned.csv.gz'), compression='gzip')
 
 sample_cols = [col for col in df_ms2.columns if 'Peak area' in col]
 feature_data = df_ms2[sample_cols].T.reset_index(drop=True)
@@ -131,10 +136,10 @@ Quality checks:
   - Outliers: {(feature_data_log > 5).sum().sum()} extreme values (>5 SD, monitored)
 """)
 
-# Save filtered data
+# Save filtered data (compressed)
 print("\nSaving outputs...")
 
-feature_data_log.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase1_features_filtered.csv', index=False)
+feature_data_log.to_csv(os.path.join(script_dir, 'phase1_features_filtered.csv.gz'), index=False, compression='gzip')
 
 # Add feature metadata
 feature_metadata = pd.DataFrame({
@@ -143,10 +148,10 @@ feature_metadata = pd.DataFrame({
     'mean_log_intensity': feature_data_log.mean(axis=0),
     'std_log_intensity': feature_data_log.std(axis=0),
 })
-feature_metadata.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase1_feature_metadata.csv', index=False)
+feature_metadata.to_csv(os.path.join(script_dir, 'phase1_feature_metadata.csv.gz'), index=False, compression='gzip')
 
 # Save metadata aligned with feature data
-df_meta.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase1_phenotype_data.csv', index=False)
+df_meta.to_csv(os.path.join(script_dir, 'phase1_phenotype_data.csv.gz'), index=False, compression='gzip')
 
 print("✓ Filtered features saved: phase1_features_filtered.csv")
 print("✓ Feature metadata saved: phase1_feature_metadata.csv")

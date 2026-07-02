@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 from scipy.stats import spearmanr, rankdata
 import json
+import os
 from statsmodels.stats.multitest import multipletests
 import warnings
 warnings.filterwarnings('ignore')
@@ -16,12 +17,15 @@ print("="*80)
 print("PHASE 2: CORRELATION ANALYSIS (SPEARMAN PARTIAL CORRELATIONS)")
 print("="*80)
 
-# Load Phase 0 decision and Phase 1 data
-with open('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase0_decision.json', 'r') as f:
+# Setup paths relative to this script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Load Phase 0 decision and Phase 1 data (compressed)
+with open(os.path.join(script_dir, 'phase0_decision.json'), 'r') as f:
     decision = json.load(f)
 
-features = pd.read_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase1_features_filtered.csv')
-metadata = pd.read_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase1_phenotype_data.csv')
+features = pd.read_csv(os.path.join(script_dir, 'phase1_features_filtered.csv.gz'), compression='gzip')
+metadata = pd.read_csv(os.path.join(script_dir, 'phase1_phenotype_data.csv.gz'), compression='gzip')
 
 print(f"\nFeatures: {features.shape}")
 print(f"Samples: {metadata.shape}")
@@ -198,24 +202,24 @@ for phenotype in phenotype_cols:
     for idx, row in df_pheno.head(10).iterrows():
         print(f"    Feature {int(row['feature_index']):5} | ρ={row['rho']:7.3f} | q={row['q_value_stage1']:.2e} | {row['tier']}")
 
-# Save results
+# Save results (compressed)
 print("\n" + "="*80)
 print("SAVING RESULTS")
 print("="*80)
 
 # Full results table
-df_results.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase2_all_correlations.csv', index=False)
-print("✓ All correlations saved: phase2_all_correlations.csv")
+df_results.to_csv(os.path.join(script_dir, 'phase2_all_correlations.csv.gz'), index=False, compression='gzip')
+print("✓ All correlations saved: phase2_all_correlations.csv.gz")
 
 # Tier 1 hits (high confidence)
 tier1 = df_results[df_results['tier'] == 'Tier1_High'].sort_values('q_value_stage1')
-tier1.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase2_tier1_hits.csv', index=False)
-print(f"✓ Tier 1 hits ({len(tier1)} features): phase2_tier1_hits.csv")
+tier1.to_csv(os.path.join(script_dir, 'phase2_tier1_hits.csv.gz'), index=False, compression='gzip')
+print(f"✓ Tier 1 hits ({len(tier1)} features): phase2_tier1_hits.csv.gz")
 
 # Tier 1+2 hits (high + medium confidence)
 tier12 = df_results[df_results['tier'].isin(['Tier1_High', 'Tier2_Medium'])].sort_values('q_value_stage1')
-tier12.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase2_tier12_hits.csv', index=False)
-print(f"✓ Tier 1+2 hits ({len(tier12)} features): phase2_tier12_hits.csv")
+tier12.to_csv(os.path.join(script_dir, 'phase2_tier12_hits.csv.gz'), index=False, compression='gzip')
+print(f"✓ Tier 1+2 hits ({len(tier12)} features): phase2_tier12_hits.csv.gz")
 
 # Summary statistics
 summary_stats = {
@@ -230,7 +234,7 @@ summary_stats = {
     'phenotypes_used': phenotype_cols,
 }
 
-with open('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase2_summary.json', 'w') as f:
+with open(os.path.join(script_dir, 'phase2_summary.json'), 'w') as f:
     json.dump(summary_stats, f, indent=2)
 
 print("\n✓ Phase 2 complete!")

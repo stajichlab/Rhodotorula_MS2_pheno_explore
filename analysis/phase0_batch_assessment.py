@@ -15,13 +15,20 @@ print("="*80)
 print("PHASE 0: BATCH & CONFOUNDER ASSESSMENT")
 print("="*80)
 
-# Load data
+# Load data from local input_data folder
 print("\n[1/5] Loading data...")
-ms2_file = '/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/feature_extractMS2/Rhodotorula_MS2_aligned_features_ms2.csv'
-metadata_file = '/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/feature_extractMS2/MS2_samples_combine.extended_metadata_with_strain_traits.tsv'
+import os
+import gzip
+
+# Use relative path to work from repo root
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root = os.path.dirname(script_dir)
+
+ms2_file = os.path.join(repo_root, 'input_data', 'Rhodotorula_MS2_aligned_features_ms2.csv.gz')
+metadata_file = os.path.join(repo_root, 'input_data', 'MS2_samples_combine.extended_metadata_with_strain_traits.tsv.gz')
 
 df_ms2 = pd.read_csv(ms2_file)
-df_meta = pd.read_csv(metadata_file, sep='\t')
+df_meta = pd.read_csv(metadata_file, sep='\t', compression='gzip')
 
 print(f"  MS2 data: {df_ms2.shape}")
 print(f"  Metadata: {df_meta.shape}")
@@ -257,12 +264,18 @@ decision = {
 }
 
 import json
-with open('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase0_decision.json', 'w') as f:
+
+# Output to local analysis folder
+output_decision = os.path.join(script_dir, 'phase0_decision.json')
+output_ms2 = os.path.join(script_dir, 'phase0_ms2_aligned.csv.gz')
+output_meta = os.path.join(script_dir, 'phase0_metadata_aligned.csv.gz')
+
+with open(output_decision, 'w') as f:
     json.dump(decision, f, indent=2)
 
-# Save aligned data for Phase 1
-df_ms2_aligned.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase0_ms2_aligned.csv', index=False)
-df_meta_aligned.to_csv('/scratch/jstajich/25989115/claude-1181/-bigdata-stajichlab-shared-projects-Rhodotorula-Rhodotorula-Metabolites-feature-extractMS2/206d2d5d-9c2d-470e-be4a-c7cd9006d021/scratchpad/phase0_metadata_aligned.csv', index=False)
+# Save aligned data compressed for Phase 1
+df_ms2_aligned.to_csv(output_ms2, index=False, compression='gzip')
+df_meta_aligned.to_csv(output_meta, index=False, compression='gzip')
 
 print("\n✓ Phase 0 complete. Decision and aligned data saved.")
 print("  Ready for Phase 1: Feature filtering & preprocessing")
