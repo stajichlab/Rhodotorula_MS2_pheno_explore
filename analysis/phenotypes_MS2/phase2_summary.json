@@ -1,0 +1,17 @@
+{
+  "n_features_analyzed": 7341,
+  "n_phenotypes": 3,
+  "n_total_tests": 22023,
+  "tier1_count": 12269,
+  "tier2_count": 4317,
+  "tier3_count": 1798,
+  "strategy": "stratified_with_plate",
+  "covariates": [
+    "Library Plate"
+  ],
+  "phenotypes_used": [
+    "Median_ColorLab_L*Mean",
+    "Median_ColorLab_a*Mean",
+    "Median_ColorLab_b*Mean"
+  ]
+}
