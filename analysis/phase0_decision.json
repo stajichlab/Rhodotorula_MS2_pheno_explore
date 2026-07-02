@@ -1,0 +1,12 @@
+{
+  "plate_effect": true,
+  "species_effect": true,
+  "strategy": "stratified_with_plate",
+  "phenotypes_to_use": [
+    "Median_ColorLab_L*Mean",
+    "Median_ColorLab_a*Mean",
+    "Median_ColorLab_b*Mean"
+  ],
+  "n_samples": 590,
+  "n_features_raw": 16332
+}
