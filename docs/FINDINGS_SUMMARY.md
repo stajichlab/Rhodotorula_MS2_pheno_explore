@@ -84,8 +84,8 @@ Exploratory (Tier 3):
 **Design:**
 - 22,023 total tests (7,341 features × 3 phenotypes)
 - Two-stage FDR to prevent false positives from phenotype redundancy
-- Stage 1: Within-phenotype FDR (q < 0.05)
-- Stage 2: Across-phenotype Bonferroni (×3)
+- Stage 1: Within-phenotype Benjamini-Hochberg (q < 0.05 per phenotype)
+- Stage 2: Across-phenotype Benjamini-Hochberg (q < 0.05 global)
 
 **Result:**
 - Tier 1 hits: Extremely unlikely to be false positives (FDR-protected)

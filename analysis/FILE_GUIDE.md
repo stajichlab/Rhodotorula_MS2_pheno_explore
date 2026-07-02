@@ -76,7 +76,7 @@ Not sig:                          →   3,639 features
 - `n_samples`: Number of samples used in correlation
 - `reject_stage1`: FDR-corrected significance (within phenotype)
 - `q_value_stage1`: Within-phenotype q-value
-- `q_value_global`: Global q-value (Bonferroni-corrected)
+- `q_value_global`: Global q-value (Benjamini-Hochberg FDR-corrected)
 - `reject_global`: Global significance flag
 - `tier`: Confidence tier (Tier1_High, Tier2_Medium, etc.)
 

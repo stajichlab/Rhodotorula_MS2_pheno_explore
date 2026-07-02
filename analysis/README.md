@@ -77,8 +77,8 @@ This analysis pipeline identifies associations between MS2-detected metabolite f
 - **Correlation:** Spearman rank (robust to outliers, non-normality)
 - **Partial correlation:** Controlling for Library Plate batch effects
 - **Multiple testing:** Two-stage FDR correction
-  - Stage 1: Within-phenotype FDR (q < 0.05 per phenotype)
-  - Stage 2: Across-phenotype Bonferroni (×3 for 3 phenotypes)
+  - Stage 1: Within-phenotype Benjamini-Hochberg (q < 0.05 per phenotype)
+  - Stage 2: Across-phenotype Benjamini-Hochberg (q < 0.05 global)
 - **Effect size tiering:**
   - **Tier 1 (High):** |ρ| > 0.30 AND q < 0.05 (12,269 features)
   - **Tier 2 (Medium):** |ρ| > 0.25 AND q < 0.05 (4,317 features)
@@ -190,9 +190,9 @@ python3 phase2_correlation_analysis.py
 - Standard method in metabolomics literature
 
 ### Why Two-Stage FDR?
-- Within-phenotype FDR: Accounts for ~7,300 tests per phenotype
-- Across-phenotype Bonferroni: Prevents inflated false positives from trait redundancy
-- Result: Conservative, defensible significance threshold
+- Within-phenotype Benjamini-Hochberg: Accounts for ~7,300 tests per phenotype (controls FDR < 5%)
+- Across-phenotype Benjamini-Hochberg: Prevents inflated false positives from trait redundancy
+- Result: Conservative, defensible significance threshold with proper FDR control
 
 ### Why Tier Hits?
 - Not all q < 0.05 are equally credible
