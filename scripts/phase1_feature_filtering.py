@@ -17,7 +17,7 @@ print("="*80)
 
 # Setup paths relative to this script
 script_dir = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.join(script_dir, 'phenotypes_MS2')
+output_dir = os.path.join(script_dir, '../results/phase')
 
 # Load decision from Phase 0
 decision_file = os.path.join(output_dir, 'phase0_decision.json')
@@ -137,7 +137,7 @@ Quality checks:
   - Outliers: {(feature_data_log > 5).sum().sum()} extreme values (>5 SD, monitored)
 """)
 
-# Save filtered data (compressed) to phenotypes_MS2 folder
+# Save filtered data (compressed) to ../results/phase folder
 print("\nSaving outputs...")
 
 feature_data_log.to_csv(os.path.join(output_dir, 'phase1_features_filtered.csv.gz'), index=False, compression='gzip')

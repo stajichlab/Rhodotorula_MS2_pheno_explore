@@ -17,7 +17,7 @@ print("PHASE 3: STRATIFIED SPECIES ANALYSIS (OPTIMIZED)")
 print("="*80)
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.join(script_dir, 'phenotypes_MS2')
+output_dir = os.path.join(script_dir, '../results/phase')
 
 with open(os.path.join(output_dir, 'phase0_decision.json'), 'r') as f:
     decision = json.load(f)

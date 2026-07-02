@@ -19,7 +19,7 @@ print("="*80)
 
 # Setup paths relative to this script
 script_dir = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.join(script_dir, 'phenotypes_MS2')
+output_dir = os.path.join(script_dir, '../results/phase')
 
 # Load Phase 0 decision and Phase 1 data (compressed)
 with open(os.path.join(output_dir, 'phase0_decision.json'), 'r') as f:
@@ -204,7 +204,7 @@ for phenotype in phenotype_cols:
     for idx, row in df_pheno.head(10).iterrows():
         print(f"    Feature {int(row['feature_index']):5} | ρ={row['rho']:7.3f} | q={row['q_value_stage1']:.2e} | {row['tier']}")
 
-# Save results (compressed) to phenotypes_MS2 folder
+# Save results (compressed) to ../results/phase folder
 print("\n" + "="*80)
 print("SAVING RESULTS")
 print("="*80)

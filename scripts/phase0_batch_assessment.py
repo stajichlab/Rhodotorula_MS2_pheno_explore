@@ -265,8 +265,8 @@ decision = {
 
 import json
 
-# Output to phenotypes_MS2 subfolder
-output_dir = os.path.join(script_dir, 'phenotypes_MS2')
+# Output to ../results/phase subfolder
+output_dir = os.path.join(script_dir, '../results/phase')
 os.makedirs(output_dir, exist_ok=True)
 
 output_decision = os.path.join(output_dir, 'phase0_decision.json')

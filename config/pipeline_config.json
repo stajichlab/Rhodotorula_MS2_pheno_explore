@@ -1,0 +1,67 @@
+{
+  "project_name": "Rhodotorula_MS2_pheno_explore",
+  "description": "Metabolite-phenotype correlation analysis stratified by species",
+  "version": "3.0",
+  
+  "pipeline": {
+    "phases": ["phase0", "phase1", "phase2", "phase3"],
+    "paths": {
+      "input_data": "input_data/",
+      "results": "results/",
+      "scripts": "scripts/",
+      "docs": "docs/",
+      "presentations": "presentations/",
+      "config": "config/",
+      "logs": "logs/"
+    }
+  },
+
+  "correlation": {
+    "method": "spearman",
+    "fdr_method": "benjamini-hochberg",
+    "fdr_threshold": 0.05,
+    "alpha": 0.05,
+    "min_samples": 4
+  },
+
+  "phase0": {
+    "description": "Data alignment and quality control",
+    "min_non_zero_fraction": 0.1,
+    "remove_constant_features": true
+  },
+
+  "phase1": {
+    "description": "Feature filtering and phenotype selection",
+    "min_feature_variance": 0.01,
+    "min_non_zero_samples": 0.1,
+    "phenotypes_to_use": ["Median_ColorLab_L*Mean", "Median_ColorLab_a*Mean", "Median_ColorLab_b*Mean"],
+    "plate_effect": true
+  },
+
+  "phase2": {
+    "description": "Correlation analysis with tiering",
+    "tiering": {
+      "tier1_rho_threshold": 0.30,
+      "tier2_rho_threshold": 0.25,
+      "tier3_rho_threshold": 0.20,
+      "tier1_q_threshold": 0.05,
+      "tier2_q_threshold": 0.05,
+      "tier3_q_threshold": 0.10
+    },
+    "correction": "benjamini-hochberg-two-stage"
+  },
+
+  "phase3": {
+    "description": "Stratified species analysis",
+    "species_min_samples": 3,
+    "top_discriminant_features": 200,
+    "covariates": ["LibraryPlate"]
+  },
+
+  "visualization": {
+    "dpi": 300,
+    "figure_format": "png",
+    "colormap": "RdYlBu_r",
+    "palette": "husl"
+  }
+}

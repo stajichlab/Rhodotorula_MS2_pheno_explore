@@ -14,7 +14,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.join(script_dir, 'phenotypes_MS2')
+output_dir = os.path.join(script_dir, '../results/phase')
 
 # Load data
 features = pd.read_csv(os.path.join(output_dir, 'phase1_features_filtered.csv.gz'), compression='gzip')

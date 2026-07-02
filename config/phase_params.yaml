@@ -1,0 +1,25 @@
+# Phase-specific parameter overrides
+# Use these to adjust analysis behavior without editing scripts
+
+phase0:
+  min_non_zero_fraction: 0.10
+  variance_threshold: 0.001
+  
+phase1:
+  feature_variance_cutoff: 0.01
+  phenotype_selection: "lab_space_only"  # "lab_space_only" or "all"
+  
+phase2:
+  correction_method: "benjamini-hochberg"
+  fdr_threshold: 0.05
+  effect_size_thresholds:
+    tier1: 0.30
+    tier2: 0.25
+    tier3: 0.20
+
+phase3:
+  species_sample_minimum: 3
+  discriminant_features_count: 200
+  include_covariates: true
+  covariate_names:
+    - "LibraryPlate"
