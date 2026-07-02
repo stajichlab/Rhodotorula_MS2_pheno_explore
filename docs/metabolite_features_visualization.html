@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhodotorula Metabolite Features</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #FAFBFC;
+      color: #1F2937;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #6B7280;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Color phenotype badges */
+    .phenotype-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .phenotype-badge {
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .phenotype-L {
+      background: rgba(212, 165, 116, 0.15);
+      color: #8B6F47;
+      border: 1px solid rgba(212, 165, 116, 0.3);
+    }
+
+    .phenotype-a {
+      background: rgba(168, 85, 85, 0.15);
+      color: #704B4B;
+      border: 1px solid rgba(168, 85, 85, 0.3);
+    }
+
+    .phenotype-b {
+      background: rgba(74, 111, 165, 0.15);
+      color: #3A4F7A;
+      border: 1px solid rgba(74, 111, 165, 0.3);
+    }
+
+    /* Hero Feature Card */
+    .hero-card {
+      background: white;
+      border: 2px solid #E5E7EB;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: #9CA3AF;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-mz {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #D4A574;
+    }
+
+    .hero-stat {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-stat-label {
+      font-size: 0.875rem;
+      color: #6B7280;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-properties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #E5E7EB;
+    }
+
+    .prop-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .prop-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: #9CA3AF;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .prop-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #1F2937;
+    }
+
+    /* Feature Cards Grid */
+    .features-section {
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #E5E7EB;
+      color: #1F2937;
+    }
+
+    .features-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 0.375rem;
+      padding: 1.25rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .feature-mz-badge {
+      flex-shrink: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.875rem;
+      background: #F3F4F6;
+      color: #374151;
+      padding: 0.75rem;
+      border-radius: 0.25rem;
+      min-width: 60px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .feature-content {
+      flex: 1;
+    }
+
+    .feature-name {
+      font-size: 0.875rem;
+      color: #6B7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .feature-correlation {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .correlation-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 600;
+      font-size: 1.125rem;
+      min-width: 60px;
+    }
+
+    .correlation-bar {
+      flex: 1;
+      height: 6px;
+      background: #E5E7EB;
+      border-radius: 2px;
+      overflow: hidden;
+      max-width: 150px;
+    }
+
+    .correlation-fill {
+      height: 100%;
+      background: #D4A574;
+      border-radius: 2px;
+    }
+
+    .correlation-L .correlation-fill { background: #D4A574; }
+    .correlation-a .correlation-fill { background: #A85555; }
+    .correlation-b .correlation-fill { background: #4A6FA5; }
+
+    .feature-notes {
+      font-size: 0.875rem;
+      color: #6B7280;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* Data Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+
+    .data-table th {
+      background: #F9FAFB;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid #E5E7EB;
+      color: #374151;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .data-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #E5E7EB;
+      font-family: 'IBM Plex Mono', monospace;
+      color: #1F2937;
+    }
+
+    .data-table tr:hover {
+      background: #FAFBFC;
+    }
+
+    /* Interpretation section */
+    .interpretation {
+      background: #F9FAFB;
+      border-left: 3px solid #D4A574;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #4B5563;
+      line-height: 1.6;
+    }
+
+    .interpretation strong {
+      color: #1F2937;
+    }
+
+    /* Footer info */
+    .info-section {
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 0.375rem;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+      font-size: 0.875rem;
+      color: #6B7280;
+    }
+
+    .info-section h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      color: #374151;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 1.875rem;
+      }
+
+      .hero-mz {
+        font-size: 2.25rem;
+      }
+
+      .hero-properties {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        flex-direction: column;
+      }
+
+      .data-table {
+        font-size: 0.75rem;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Rhodotorula Color Metabolites</h1>
+      <p class="subtitle">
+        High-confidence metabolite features linked to brightness, hue, and color phenotypes
+      </p>
+      <div class="phenotype-group">
+        <div class="phenotype-badge phenotype-L">L* — Brightness</div>
+        <div class="phenotype-badge phenotype-a">a* — Red-Green</div>
+        <div class="phenotype-badge phenotype-b">b* — Yellow-Blue</div>
+      </div>
+    </header>
+
+    <!-- Hero Feature: 2755 -->
+    <div class="hero-card">
+      <div class="hero-eyebrow">Master Brightness Metabolite</div>
+      <div class="hero-mz">808.51</div>
+      <div class="hero-stat">54% of brightness variation</div>
+      <div class="hero-stat-label">explained by Feature 2755 alone</div>
+
+      <div class="hero-properties">
+        <div class="prop-item">
+          <div class="prop-label">Correlation (ρ)</div>
+          <div class="prop-value">0.735</div>
+        </div>
+        <div class="prop-item">
+          <div class="prop-label">Statistical Significance</div>
+          <div class="prop-value">q = 2.39×10⁻⁹³</div>
+        </div>
+        <div class="prop-item">
+          <div class="prop-label">Retention Time</div>
+          <div class="prop-value">5.31 min</div>
+        </div>
+        <div class="prop-item">
+          <div class="prop-label">Adduct</div>
+          <div class="prop-value">[M+2ACN+H]₁⁺</div>
+        </div>
+        <div class="prop-item">
+          <div class="prop-label">Parent Mass</div>
+          <div class="prop-value">725.46 Da</div>
+        </div>
+        <div class="prop-item">
+          <div class="prop-label">MS2 Spectrum</div>
+          <div class="prop-value">Available ✓</div>
+        </div>
+      </div>
+
+      <div class="interpretation">
+        <strong>Interpretation:</strong> Double acetonitrile adduct and extreme m/z suggest a highly polar, large molecule—likely a carotenoid glycoside or pigment complex. Single feature controls >50% of brightness variation across 567 samples, suggesting direct genetic control.
+      </div>
+    </div>
+
+    <!-- Brightness Features -->
+    <div class="features-section">
+      <h2 class="section-title">Top Brightness (L*) Features</h2>
+      <div class="features-grid">
+        <div class="feature-card correlation-L">
+          <div class="feature-mz-badge">486.77</div>
+          <div class="feature-content">
+            <div class="feature-name">Feature 6926</div>
+            <div class="feature-correlation">
+              <span class="correlation-value">0.731</span>
+              <div class="correlation-bar"><div class="correlation-fill" style="width: 99.6%;"></div></div>
+            </div>
+            <div class="feature-notes">
+              Simpler molecule (m/z 486 vs 808); appears in all three color phenotypes. Likely carotenoid monomer or intermediate.
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card correlation-L">
+          <div class="feature-mz-badge">1177.58</div>
+          <div class="feature-content">
+            <div class="feature-name">Feature 6188</div>
+            <div class="feature-correlation">
+              <span class="correlation-value">0.730</span>
+              <div class="correlation-bar"><div class="correlation-fill" style="width: 99.4%;"></div></div>
+            </div>
+            <div class="feature-notes">
+              Largest m/z observed; coordinated multi-phenotype hit. Suggests complex pigment or polymer.
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card correlation-L">
+          <div class="feature-mz-badge">212.11</div>
+          <div class="feature-content">
+            <div class="feature-name">Feature 1560</div>
+            <div class="feature-correlation">
+              <span class="correlation-value">0.727</span>
+              <div class="correlation-bar"><div class="correlation-fill" style="width: 99.0%;"></div></div>
+            </div>
+            <div class="feature-notes">
+              Small, simple molecule; selective detection (13% of samples). May be precursor or species-specific variant.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Red-Green Features -->
+    <div class="features-section">
+      <h2 class="section-title">Red-Green (a*) Features</h2>
+      <div class="features-grid">
+        <div class="feature-card correlation-a">
+          <div class="feature-mz-badge">606.42</div>
+          <div class="feature-content">
+            <div class="feature-name">Feature 5740</div>
+            <div class="feature-correlation">
+              <span class="correlation-value">−0.571</span>
+              <div class="correlation-bar"><div class="correlation-fill" style="width: 76.8%;"></div></div>
+            </div>
+            <div class="feature-notes">
+              <strong>Negative correlation:</strong> Higher metabolite = greener (less red). Suggests competitive inhibition of red pigments.
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card correlation-a">
+          <div class="feature-mz-badge">434.22</div>
+          <div class="feature-content">
+            <div class="feature-name">Feature 2308</div>
+            <div class="feature-correlation">
+              <span class="correlation-value">−0.564</span>
+              <div class="correlation-bar"><div class="correlation-fill" style="width: 76.3%;"></div></div>
+            </div>
+            <div class="feature-notes">
+              Polar molecule (RT 0.90 min). May be phosphorylated or sugar-conjugated intermediate competing with red pigment synthesis.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multi-Phenotype Hits -->
+    <div class="features-section">
+      <h2 class="section-title">Coordinated Hits (All Three Color Dimensions)</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>L* (Brightness)</th>
+            <th>a* (Red–Green)</th>
+            <th>b* (Yellow–Blue)</th>
+            <th>Interpretation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2755</td>
+            <td>0.735</td>
+            <td>—</td>
+            <td>−0.359</td>
+            <td>Master controller; affects brightness and hue</td>
+          </tr>
+          <tr>
+            <td>6188</td>
+            <td>0.730</td>
+            <td>−0.549</td>
+            <td>−0.360</td>
+            <td>Multi-dimensional regulator; central to pathway</td>
+          </tr>
+          <tr>
+            <td>6926</td>
+            <td>0.731</td>
+            <td>−0.558</td>
+            <td>−0.344</td>
+            <td>Coordinated color control; strong co-factor</td>
+          </tr>
+          <tr>
+            <td>2308</td>
+            <td>—</td>
+            <td>−0.564</td>
+            <td>−0.343</td>
+            <td>Balanced a*–b* controller</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="interpretation">
+        <strong>Pattern:</strong> Five features show coordinated effects across multiple color dimensions, suggesting they form a single metabolic module or biosynthetic pathway. Regulatory hierarchy: 2755 → 6926 → 6188 (decreasing effect size).
+      </div>
+    </div>
+
+    <!-- Interpretation -->
+    <div class="info-section">
+      <h3>Next Steps</h3>
+      <div class="info-grid">
+        <div>
+          <strong>Priority 1: MS2 Validation</strong><br/>
+          High-resolution fragmentation for Features 2755, 6926, 6188. Compare against HMDB, MassBank, carotenoid standards.
+        </div>
+        <div>
+          <strong>Priority 2: Chemical Standards</strong><br/>
+          Measure retention times + m/z for β-carotene, lycopene, lutein. Cross-reference with observed features.
+        </div>
+        <div>
+          <strong>Priority 3: Biological Validation</strong><br/>
+          Species stratification & genetic basis. Do bright strains have high Feature 2755?
+        </div>
+        <div>
+          <strong>Priority 4: Gene Mapping</strong><br/>
+          Link to known carotenoid genes. Check expression correlation with metabolite abundance.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
