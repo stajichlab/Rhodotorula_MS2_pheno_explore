@@ -221,14 +221,14 @@ tier12 = df_results[df_results['tier'].isin(['Tier1_High', 'Tier2_Medium'])].sor
 tier12.to_csv(os.path.join(script_dir, 'phase2_tier12_hits.csv.gz'), index=False, compression='gzip')
 print(f"✓ Tier 1+2 hits ({len(tier12)} features): phase2_tier12_hits.csv.gz")
 
-# Summary statistics
+# Summary statistics (convert numpy types to Python native types for JSON)
 summary_stats = {
-    'n_features_analyzed': features.shape[1],
-    'n_phenotypes': len(phenotype_cols),
-    'n_total_tests': features.shape[1] * len(phenotype_cols),
-    'tier1_count': (df_results['tier'] == 'Tier1_High').sum(),
-    'tier2_count': (df_results['tier'] == 'Tier2_Medium').sum(),
-    'tier3_count': (df_results['tier'] == 'Tier3_Exploratory').sum(),
+    'n_features_analyzed': int(features.shape[1]),
+    'n_phenotypes': int(len(phenotype_cols)),
+    'n_total_tests': int(features.shape[1] * len(phenotype_cols)),
+    'tier1_count': int((df_results['tier'] == 'Tier1_High').sum()),
+    'tier2_count': int((df_results['tier'] == 'Tier2_Medium').sum()),
+    'tier3_count': int((df_results['tier'] == 'Tier3_Exploratory').sum()),
     'strategy': decision['strategy'],
     'covariates': covariate_names,
     'phenotypes_used': phenotype_cols,
