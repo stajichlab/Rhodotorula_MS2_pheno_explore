@@ -1,0 +1,30 @@
+# Large data files (included in LFS)
+*.csv
+*.tsv
+*.xlsx
+
+# Large binary data
+*.pyc
+__pycache__/
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+.env
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+.cache/
