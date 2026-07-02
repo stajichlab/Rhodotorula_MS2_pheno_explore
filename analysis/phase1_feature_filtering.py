@@ -17,17 +17,18 @@ print("="*80)
 
 # Setup paths relative to this script
 script_dir = os.path.dirname(os.path.abspath(__file__))
+output_dir = os.path.join(script_dir, 'phenotypes_MS2')
 
 # Load decision from Phase 0
-decision_file = os.path.join(script_dir, 'phase0_decision.json')
+decision_file = os.path.join(output_dir, 'phase0_decision.json')
 with open(decision_file, 'r') as f:
     decision = json.load(f)
 
 print(f"\nUsing Phase 0 decision: {decision['strategy']}")
 
 # Load aligned data from Phase 0 (compressed)
-df_ms2 = pd.read_csv(os.path.join(script_dir, 'phase0_ms2_aligned.csv.gz'), compression='gzip')
-df_meta = pd.read_csv(os.path.join(script_dir, 'phase0_metadata_aligned.csv.gz'), compression='gzip')
+df_ms2 = pd.read_csv(os.path.join(output_dir, 'phase0_ms2_aligned.csv.gz'), compression='gzip')
+df_meta = pd.read_csv(os.path.join(output_dir, 'phase0_metadata_aligned.csv.gz'), compression='gzip')
 
 sample_cols = [col for col in df_ms2.columns if 'Peak area' in col]
 feature_data = df_ms2[sample_cols].T.reset_index(drop=True)
@@ -136,10 +137,10 @@ Quality checks:
   - Outliers: {(feature_data_log > 5).sum().sum()} extreme values (>5 SD, monitored)
 """)
 
-# Save filtered data (compressed)
+# Save filtered data (compressed) to phenotypes_MS2 folder
 print("\nSaving outputs...")
 
-feature_data_log.to_csv(os.path.join(script_dir, 'phase1_features_filtered.csv.gz'), index=False, compression='gzip')
+feature_data_log.to_csv(os.path.join(output_dir, 'phase1_features_filtered.csv.gz'), index=False, compression='gzip')
 
 # Add feature metadata
 feature_metadata = pd.DataFrame({
@@ -148,10 +149,10 @@ feature_metadata = pd.DataFrame({
     'mean_log_intensity': feature_data_log.mean(axis=0),
     'std_log_intensity': feature_data_log.std(axis=0),
 })
-feature_metadata.to_csv(os.path.join(script_dir, 'phase1_feature_metadata.csv.gz'), index=False, compression='gzip')
+feature_metadata.to_csv(os.path.join(output_dir, 'phase1_feature_metadata.csv.gz'), index=False, compression='gzip')
 
 # Save metadata aligned with feature data
-df_meta.to_csv(os.path.join(script_dir, 'phase1_phenotype_data.csv.gz'), index=False, compression='gzip')
+df_meta.to_csv(os.path.join(output_dir, 'phase1_phenotype_data.csv.gz'), index=False, compression='gzip')
 
 print("✓ Filtered features saved: phase1_features_filtered.csv")
 print("✓ Feature metadata saved: phase1_feature_metadata.csv")

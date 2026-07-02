@@ -265,10 +265,13 @@ decision = {
 
 import json
 
-# Output to local analysis folder
-output_decision = os.path.join(script_dir, 'phase0_decision.json')
-output_ms2 = os.path.join(script_dir, 'phase0_ms2_aligned.csv.gz')
-output_meta = os.path.join(script_dir, 'phase0_metadata_aligned.csv.gz')
+# Output to phenotypes_MS2 subfolder
+output_dir = os.path.join(script_dir, 'phenotypes_MS2')
+os.makedirs(output_dir, exist_ok=True)
+
+output_decision = os.path.join(output_dir, 'phase0_decision.json')
+output_ms2 = os.path.join(output_dir, 'phase0_ms2_aligned.csv.gz')
+output_meta = os.path.join(output_dir, 'phase0_metadata_aligned.csv.gz')
 
 with open(output_decision, 'w') as f:
     json.dump(decision, f, indent=2)

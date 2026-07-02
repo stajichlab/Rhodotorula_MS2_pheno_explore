@@ -19,13 +19,14 @@ print("="*80)
 
 # Setup paths relative to this script
 script_dir = os.path.dirname(os.path.abspath(__file__))
+output_dir = os.path.join(script_dir, 'phenotypes_MS2')
 
 # Load Phase 0 decision and Phase 1 data (compressed)
-with open(os.path.join(script_dir, 'phase0_decision.json'), 'r') as f:
+with open(os.path.join(output_dir, 'phase0_decision.json'), 'r') as f:
     decision = json.load(f)
 
-features = pd.read_csv(os.path.join(script_dir, 'phase1_features_filtered.csv.gz'), compression='gzip')
-metadata = pd.read_csv(os.path.join(script_dir, 'phase1_phenotype_data.csv.gz'), compression='gzip')
+features = pd.read_csv(os.path.join(output_dir, 'phase1_features_filtered.csv.gz'), compression='gzip')
+metadata = pd.read_csv(os.path.join(output_dir, 'phase1_phenotype_data.csv.gz'), compression='gzip')
 
 print(f"\nFeatures: {features.shape}")
 print(f"Samples: {metadata.shape}")
@@ -202,23 +203,23 @@ for phenotype in phenotype_cols:
     for idx, row in df_pheno.head(10).iterrows():
         print(f"    Feature {int(row['feature_index']):5} | ρ={row['rho']:7.3f} | q={row['q_value_stage1']:.2e} | {row['tier']}")
 
-# Save results (compressed)
+# Save results (compressed) to phenotypes_MS2 folder
 print("\n" + "="*80)
 print("SAVING RESULTS")
 print("="*80)
 
 # Full results table
-df_results.to_csv(os.path.join(script_dir, 'phase2_all_correlations.csv.gz'), index=False, compression='gzip')
+df_results.to_csv(os.path.join(output_dir, 'phase2_all_correlations.csv.gz'), index=False, compression='gzip')
 print("✓ All correlations saved: phase2_all_correlations.csv.gz")
 
 # Tier 1 hits (high confidence)
 tier1 = df_results[df_results['tier'] == 'Tier1_High'].sort_values('q_value_stage1')
-tier1.to_csv(os.path.join(script_dir, 'phase2_tier1_hits.csv.gz'), index=False, compression='gzip')
+tier1.to_csv(os.path.join(output_dir, 'phase2_tier1_hits.csv.gz'), index=False, compression='gzip')
 print(f"✓ Tier 1 hits ({len(tier1)} features): phase2_tier1_hits.csv.gz")
 
 # Tier 1+2 hits (high + medium confidence)
 tier12 = df_results[df_results['tier'].isin(['Tier1_High', 'Tier2_Medium'])].sort_values('q_value_stage1')
-tier12.to_csv(os.path.join(script_dir, 'phase2_tier12_hits.csv.gz'), index=False, compression='gzip')
+tier12.to_csv(os.path.join(output_dir, 'phase2_tier12_hits.csv.gz'), index=False, compression='gzip')
 print(f"✓ Tier 1+2 hits ({len(tier12)} features): phase2_tier12_hits.csv.gz")
 
 # Summary statistics (convert numpy types to Python native types for JSON)
@@ -234,7 +235,7 @@ summary_stats = {
     'phenotypes_used': phenotype_cols,
 }
 
-with open(os.path.join(script_dir, 'phase2_summary.json'), 'w') as f:
+with open(os.path.join(output_dir, 'phase2_summary.json'), 'w') as f:
     json.dump(summary_stats, f, indent=2)
 
 print("\n✓ Phase 2 complete!")
