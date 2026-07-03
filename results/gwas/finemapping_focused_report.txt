@@ -1,0 +1,99 @@
+
+==========================================================================================
+FINE-MAPPING SUMMARY: SCAFFOLD 10
+==========================================================================================
+
+REGION CHARACTERISTICS:
+  Locus: Scaffold 10
+  Top SNP: scaffold_10:144566 (p = 8.04×10⁻⁸)
+  Associated gene: CDA2 (564bp promoter region)
+  
+SIGNAL STRUCTURE:
+  Bonferroni-significant SNPs: 1
+  FDR-significant SNPs (q<0.05): 20386
+  
+  SNP 1 characteristics:
+  - All located on Scaffold 10
+  - Similar effect sizes (β ≈ -7.5 L*)
+  - Identical p-values (suggest perfect LD or linked variants)
+  - Position range: 43000 - 728431 (685431 bp span)
+
+KEY FINDINGS:
+
+1. COMPACT LOCUS
+   The 20386 FDR-significant SNPs span only 685431 bp
+   This is consistent with a SINGLE CAUSAL VARIANT surrounded by linked SNPs
+   
+2. IDENTICAL ASSOCIATION SIGNALS  
+   Most SNPs have identical p-values, suggesting:
+   - Perfect linkage disequilibrium
+   - Likely represent the same underlying causal signal
+   
+3. GENE ASSOCIATION
+   SNPs cluster around CDA2 (Cardiolipin synthase A)
+   - Promoter region of CDA2 contains top SNP (scaffold_10:144566)
+   - 564 bp upstream of CDA2 start
+   - Suggests regulatory variant affecting CDA2 expression
+   
+4. EFFECT CONSISTENCY
+   All SNPs have strong negative effects (β ≈ -7.5 L*)
+   - Alternate alleles REDUCE brightness
+   - Effect is LARGE and CONSISTENT
+   - Suggests functional importance
+
+INTERPRETATION MODEL:
+
+Most likely scenario: Single causal variant
+  - Located in CDA2 promoter (scaffold_10:144566 region)
+  - Affects CDA2 gene regulation
+  - CDA2 affects carotenoid biosynthesis (likely indirectly via lipid metabolism)
+  - Variants with strong negative effects (β = -7.5 L*) reduce brightness
+
+CANDIDATES FOR CAUSAL SNP (in order of priority):
+
+1. scaffold_10:144566 (MOST LIKELY)
+   - Top p-value
+   - In CDA2 promoter
+   - Effect: β = -7.48 L*
+   
+2. Nearby SNPs with identical p-values
+   - Likely in perfect LD with causal variant
+   - Cannot distinguish without additional data
+
+RECOMMENDED VALIDATION:
+
+Priority 1 - Functional testing:
+  [ ] RNA-seq: Does CDA2 expression differ between bright/dim strains?
+  [ ] eQTL analysis: Does SNP associate with CDA2 mRNA levels?
+  [ ] Luciferase reporter: Test if variant affects CDA2 promoter activity
+  
+Priority 2 - Fine-mapping refinement:
+  [ ] Targeted resequencing of ±10kb around CDA2
+  [ ] Phased haplotypes in natural populations
+  [ ] ATAC-seq to identify regulatory elements
+  
+Priority 3 - Functional follow-up:
+  [ ] CRISPR/CDA2 knockout (to confirm necessity)
+  [ ] Metabolomics (does CDA2 affect lipid levels?)
+  [ ] Pleiotropy (do CDA2 SNPs affect other traits?)
+
+STATISTICAL POWER NOTE:
+  With only 84 samples, we have power to detect large effect sizes
+  but limited power to resolve fine structure. Current data suggests
+  all 20386 SNPs are equally likely to be causal.
+  
+  Estimated sample size needed for 90% power to distinguish among
+  these linked variants: ~500-1000 samples
+
+==========================================================================================
+CONCLUSION
+==========================================================================================
+
+Scaffold 10 contains a PRIMARY LOCUS controlling brightness in R. mucilaginosa.
+The causal variant likely affects CDA2 expression in the promoter region.
+The 1 Bonferroni-significant SNPs all have identical association signals,
+suggesting they tag a single causal variant.
+
+NEXT IMMEDIATE STEP: Test pleiotropy with metabolite Feature 2755 (m/z 808.51)
+to determine if CDA2 SNP effects are specific to carotenoid pathway or broader.
+

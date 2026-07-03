@@ -1,0 +1,9 @@
+{
+  "locus": "scaffold_10",
+  "top_snp": "scaffold_10:144566",
+  "window_size_kb": 500.0,
+  "total_snps_in_window": 17560,
+  "snps_with_genotypes": 17560,
+  "snps_in_95_credible_set": 12589,
+  "cumulative_posterior_prob_cs95": 0.9500023821550616
+}
