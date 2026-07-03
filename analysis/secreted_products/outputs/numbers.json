@@ -1,0 +1,71 @@
+{
+  "namespace": "secreted_products",
+  "values": [
+    {
+      "key": "log2fc_threshold",
+      "value": 1.0,
+      "provenance": "scripts/01_secretion_analysis.py:L366",
+      "computed_at": "scripts/01_secretion_analysis.py:L366"
+    },
+    {
+      "key": "n_features_tested",
+      "value": 16332,
+      "provenance": "scripts/01_secretion_analysis.py:L364",
+      "computed_at": "scripts/01_secretion_analysis.py:L364"
+    },
+    {
+      "key": "n_paired_strains",
+      "value": 292,
+      "provenance": "scripts/01_secretion_analysis.py:L362",
+      "computed_at": "scripts/01_secretion_analysis.py:L362"
+    },
+    {
+      "key": "n_paired_strains_with_genome",
+      "value": 270,
+      "provenance": "scripts/01_secretion_analysis.py:L363",
+      "computed_at": "scripts/01_secretion_analysis.py:L363"
+    },
+    {
+      "key": "n_secreted_features",
+      "value": 6724,
+      "provenance": "scripts/01_secretion_analysis.py:L369",
+      "computed_at": "scripts/01_secretion_analysis.py:L369"
+    },
+    {
+      "key": "n_species",
+      "value": 17,
+      "provenance": "scripts/01_secretion_analysis.py:L365",
+      "computed_at": "scripts/01_secretion_analysis.py:L365"
+    },
+    {
+      "key": "n_uniquely_secreted_features",
+      "value": 130,
+      "provenance": "scripts/01_secretion_analysis.py:L370",
+      "computed_at": "scripts/01_secretion_analysis.py:L370"
+    },
+    {
+      "key": "null_mean_positive",
+      "value": 2442.8,
+      "provenance": "scripts/01_secretion_analysis.py:L371",
+      "computed_at": "scripts/01_secretion_analysis.py:L371"
+    },
+    {
+      "key": "q_threshold",
+      "value": 0.05,
+      "provenance": "scripts/01_secretion_analysis.py:L367",
+      "computed_at": "scripts/01_secretion_analysis.py:L367"
+    },
+    {
+      "key": "secretion_empirical_fdr",
+      "value": 0.3629,
+      "provenance": "scripts/01_secretion_analysis.py:L372",
+      "computed_at": "scripts/01_secretion_analysis.py:L372"
+    },
+    {
+      "key": "tau_threshold",
+      "value": 0.85,
+      "provenance": "scripts/01_secretion_analysis.py:L368",
+      "computed_at": "scripts/01_secretion_analysis.py:L368"
+    }
+  ]
+}
