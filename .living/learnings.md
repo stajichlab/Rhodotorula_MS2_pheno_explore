@@ -85,3 +85,26 @@ union-type syntax) — install/run it under `/usr/bin/python3.12`, not the clust
 py3.9 conda, and needs `lxml` + `psims` as companion packages.
 **Tags**: sirius, tooling, environment, feature-index, mzml, ms2, metabolomics
 **mitigation_type**: ambient-awareness
+
+### [2026-07-03] Running SIRIUS interactively OOM-killed twice; the cause was shared cgroup memory, not SIRIUS's own heap size
+
+**Category**: tooling / environment
+**What happened**: Running `sirius formula fingerprint structure canopus` on 117 spectra
+directly in the interactive SLURM session (job 26025365, `--mem=16G`) was OOM-killed twice
+(confirmed via `dmesg`: `oom-kill:constraint=CONSTRAINT_MEMCG ... task=java`), even after
+capping the JVM heap with `JAVA_OPTS="-Xmx10G"` and lowering `--cores 2 --instance-buffer 1`.
+`free -h` misleadingly reports the whole physical host's RAM (503G), not the cgroup limit —
+SIRIUS's own launcher sets `-XX:MaxRAMPercentage=65` against that host-visible value, so on a
+small SLURM allocation the JVM heap sizing is wrong from the start. Worse: the interactive
+job's 16G cgroup was already ~9G consumed by *unrelated* concurrently-running jobs in the same
+session (`conda-build` ~6.2G, `funannotate` java, `raxml-ng`), leaving only ~6-7G of real
+headroom no matter how SIRIUS's own flags were tuned.
+**Why it matters**: Any memory-hungry tool run inside a shared interactive HPCC session can be
+killed by *other unrelated jobs'* memory use in the same cgroup — this is invisible from `free
+-h` / `ps` alone; you have to check `sacct`/`scontrol show job`/`dmesg` to see the real ceiling.
+**Resolution**: Submit as a dedicated `sbatch` job with its own `--mem` allocation instead of
+running inside the shared interactive session (see `analysis/secreted_products/
+sirius_annotation/scripts/03_sirius.sbatch`, `--mem=32G`). Also see [[hpcc-sbatch-script-paths]]
+memory for the `$0`/spool-dir path bug hit while building that same sbatch script.
+**Tags**: hpcc, slurm, oom, memory, cgroup, sirius, sbatch, tooling
+**mitigation_type**: ambient-awareness

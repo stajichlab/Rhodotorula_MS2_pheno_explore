@@ -87,3 +87,25 @@ isn't guaranteed to be triggered in the exact chosen file/window) — these are 
 `no_ms2_match` in `mgf_export_summary.csv` rather than silently dropped, so the true annotation
 coverage is auditable.
 **Tags**: metabolomics, sirius, ms2, mgf-export, mzml, secretion
+
+### [2026-07-03] Moved SIRIUS execution from the interactive session to a dedicated sbatch job
+
+**Context**: SIRIUS `formula`/`fingerprint`/`structure`/`canopus` on 117 spectra was
+OOM-killed twice running directly in the interactive SLURM session (see [[oom-cgroup-sirius]]
+learning), because that session's 16G memory cgroup was already ~9G consumed by unrelated
+concurrent jobs.
+**Decision**: Added `scripts/03_sirius.sbatch` (stajichlab partition/account, `--mem=32G`,
+`--cpus-per-task=8`) as the canonical way to run the compute-heavy SIRIUS step, submitted with
+`sbatch --chdir=<sirius_annotation dir>`. `run.sh` still documents the interactive path for
+small/offline-only (`formula`+`fingerprint` without CSI:FingerID/CANOPUS) test runs.
+**Alternatives considered**: (a) keep shrinking SIRIUS's own `-Xmx`/`--instance-buffer` —
+rejected, headroom in the shared interactive cgroup was fundamentally too small regardless of
+SIRIUS-side tuning; (b) ask the user to free up or resize the interactive session — deferred,
+user chose the sbatch route when asked.
+**Rationale**: A dedicated batch allocation isolates SIRIUS's memory from unrelated jobs
+sharing the interactive session's cgroup, and 32G comfortably covers the ~10G heap that OOM'd
+under 16G shared.
+**Consequences**: Adds a SLURM dependency to the reproduce path (`run.sh` alone no longer
+finishes the SIRIUS step end-to-end; `03_sirius.sbatch` must be submitted separately and waited
+on). Documented in the analysis manifest.
+**Tags**: hpcc, slurm, sbatch, sirius, memory, tooling
