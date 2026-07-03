@@ -1,0 +1,14 @@
+{
+  "n_samples": 84,
+  "n_snps_tested": 568505,
+  "n_sig_bonf": 12,
+  "n_sig_fdr": 20386,
+  "bonf_threshold": 8.794997405475766e-08,
+  "brightness_mean": 74.78854937588365,
+  "brightness_std": 1.5042643548702008,
+  "brightness_min": 67.3781915936672,
+  "brightness_max": 78.7654626667355,
+  "p_value_min": 3.289205759680649e-08,
+  "p_value_median": 0.17576816358759387,
+  "p_value_max": 0.9999415140636101
+}
