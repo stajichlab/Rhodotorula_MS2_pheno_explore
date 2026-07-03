@@ -1,0 +1,31 @@
+{
+  "n_features_total": 16332,
+  "n_samples_total": 590,
+  "n_species_with_enough_samples": 13,
+  "n_candidate_pairs": 2,
+  "n_species_specific": 2,
+  "species_specific_by_species": {
+    "Rhodotorula mucilaginosa": 0,
+    "Rhodotorula sphaerocarpa": 0,
+    "Rhodotorula toruloides": 0,
+    "Rhodotorula diobovata": 0,
+    "Rhodotorula taiwanensis": 1,
+    "Rhodotorula sp. clade I": 0,
+    "Rhodotorula paludigena": 0,
+    "Rhodotorula sp. clade XI": 1,
+    "Rhodotorula dairenensis": 0,
+    "Rhodotorula glutinis": 0,
+    "Rhodotorula pacifica": 0,
+    "Rhodotorula kratochvilovae": 0,
+    "Rhodotorula graminis": 0
+  },
+  "parameters": {
+    "detection_threshold": 0,
+    "min_target_prevalence": 0.8,
+    "max_other_prevalence": 0.2,
+    "min_species_samples": 3,
+    "fdr_alpha": 0.05,
+    "multiple_testing_correction": "Benjamini-Hochberg FDR",
+    "statistical_test": "Fisher's exact test (one-sided, greater)"
+  }
+}

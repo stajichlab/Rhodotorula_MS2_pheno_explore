@@ -1,0 +1,861 @@
+ms2_column,sample_id,strain_id,sample_type,species,library_plate,strain_name
+C_1.mzML Peak area,C_1,1,C,Rhodotorula mucilaginosa,1.0,"17-291Y-1
+ BY126-B8"
+C_10.mzML Peak area,C_10,10,C,Rhodotorula sphaerocarpa,1.0,"86C-9
+ BY34-B2"
+C_100.mzML Peak area,C_100,100,C,Rhodotorula mucilaginosa,2.0,"404D-1
+ BY123-F4"
+C_104.mzML Peak area,C_104,104,C,Rhodotorula mucilaginosa,2.0,"213-6-2
+ BY42-B6"
+C_105.mzML Peak area,C_105,105,C,Rhodotorula toruloides,2.0,"152C-6
+ BY32-G3"
+C_106.mzML Peak area,C_106,106,C,Rhodotorula mucilaginosa,2.0,"273H-1
+ BY113-C3"
+C_107.mzML Peak area,C_107,107,C,Rhodotorula mucilaginosa,2.0,"209-6-4
+ BY42-I9"
+C_108.mzML Peak area,C_108,108,C,Rhodotorula mucilaginosa,2.0,"25-332M-2
+ BY119-E2"
+C_109.mzML Peak area,C_109,109,C,Rhodotorula mucilaginosa,2.0,98C-8
+C_11.mzML Peak area,C_11,11,C,Rhodotorula mucilaginosa,1.0,"122C-2 
+ BY31-A2"
+C_111.mzML Peak area,C_111,111,C,Rhodotorula diobovata,2.0,"25-335C-1
+ BY120-B5"
+C_113.mzML Peak area,C_113,113,C,Rhodotorula mucilaginosa,2.0,54D-2
+C_114.mzML Peak area,C_114,114,C,Rhodotorula toruloides,2.0,"152D-6
+ BY32-D4"
+C_115.mzML Peak area,C_115,115,C,Rhodotorula mucilaginosa,2.0,"25-0-2E332-1
+ BY119-E3"
+C_116.mzML Peak area,C_116,116,C,Rhodotorula mucilaginosa,2.0,"BY120-C1 (BY120-C7)
+ 25-0-2E333-9"
+C_117.mzML Peak area,C_117,117,C,Rhodotorula mucilaginosa,2.0,"17-0-2E334-10
+ BY116-C8"
+C_118.mzML Peak area,C_118,118,C,Rhodotorula taiwanensis,2.0,"357-1
+ BY110-F4"
+C_119.mzML Peak area,C_119,119,C,Rhodotorula sp. clade I,2.0,"17-328C-3
+ BY117-D1"
+C_12.mzML Peak area,C_12,12,C,Rhodotorula mucilaginosa,1.0,4M-1-3
+C_120.mzML Peak area,C_120,120,C,Rhodotorula diobovata,2.0,"17-334Y-6
+ BY116-F9"
+C_121.mzML Peak area,C_121,121,C,Rhodotorula paludigena,2.0,"25-333P-5
+ BY120-H3"
+C_122.mzML Peak area,C_122,122,C,Rhodotorula sp. clade I,2.0,"222A-2
+ BY37-G8"
+C_123.mzML Peak area,C_123,123,C,Rhodotorula sp. clade I,2.0,"25-333Y-2
+ BY120-G4"
+C_124.mzML Peak area,C_124,124,C,Rhodotorula mucilaginosa,2.0,98A-10
+C_125.mzML Peak area,C_125,125,C,Rhodotorula mucilaginosa,2.0,"17-334D-6
+ BY115-E2"
+C_126.mzML Peak area,C_126,126,C,Rhodotorula mucilaginosa,2.0,"17-0-2E334-4
+ BY116-G7"
+C_127.mzML Peak area,C_127,127,C,Rhodotorula mucilaginosa,2.0,"363-1-2
+ BY110-A6"
+C_129.mzML Peak area,C_129,129,C,Rhodotorula mucilaginosa,2.0,"25-0-2E333-7
+ BY120-A7"
+C_13.mzML Peak area,C_13,13,C,Rhodotorula mucilaginosa,1.0,"141C-2
+ BY30-H4"
+C_130.mzML Peak area,C_130,130,C,Rhodotorula mucilaginosa,2.0,"25-335Y-1
+ BY120-I4"
+C_131.mzML Peak area,C_131,131,C,Rhodotorula mucilaginosa,2.0,"213-6-4
+ BY42-C6"
+C_133.mzML Peak area,C_133,133,C,Rhodotorula mucilaginosa,2.0,98C-3
+C_134.mzML Peak area,C_134,134,C,Rhodotorula mucilaginosa,2.0,"17-333D-2
+ BY115-E6"
+C_135.mzML Peak area,C_135,135,C,Rhodotorula mucilaginosa,2.0,"17-332C-2
+ BY115-H4"
+C_136.mzML Peak area,C_136,136,C,Rhodotorula sphaerocarpa,2.0,"86A-6
+ BY34-A7"
+C_137.mzML Peak area,C_137,137,C,Rhodotorula taiwanensis,2.0,"0520-4-2-2
+ BY53-D9"
+C_139.mzML Peak area,C_139,139,C,Rhodotorula sp. clade I,2.0,"25-333D-5
+ BY120-H7"
+C_14.mzML Peak area,C_14,14,C,Rhodotorula mucilaginosa,1.0,"130D-4
+ BY30-H7"
+C_141.mzML Peak area,C_141,141,C,Rhodotorula toruloides,2.0,"152C-2
+ BY32-C3"
+C_142.mzML Peak area,C_142,142,C,Rhodotorula mucilaginosa,2.0,"98D-9
+ BY31-F3"
+C_143.mzML Peak area,C_143,143,C,Rhodotorula mucilaginosa,2.0,"17-325D-4
+ BY116-C4"
+C_144.mzML Peak area,C_144,144,C,Rhodotorula mucilaginosa,2.0,"17-332P-2
+ BY117-G8"
+C_148.mzML Peak area,C_148,148,C,Rhodotorula mucilaginosa,2.0,"342-3
+ BY110_B2"
+C_149.mzML Peak area,C_149,149,C,Rhodotorula sphaerocarpa,2.0,"86A-8
+ BY35-H3"
+C_15.mzML Peak area,C_15,15,C,Rhodotorula mucilaginosa,1.0,"3M-1-1
+ BY8-B4"
+C_150.mzML Peak area,C_150,150,C,Rhodotorula mucilaginosa,2.0,"152C-5
+ BY32-F3"
+C_151.mzML Peak area,C_151,151,C,Rhodotorula mucilaginosa,2.0,"98D-7
+ BY31-E3"
+C_152.mzML Peak area,C_152,152,C,Rhodotorula mucilaginosa,2.0,"25-337M-3
+ BY119-F9"
+C_153.mzML Peak area,C_153,153,C,Rhodotorula mucilaginosa,2.0,"25-0-2E333-5
+ BY120-E4"
+C_155.mzML Peak area,C_155,155,C,Rhodotorula taiwanensis,2.0,"0520-4-2-1
+ BY53-C9"
+C_156.mzML Peak area,C_156,156,C,Rhodotorula paludigena,2.0,48A-2
+C_157.mzML Peak area,C_157,157,C,Rhodotorula paludigena,2.0,1A-1-2
+C_158.mzML Peak area,C_158,158,C,Rhodotorula mucilaginosa,2.0,"152A-1
+ BY32-H1"
+C_159.mzML Peak area,C_159,159,C,Rhodotorula mucilaginosa,2.0,"152A-5
+ BY32-C2"
+C_16.mzML Peak area,C_16,16,C,Rhodotorula sp. clade XI,1.0,"186DK3-2
+ BY39-H9"
+C_161.mzML Peak area,C_161,161,C,Rhodotorula mucilaginosa,2.0,102D-2
+C_162.mzML Peak area,C_162,162,C,Rhodotorula mucilaginosa,2.0,"25-327D-1
+ BY119-D5"
+C_163.mzML Peak area,C_163,163,C,Rhodotorula mucilaginosa,2.0,"17-334Y-5
+ BY116-E9"
+C_164.mzML Peak area,C_164,164,C,Rhodotorula mucilaginosa,2.0,"17-334C-1
+ BY117-A6"
+C_165.mzML Peak area,C_165,165,C,,2.0,"17-332Y-1
+ BY115-H5"
+C_166.mzML Peak area,C_166,166,C,Rhodotorula mucilaginosa,2.0,3238
+C_167.mzML Peak area,C_167,167,C,Rhodotorula mucilaginosa,2.0,3444
+C_168.mzML Peak area,C_168,168,C,Rhodotorula mucilaginosa,2.0,3775
+C_169.mzML Peak area,C_169,169,C,Rhodotorula mucilaginosa,2.0,3983
+C_17.mzML Peak area,C_17,17,C,Rhodotorula diobovata,1.0,7-9-3
+C_170.mzML Peak area,C_170,170,C,Rhodotorula mucilaginosa,2.0,4378
+C_171.mzML Peak area,C_171,171,C,Rhodotorula mucilaginosa,2.0,4618
+C_172.mzML Peak area,C_172,172,C,Rhodotorula mucilaginosa,2.0,106A-1
+C_174.mzML Peak area,C_174,174,C,Rhodotorula mucilaginosa,2.0,17-0-2E337-3 BY117-H4
+C_175.mzML Peak area,C_175,175,C,Rhodotorula mucilaginosa,2.0,3239
+C_176.mzML Peak area,C_176,176,C,Rhodotorula mucilaginosa,3.0,3538
+C_177.mzML Peak area,C_177,177,C,Rhodotorula mucilaginosa,3.0,3776
+C_178.mzML Peak area,C_178,178,C,Rhodotorula mucilaginosa,3.0,3984
+C_179.mzML Peak area,C_179,179,C,Rhodotorula mucilaginosa,3.0,4379
+C_18.mzML Peak area,C_18,18,C,Rhodotorula mucilaginosa,1.0,"25-395P-1
+ BY126-F2"
+C_181.mzML Peak area,C_181,181,C,Rhodotorula mucilaginosa,3.0,"25-332D-1
+ BY119-H1"
+C_182.mzML Peak area,C_182,182,C,Rhodotorula mucilaginosa,3.0,"25-333P-2
+ BY120-E3"
+C_183.mzML Peak area,C_183,183,C,Rhodotorula mucilaginosa,3.0,"181A-1
+ BY39-F5"
+C_185.mzML Peak area,C_185,185,C,Rhodotorula dairenensis,3.0,3768
+C_186.mzML Peak area,C_186,186,C,Rhodotorula mucilaginosa,3.0,3777
+C_187.mzML Peak area,C_187,187,C,Rhodotorula glutinis,3.0,3985
+C_188.mzML Peak area,C_188,188,C,Rhodotorula mucilaginosa,3.0,4380
+C_189.mzML Peak area,C_189,189,C,Rhodotorula mucilaginosa,3.0,4669
+C_19.mzML Peak area,C_19,19,C,Rhodotorula mucilaginosa,1.0,"152A-12
+ BY32-A3"
+C_190.mzML Peak area,C_190,190,C,Rhodotorula mucilaginosa,3.0,"17-332M-1
+ BY115-F4"
+C_191.mzML Peak area,C_191,191,C,,3.0,"17-332D-2
+ BY115-B6"
+C_192.mzML Peak area,C_192,192,C,Rhodotorula dairenensis,3.0,Y3853
+C_193.mzML Peak area,C_193,193,C,Rhodotorula mucilaginosa,3.0,3381
+C_194.mzML Peak area,C_194,194,C,Rhodotorula dairenensis,3.0,3769
+C_196.mzML Peak area,C_196,196,C,Rhodotorula mucilaginosa,3.0,4201
+C_197.mzML Peak area,C_197,197,C,Rhodotorula mucilaginosa,3.0,4408
+C_198.mzML Peak area,C_198,198,C,Rhodotorula mucilaginosa,3.0,4920
+C_199.mzML Peak area,C_199,199,C,Rhodotorula mucilaginosa,3.0,"17-332M-2
+ BY115-F4"
+C_2.mzML Peak area,C_2,2,C,Rhodotorula mucilaginosa,1.0,"134A-3
+ BY30-D2"
+C_20.mzML Peak area,C_20,20,C,Rhodotorula mucilaginosa,1.0,102D-1 8130
+C_200.mzML Peak area,C_200,200,C,Rhodotorula mucilaginosa,3.0,"209-6-14
+ BY43-A2"
+C_201.mzML Peak area,C_201,201,C,Rhodotorula mucilaginosa,3.0,DBVPG 3044
+C_202.mzML Peak area,C_202,202,C,Rhodotorula mucilaginosa,3.0,3382
+C_203.mzML Peak area,C_203,203,C,Rhodotorula dairenensis,3.0,3770
+C_204.mzML Peak area,C_204,204,C,Rhodotorula mucilaginosa,3.0,3854
+C_205.mzML Peak area,C_205,205,C,Rhodotorula mucilaginosa,3.0,4202
+C_206.mzML Peak area,C_206,206,C,Rhodotorula mucilaginosa,3.0,4466
+C_207.mzML Peak area,C_207,207,C,Rhodotorula mucilaginosa,3.0,4945
+C_209.mzML Peak area,C_209,209,C,Rhodotorula mucilaginosa,3.0,"17-332C-1
+ BY115-G4"
+C_21.mzML Peak area,C_21,21,C,Rhodotorula mucilaginosa,1.0,"4M-1-2
+ BY8-D4"
+C_210.mzML Peak area,C_210,210,C,Rhodotorula mucilaginosa,3.0,3045
+C_211.mzML Peak area,C_211,211,C,Rhodotorula mucilaginosa,3.0,3383
+C_213.mzML Peak area,C_213,213,C,Rhodotorula mucilaginosa,3.0,3855
+C_214.mzML Peak area,C_214,214,C,Rhodotorula mucilaginosa,3.0,4203
+C_215.mzML Peak area,C_215,215,C,Rhodotorula taiwanensis,3.0,4530
+C_216.mzML Peak area,C_216,216,C,Rhodotorula mucilaginosa,3.0,4946
+C_217.mzML Peak area,C_217,217,C,Rhodotorula mucilaginosa,3.0,"25-0-2E333-1
+ BY120-A4"
+C_218.mzML Peak area,C_218,218,C,Rhodotorula mucilaginosa,3.0,"25-0-2E334-1
+ BY118-A8"
+C_219.mzML Peak area,C_219,219,C,Rhodotorula mucilaginosa,3.0,3090
+C_22.mzML Peak area,C_22,22,C,Rhodotorula mucilaginosa,1.0,"209-6-11
+ BY43-G1"
+C_220.mzML Peak area,C_220,220,C,Rhodotorula mucilaginosa,3.0,3384
+C_221.mzML Peak area,C_221,221,C,Rhodotorula dairenensis,3.0,3772
+C_222.mzML Peak area,C_222,222,C,Rhodotorula mucilaginosa,3.0,3856
+C_223.mzML Peak area,C_223,223,C,Rhodotorula mucilaginosa,3.0,4304
+C_224.mzML Peak area,C_224,224,C,Rhodotorula taiwanensis,3.0,4531
+C_225.mzML Peak area,C_225,225,C,Rhodotorula mucilaginosa,3.0,4947
+C_227.mzML Peak area,C_227,227,C,Rhodotorula mucilaginosa,3.0,"25-334Y-6
+ BY118-F9"
+C_228.mzML Peak area,C_228,228,C,Rhodotorula mucilaginosa,3.0,3235
+C_229.mzML Peak area,C_229,229,C,Rhodotorula mucilaginosa,3.0,3442
+C_230.mzML Peak area,C_230,230,C,Rhodotorula dairenensis,3.0,3773
+C_231.mzML Peak area,C_231,231,C,Rhodotorula mucilaginosa,3.0,3857
+C_232.mzML Peak area,C_232,232,C,Rhodotorula mucilaginosa,3.0,4376
+C_233.mzML Peak area,C_233,233,C,Rhodotorula mucilaginosa,3.0,4534
+C_234.mzML Peak area,C_234,234,C,Rhodotorula mucilaginosa,3.0,4949
+C_235.mzML Peak area,C_235,235,C,Rhodotorula mucilaginosa,3.0,"209-6-1
+ BY42-F9"
+C_236.mzML Peak area,C_236,236,C,Rhodotorula mucilaginosa,3.0,"209-6-12
+ BY43-H1"
+C_237.mzML Peak area,C_237,237,C,Rhodotorula mucilaginosa,3.0,3237
+C_238.mzML Peak area,C_238,238,C,Rhodotorula mucilaginosa,3.0,3443
+C_239.mzML Peak area,C_239,239,C,Rhodotorula mucilaginosa,3.0,3774
+C_24.mzML Peak area,C_24,24,C,Rhodotorula mucilaginosa,1.0,"17-337P-5
+ BY116-B7"
+C_240.mzML Peak area,C_240,240,C,Rhodotorula mucilaginosa,3.0,3858
+C_242.mzML Peak area,C_242,242,C,Rhodotorula paludigena,3.0,4610
+C_244.mzML Peak area,C_244,244,C,Rhodotorula mucilaginosa,3.0,4952
+C_245.mzML Peak area,C_245,245,C,Rhodotorula mucilaginosa,3.0,5227
+C_246.mzML Peak area,C_246,246,C,Rhodotorula mucilaginosa,3.0,6091
+C_247.mzML Peak area,C_247,247,C,Rhodotorula toruloides,3.0,6739
+C_248.mzML Peak area,C_248,248,C,Rhodotorula sp. clade XIII,3.0,7947
+C_249.mzML Peak area,C_249,249,C,Rhodotorula mucilaginosa,3.0,3236
+C_25.mzML Peak area,C_25,25,C,Rhodotorula mucilaginosa,1.0,"137C-3
+ BY30-I4"
+C_250.mzML Peak area,C_250,250,C,Rhodotorula paludigena,3.0,7316
+C_251.mzML Peak area,C_251,251,C,,3.0,17-333P-8
+C_252.mzML Peak area,C_252,252,C,,3.0,48D-1
+C_253.mzML Peak area,C_253,253,C,Rhodotorula mucilaginosa,3.0,4956
+C_254.mzML Peak area,C_254,254,C,Rhodotorula mucilaginosa,3.0,5228
+C_255.mzML Peak area,C_255,255,C,Rhodotorula mucilaginosa,3.0,6093
+C_256.mzML Peak area,C_256,256,C,Rhodotorula mucilaginosa,3.0,6742
+C_257.mzML Peak area,C_257,257,C,Rhodotorula mucilaginosa,3.0,8043
+C_258.mzML Peak area,C_258,258,C,Rhodotorula mucilaginosa,3.0,3445
+C_259.mzML Peak area,C_259,259,C,,3.0,10056
+C_26.mzML Peak area,C_26,26,C,Rhodotorula mucilaginosa,1.0,"212C-2
+ BY39-G3"
+C_260.mzML Peak area,C_260,260,C,,4.0,152D-2
+C_261.mzML Peak area,C_261,261,C,Rhodotorula sphaerocarpa,4.0,"86C-3
+ BY33-D3"
+C_262.mzML Peak area,C_262,262,C,Rhodotorula mucilaginosa,4.0,4957
+C_263.mzML Peak area,C_263,263,C,Rhodotorula mucilaginosa,4.0,5229
+C_264.mzML Peak area,C_264,264,C,Rhodotorula mucilaginosa,4.0,6094
+C_265.mzML Peak area,C_265,265,C,Rhodotorula mucilaginosa,4.0,6743
+C_266.mzML Peak area,C_266,266,C,Rhodotorula sp. clade I,4.0,8058
+C_267.mzML Peak area,C_267,267,C,Rhodotorula mucilaginosa,4.0,3446
+C_268.mzML Peak area,C_268,268,C,Rhodotorula mucilaginosa,4.0,10842
+C_269.mzML Peak area,C_269,269,C,,4.0,17-332Y-1
+C_27.mzML Peak area,C_27,27,C,Rhodotorula mucilaginosa,1.0,"25-0-2E390-1
+ BY126-F3"
+C_270.mzML Peak area,C_270,270,C,Rhodotorula diobovata,4.0,7-6-2003
+C_271.mzML Peak area,C_271,271,C,Rhodotorula mucilaginosa,4.0,4958
+C_272.mzML Peak area,C_272,272,C,Rhodotorula mucilaginosa,4.0,5235
+C_273.mzML Peak area,C_273,273,C,Rhodotorula toruloides,4.0,6121
+C_274.mzML Peak area,C_274,274,C,Rhodotorula mucilaginosa,4.0,6803
+C_275.mzML Peak area,C_275,275,C,Cystobasidium sp.,4.0,10075
+C_276.mzML Peak area,C_276,276,C,Rhodotorula mucilaginosa,4.0,3778
+C_277.mzML Peak area,C_277,277,C,Rhodotorula mucilaginosa,4.0,10882
+C_278.mzML Peak area,C_278,278,C,Rhodotorula sphaerocarpa,4.0,"86A-5
+ BY34-I6"
+C_279.mzML Peak area,C_279,279,C,Rhodotorula mucilaginosa,4.0,"186CL④-2
+ BY39-C9"
+C_28.mzML Peak area,C_28,28,C,Rhodotorula pacifica,1.0,1A-1-3 8130
+C_280.mzML Peak area,C_280,280,C,Rhodotorula mucilaginosa,4.0,4962
+C_281.mzML Peak area,C_281,281,C,Rhodotorula mucilaginosa,4.0,5236
+C_282.mzML Peak area,C_282,282,C,Rhodotorula diobovata,4.0,6195
+C_283.mzML Peak area,C_283,283,C,Rhodotorula mucilaginosa,4.0,7019
+C_284.mzML Peak area,C_284,284,C,Rhodotorula kratochvilovae,4.0,10753
+C_285.mzML Peak area,C_285,285,C,Rhodotorula mucilaginosa,4.0,3780
+C_286.mzML Peak area,C_286,286,C,Rhodotorula mucilaginosa,4.0,10886
+C_287.mzML Peak area,C_287,287,C,Rhodotorula toruloides,4.0,"152A-3
+ BY32-A2"
+C_288.mzML Peak area,C_288,288,C,Rhodotorula pacifica,4.0,1A-1-5
+C_289.mzML Peak area,C_289,289,C,Rhodotorula mucilaginosa,4.0,4963
+C_29.mzML Peak area,C_29,29,C,Rhodotorula mucilaginosa,1.0,"25-332D-2
+ BY119-I1 8/30"
+C_290.mzML Peak area,C_290,290,C,Rhodotorula mucilaginosa,4.0,5757
+C_291.mzML Peak area,C_291,291,C,Rhodotorula diobovata,4.0,6202
+C_292.mzML Peak area,C_292,292,C,Rhodotorula graminis,4.0,7021
+C_293.mzML Peak area,C_293,293,C,Rhodotorula mucilaginosa,4.0,10780
+C_294.mzML Peak area,C_294,294,C,Rhodotorula graminis,4.0,6083
+C_295.mzML Peak area,C_295,295,C,Rhodotorula mucilaginosa,4.0,DBVPG 10937
+C_296.mzML Peak area,C_296,296,C,Rhodotorula mucilaginosa,4.0,"2M-1-3
+ BY8-A3"
+C_297.mzML Peak area,C_297,297,C,Rhodotorula diobovata,4.0,"211C-2
+ BY37-F3"
+C_298.mzML Peak area,C_298,298,C,Rhodotorula mucilaginosa,4.0,4964
+C_299.mzML Peak area,C_299,299,C,Rhodotorula mucilaginosa,4.0,5758
+C_3.mzML Peak area,C_3,3,C,Rhodotorula mucilaginosa,1.0,98A-5
+C_30.mzML Peak area,C_30,30,C,Rhodotorula mucilaginosa,1.0,"2M-1-4
+ BY8-B3 8/30"
+C_300.mzML Peak area,C_300,300,C,Rhodotorula mucilaginosa,4.0,6593
+C_301.mzML Peak area,C_301,301,C,Rhodotorula paludigena,4.0,7323
+C_302.mzML Peak area,C_302,302,C,Rhodotorula sp. clade XI,4.0,10348
+C_303.mzML Peak area,C_303,303,C,Rhodotorula mucilaginosa,4.0,6092
+C_304.mzML Peak area,C_304,304,C,Rhodotorula mucilaginosa,4.0,17-333M-1
+C_305.mzML Peak area,C_305,305,C,,4.0,25-325P-1
+C_306.mzML Peak area,C_306,306,C,,4.0,25-327C-3
+C_307.mzML Peak area,C_307,307,C,Rhodotorula mucilaginosa,4.0,5225
+C_308.mzML Peak area,C_308,308,C,Rhodotorula mucilaginosa,4.0,5759
+C_309.mzML Peak area,C_309,309,C,Rhodotorula mucilaginosa,4.0,6649
+C_31.mzML Peak area,C_31,31,C,Rhodotorula mucilaginosa,1.0,"340-3
+ BY110-F1"
+C_310.mzML Peak area,C_310,310,C,Rhodotorula kratochvilovae,4.0,7539
+C_311.mzML Peak area,C_311,311,C,Rhodotorula kratochvilovae,4.0,10383
+C_312.mzML Peak area,C_312,312,C,Pseudomicrostroma phylloplanum,4.0,6740
+C_313.mzML Peak area,C_313,313,C,Rhodotorula mucilaginosa,4.0,5226
+C_314.mzML Peak area,C_314,314,C,Rhodotorula glutinis,4.0,6081
+C_317.mzML Peak area,C_317,317,C,Rhodotorula mucilaginosa,4.0,10619
+C_318.mzML Peak area,C_318,318,C,Rhodotorula mucilaginosa,4.0,6741
+C_319.mzML Peak area,C_319,319,C,,4.0,51A-3
+C_32.mzML Peak area,C_32,32,C,Rhodotorula mucilaginosa,1.0,"100D-1
+ BY31-H3"
+C_320.mzML Peak area,C_320,320,C,Rhodotorula graminis,4.0,Y2474
+C_321.mzML Peak area,C_321,321,C,Rhodotorula dairenensis,4.0,Y2504
+C_322.mzML Peak area,C_322,322,C,Rhodotorula mucilaginosa,4.0,Y2510
+C_323.mzML Peak area,C_323,323,C,Rhodotorula sphaerocarpa,4.0,Y7192
+C_325.mzML Peak area,C_325,325,C,Rhodotorula paludigena,4.0,Y12923
+C_326.mzML Peak area,C_326,326,C,Rhodotorula araucariae,4.0,Y17376
+C_327.mzML Peak area,C_327,327,C,,4.0,Y48721
+C_328.mzML Peak area,C_328,328,C,,,
+C_33.mzML Peak area,C_33,33,C,Rhodotorula mucilaginosa,1.0,"340-1
+ BY110-D1"
+C_334.mzML Peak area,C_334,334,C,Rhodotorula mucilaginosa,4.0,JES-025-001
+C_34.mzML Peak area,C_34,34,C,,1.0,"83E1
+ BY33-F1"
+C_35.mzML Peak area,C_35,35,C,,1.0,"17-331Y-5
+ BY117-B9"
+C_36.mzML Peak area,C_36,36,C,Rhodotorula mucilaginosa,1.0,"17-267M-1
+ BY121-A4"
+C_37.mzML Peak area,C_37,37,C,Rhodotorula paludigena,1.0,48A-15
+C_38.mzML Peak area,C_38,38,C,Rhodotorula mucilaginosa,1.0,"25-332C-1
+ BY119-C2"
+C_39.mzML Peak area,C_39,39,C,Rhodotorula mucilaginosa,1.0,"17-334Y-3
+ BY116-C9"
+C_4.mzML Peak area,C_4,4,C,Rhodotorula mucilaginosa,1.0,102C-2
+C_40.mzML Peak area,C_40,40,C,Rhodotorula mucilaginosa,1.0,"270H-1
+ BY113-D3"
+C_41.mzML Peak area,C_41,41,C,Rhodotorula mucilaginosa,1.0,107C-3
+C_42.mzML Peak area,C_42,42,C,Rhodotorula mucilaginosa,1.0,33A-4
+C_43.mzML Peak area,C_43,43,C,Rhodotorula toruloides,1.0,"152D-4
+ BY32-B4"
+C_44.mzML Peak area,C_44,44,C,Rhodotorula diobovata,1.0,7-9-2
+C_45.mzML Peak area,C_45,45,C,Rhodotorula mucilaginosa,1.0,"17Y-278-1
+ BY126-D5"
+C_46.mzML Peak area,C_46,46,C,Rhodotorula paludigena,1.0,43A-4
+C_47.mzML Peak area,C_47,47,C,Rhodotorula mucilaginosa,1.0,"25-331D-1
+ BY119-D1"
+C_48.mzML Peak area,C_48,48,C,Rhodotorula mucilaginosa,1.0,"25-333C-2
+ BY120-H5"
+C_49.mzML Peak area,C_49,49,C,Rhodotorula mucilaginosa,1.0,"270H-2
+ BY113-D4"
+C_5.mzML Peak area,C_5,5,C,Rhodotorula mucilaginosa,1.0,105A-2
+C_50.mzML Peak area,C_50,50,C,Rhodotorula mucilaginosa,1.0,"118C-2
+ BY31-G1"
+C_51.mzML Peak area,C_51,51,C,Rhodotorula mucilaginosa,1.0,"25-334D-3
+ BY118-F7"
+C_52.mzML Peak area,C_52,52,C,Rhodotorula mucilaginosa,1.0,1A-14
+C_53.mzML Peak area,C_53,53,C,Rhodotorula mucilaginosa,1.0,"211A-3
+ BY37-B3"
+C_54.mzML Peak area,C_54,54,C,Rhodotorula mucilaginosa,1.0,"17-0-2E390-1
+ BY126-B7"
+C_55.mzML Peak area,C_55,55,C,Rhodotorula mucilaginosa,1.0,"172A-1
+ BY40-A6"
+C_56.mzML Peak area,C_56,56,C,Rhodotorula mucilaginosa,1.0,22C-4
+C_57.mzML Peak area,C_57,57,C,Rhodotorula mucilaginosa,1.0,98D-11
+C_58.mzML Peak area,C_58,58,C,Rhodotorula mucilaginosa,1.0,"25-332Y-1
+ BY119-F3"
+C_59.mzML Peak area,C_59,59,C,Rhodotorula mucilaginosa,1.0,"25-333Y-9
+ BY120_C8"
+C_6.mzML Peak area,C_6,6,C,Rhodotorula mucilaginosa,1.0,"17-334Y-2
+ BY116-B9"
+C_60.mzML Peak area,C_60,60,C,Rhodotorula mucilaginosa,1.0,"25-325Y-1
+ BY120-D6"
+C_61.mzML Peak area,C_61,61,C,Rhodotorula toruloides,1.0,"152A-6
+ BY32-D2"
+C_62.mzML Peak area,C_62,62,C,Rhodotorula mucilaginosa,1.0,"17-338D-3
+ BY116-B5"
+C_63.mzML Peak area,C_63,63,C,Rhodotorula mucilaginosa,1.0,"17-0-2E390-2
+ BY126-C7"
+C_64.mzML Peak area,C_64,64,C,Rhodotorula mucilaginosa,1.0,"140A-3
+ BY30-G2"
+C_65.mzML Peak area,C_65,65,C,,1.0,"223D-8
+ BY35-B9"
+C_66.mzML Peak area,C_66,66,C,Rhodotorula mucilaginosa,1.0,"209-6-5
+ BY43-A1"
+C_67.mzML Peak area,C_67,67,C,Rhodotorula mucilaginosa,1.0,"17-333P-6
+ BY118-E1"
+C_68.mzML Peak area,C_68,68,C,Rhodotorula mucilaginosa,1.0,"17-325D-2
+ BY116-B4"
+C_69.mzML Peak area,C_69,69,C,Rhodotorula mucilaginosa,1.0,"17-325P-1
+ BY117-E2"
+C_7.mzML Peak area,C_7,7,C,Rhodotorula mucilaginosa,1.0,"17-329Y-4
+ BY115-H8"
+C_71.mzML Peak area,C_71,71,C,Rhodotorula dairenensis,1.0,"7W-292-3
+ BY53-A7"
+C_72.mzML Peak area,C_72,72,C,Rhodotorula mucilaginosa,1.0,"89D-3
+ BY32-I5"
+C_73.mzML Peak area,C_73,73,C,Rhodotorula mucilaginosa,1.0,"138A-1
+ BY31-C1"
+C_74.mzML Peak area,C_74,74,C,Rhodotorula mucilaginosa,1.0,"209-6-17
+ BY43-D2"
+C_75.mzML Peak area,C_75,75,C,Rhodotorula mucilaginosa,1.0,"137D-4
+ BY30-H6"
+C_76.mzML Peak area,C_76,76,C,Rhodotorula mucilaginosa,1.0,"25-337Y-1
+ BY118-I8"
+C_77.mzML Peak area,C_77,77,C,Rhodotorula mucilaginosa,1.0,"209-6-2
+ BY42-G9"
+C_78.mzML Peak area,C_78,78,C,Rhodotorula mucilaginosa,1.0,"25-332P-2
+ BY119-B2"
+C_79.mzML Peak area,C_79,79,C,Rhodotorula mucilaginosa,1.0,98C-7
+C_8.mzML Peak area,C_8,8,C,Rhodotorula mucilaginosa,1.0,"107A-6
+ BY31-B6"
+C_80.mzML Peak area,C_80,80,C,Rhodotorula pacifica,1.0,1B-1-2
+C_81.mzML Peak area,C_81,81,C,Rhodotorula mucilaginosa,1.0,98C-5
+C_83.mzML Peak area,C_83,83,C,Rhodotorula mucilaginosa,1.0,"152A-2
+ BY32-I1"
+C_86.mzML Peak area,C_86,86,C,Rhodotorula mucilaginosa,1.0,"25-333Y-10
+ BY120-D8"
+C_88.mzML Peak area,C_88,88,C,Rhodotorula toruloides,2.0,"152C-3
+ BY32-D3"
+C_89.mzML Peak area,C_89,89,C,Rhodotorula mucilaginosa,2.0,"4M-1-5
+ BY8-G4"
+C_9.mzML Peak area,C_9,9,C,Rhodotorula mucilaginosa,1.0,"17-390M-1
+ BY126-D7"
+C_91.mzML Peak area,C_91,91,C,Rhodotorula diobovata,2.0,"25-335P-1
+ BY120-A5"
+C_92.mzML Peak area,C_92,92,C,Rhodotorula taiwanensis,2.0,"S22D-1 
+ BY38-D8"
+C_93.mzML Peak area,C_93,93,C,Rhodotorula paludigena,2.0,48D-10
+C_95.mzML Peak area,C_95,95,C,Rhodotorula mucilaginosa,2.0,"86A-3
+ BY34-G6"
+C_96.mzML Peak area,C_96,96,C,Rhodotorula toruloides,2.0,"152A-4
+ BY32-B2"
+C_97.mzML Peak area,C_97,97,C,Rhodotorula mucilaginosa,2.0,"17-332P-1
+ BY115-D6"
+C_98.mzML Peak area,C_98,98,C,Rhodotorula mucilaginosa,2.0,"4M-1-4
+ BY8-F4"
+C_99.mzML Peak area,C_99,99,C,Rhodotorula mucilaginosa,2.0,102C-1
+SUP_1.mzML Peak area,SUP_1,1,SUP,Rhodotorula mucilaginosa,1.0,"17-291Y-1
+ BY126-B8"
+SUP_10.mzML Peak area,SUP_10,10,SUP,Rhodotorula sphaerocarpa,1.0,"86C-9
+ BY34-B2"
+SUP_100.mzML Peak area,SUP_100,100,SUP,Rhodotorula mucilaginosa,2.0,"404D-1
+ BY123-F4"
+SUP_104.mzML Peak area,SUP_104,104,SUP,Rhodotorula mucilaginosa,2.0,"213-6-2
+ BY42-B6"
+SUP_105.mzML Peak area,SUP_105,105,SUP,Rhodotorula toruloides,2.0,"152C-6
+ BY32-G3"
+SUP_106.mzML Peak area,SUP_106,106,SUP,Rhodotorula mucilaginosa,2.0,"273H-1
+ BY113-C3"
+SUP_107.mzML Peak area,SUP_107,107,SUP,Rhodotorula mucilaginosa,2.0,"209-6-4
+ BY42-I9"
+SUP_108.mzML Peak area,SUP_108,108,SUP,Rhodotorula mucilaginosa,2.0,"25-332M-2
+ BY119-E2"
+SUP_109.mzML Peak area,SUP_109,109,SUP,Rhodotorula mucilaginosa,2.0,98C-8
+SUP_11.mzML Peak area,SUP_11,11,SUP,Rhodotorula mucilaginosa,1.0,"122C-2 
+ BY31-A2"
+SUP_111.mzML Peak area,SUP_111,111,SUP,Rhodotorula diobovata,2.0,"25-335C-1
+ BY120-B5"
+SUP_113.mzML Peak area,SUP_113,113,SUP,Rhodotorula mucilaginosa,2.0,54D-2
+SUP_114.mzML Peak area,SUP_114,114,SUP,Rhodotorula toruloides,2.0,"152D-6
+ BY32-D4"
+SUP_115.mzML Peak area,SUP_115,115,SUP,Rhodotorula mucilaginosa,2.0,"25-0-2E332-1
+ BY119-E3"
+SUP_116.mzML Peak area,SUP_116,116,SUP,Rhodotorula mucilaginosa,2.0,"BY120-C1 (BY120-C7)
+ 25-0-2E333-9"
+SUP_117.mzML Peak area,SUP_117,117,SUP,Rhodotorula mucilaginosa,2.0,"17-0-2E334-10
+ BY116-C8"
+SUP_118.mzML Peak area,SUP_118,118,SUP,Rhodotorula taiwanensis,2.0,"357-1
+ BY110-F4"
+SUP_119.mzML Peak area,SUP_119,119,SUP,Rhodotorula sp. clade I,2.0,"17-328C-3
+ BY117-D1"
+SUP_12.mzML Peak area,SUP_12,12,SUP,Rhodotorula mucilaginosa,1.0,4M-1-3
+SUP_120.mzML Peak area,SUP_120,120,SUP,Rhodotorula diobovata,2.0,"17-334Y-6
+ BY116-F9"
+SUP_121.mzML Peak area,SUP_121,121,SUP,Rhodotorula paludigena,2.0,"25-333P-5
+ BY120-H3"
+SUP_122.mzML Peak area,SUP_122,122,SUP,Rhodotorula sp. clade I,2.0,"222A-2
+ BY37-G8"
+SUP_123.mzML Peak area,SUP_123,123,SUP,Rhodotorula sp. clade I,2.0,"25-333Y-2
+ BY120-G4"
+SUP_124.mzML Peak area,SUP_124,124,SUP,Rhodotorula mucilaginosa,2.0,98A-10
+SUP_125.mzML Peak area,SUP_125,125,SUP,Rhodotorula mucilaginosa,2.0,"17-334D-6
+ BY115-E2"
+SUP_126.mzML Peak area,SUP_126,126,SUP,Rhodotorula mucilaginosa,2.0,"17-0-2E334-4
+ BY116-G7"
+SUP_127.mzML Peak area,SUP_127,127,SUP,Rhodotorula mucilaginosa,2.0,"363-1-2
+ BY110-A6"
+SUP_129.mzML Peak area,SUP_129,129,SUP,Rhodotorula mucilaginosa,2.0,"25-0-2E333-7
+ BY120-A7"
+SUP_13.mzML Peak area,SUP_13,13,SUP,Rhodotorula mucilaginosa,1.0,"141C-2
+ BY30-H4"
+SUP_130.mzML Peak area,SUP_130,130,SUP,Rhodotorula mucilaginosa,2.0,"25-335Y-1
+ BY120-I4"
+SUP_131.mzML Peak area,SUP_131,131,SUP,Rhodotorula mucilaginosa,2.0,"213-6-4
+ BY42-C6"
+SUP_133.mzML Peak area,SUP_133,133,SUP,Rhodotorula mucilaginosa,2.0,98C-3
+SUP_134.mzML Peak area,SUP_134,134,SUP,Rhodotorula mucilaginosa,2.0,"17-333D-2
+ BY115-E6"
+SUP_135.mzML Peak area,SUP_135,135,SUP,Rhodotorula mucilaginosa,2.0,"17-332C-2
+ BY115-H4"
+SUP_136.mzML Peak area,SUP_136,136,SUP,Rhodotorula sphaerocarpa,2.0,"86A-6
+ BY34-A7"
+SUP_137.mzML Peak area,SUP_137,137,SUP,Rhodotorula taiwanensis,2.0,"0520-4-2-2
+ BY53-D9"
+SUP_139.mzML Peak area,SUP_139,139,SUP,Rhodotorula sp. clade I,2.0,"25-333D-5
+ BY120-H7"
+SUP_14.mzML Peak area,SUP_14,14,SUP,Rhodotorula mucilaginosa,1.0,"130D-4
+ BY30-H7"
+SUP_141.mzML Peak area,SUP_141,141,SUP,Rhodotorula toruloides,2.0,"152C-2
+ BY32-C3"
+SUP_142.mzML Peak area,SUP_142,142,SUP,Rhodotorula mucilaginosa,2.0,"98D-9
+ BY31-F3"
+SUP_143.mzML Peak area,SUP_143,143,SUP,Rhodotorula mucilaginosa,2.0,"17-325D-4
+ BY116-C4"
+SUP_144.mzML Peak area,SUP_144,144,SUP,Rhodotorula mucilaginosa,2.0,"17-332P-2
+ BY117-G8"
+SUP_148.mzML Peak area,SUP_148,148,SUP,Rhodotorula mucilaginosa,2.0,"342-3
+ BY110_B2"
+SUP_149.mzML Peak area,SUP_149,149,SUP,Rhodotorula sphaerocarpa,2.0,"86A-8
+ BY35-H3"
+SUP_15.mzML Peak area,SUP_15,15,SUP,Rhodotorula mucilaginosa,1.0,"3M-1-1
+ BY8-B4"
+SUP_150.mzML Peak area,SUP_150,150,SUP,Rhodotorula mucilaginosa,2.0,"152C-5
+ BY32-F3"
+SUP_151.mzML Peak area,SUP_151,151,SUP,Rhodotorula mucilaginosa,2.0,"98D-7
+ BY31-E3"
+SUP_152.mzML Peak area,SUP_152,152,SUP,Rhodotorula mucilaginosa,2.0,"25-337M-3
+ BY119-F9"
+SUP_153.mzML Peak area,SUP_153,153,SUP,Rhodotorula mucilaginosa,2.0,"25-0-2E333-5
+ BY120-E4"
+SUP_155.mzML Peak area,SUP_155,155,SUP,Rhodotorula taiwanensis,2.0,"0520-4-2-1
+ BY53-C9"
+SUP_156.mzML Peak area,SUP_156,156,SUP,Rhodotorula paludigena,2.0,48A-2
+SUP_157.mzML Peak area,SUP_157,157,SUP,Rhodotorula paludigena,2.0,1A-1-2
+SUP_158.mzML Peak area,SUP_158,158,SUP,Rhodotorula mucilaginosa,2.0,"152A-1
+ BY32-H1"
+SUP_159.mzML Peak area,SUP_159,159,SUP,Rhodotorula mucilaginosa,2.0,"152A-5
+ BY32-C2"
+SUP_16.mzML Peak area,SUP_16,16,SUP,Rhodotorula sp. clade XI,1.0,"186DK3-2
+ BY39-H9"
+SUP_161.mzML Peak area,SUP_161,161,SUP,Rhodotorula mucilaginosa,2.0,102D-2
+SUP_162.mzML Peak area,SUP_162,162,SUP,Rhodotorula mucilaginosa,2.0,"25-327D-1
+ BY119-D5"
+SUP_163.mzML Peak area,SUP_163,163,SUP,Rhodotorula mucilaginosa,2.0,"17-334Y-5
+ BY116-E9"
+SUP_164.mzML Peak area,SUP_164,164,SUP,Rhodotorula mucilaginosa,2.0,"17-334C-1
+ BY117-A6"
+SUP_165.mzML Peak area,SUP_165,165,SUP,,2.0,"17-332Y-1
+ BY115-H5"
+SUP_166.mzML Peak area,SUP_166,166,SUP,Rhodotorula mucilaginosa,2.0,3238
+SUP_167.mzML Peak area,SUP_167,167,SUP,Rhodotorula mucilaginosa,2.0,3444
+SUP_168.mzML Peak area,SUP_168,168,SUP,Rhodotorula mucilaginosa,2.0,3775
+SUP_169.mzML Peak area,SUP_169,169,SUP,Rhodotorula mucilaginosa,2.0,3983
+SUP_17.mzML Peak area,SUP_17,17,SUP,Rhodotorula diobovata,1.0,7-9-3
+SUP_170.mzML Peak area,SUP_170,170,SUP,Rhodotorula mucilaginosa,2.0,4378
+SUP_171.mzML Peak area,SUP_171,171,SUP,Rhodotorula mucilaginosa,2.0,4618
+SUP_172.mzML Peak area,SUP_172,172,SUP,Rhodotorula mucilaginosa,2.0,106A-1
+SUP_174.mzML Peak area,SUP_174,174,SUP,Rhodotorula mucilaginosa,2.0,17-0-2E337-3 BY117-H4
+SUP_175.mzML Peak area,SUP_175,175,SUP,Rhodotorula mucilaginosa,2.0,3239
+SUP_176.mzML Peak area,SUP_176,176,SUP,Rhodotorula mucilaginosa,3.0,3538
+SUP_177.mzML Peak area,SUP_177,177,SUP,Rhodotorula mucilaginosa,3.0,3776
+SUP_178.mzML Peak area,SUP_178,178,SUP,Rhodotorula mucilaginosa,3.0,3984
+SUP_179.mzML Peak area,SUP_179,179,SUP,Rhodotorula mucilaginosa,3.0,4379
+SUP_18.mzML Peak area,SUP_18,18,SUP,Rhodotorula mucilaginosa,1.0,"25-395P-1
+ BY126-F2"
+SUP_181.mzML Peak area,SUP_181,181,SUP,Rhodotorula mucilaginosa,3.0,"25-332D-1
+ BY119-H1"
+SUP_182.mzML Peak area,SUP_182,182,SUP,Rhodotorula mucilaginosa,3.0,"25-333P-2
+ BY120-E3"
+SUP_183.mzML Peak area,SUP_183,183,SUP,Rhodotorula mucilaginosa,3.0,"181A-1
+ BY39-F5"
+SUP_185.mzML Peak area,SUP_185,185,SUP,Rhodotorula dairenensis,3.0,3768
+SUP_186.mzML Peak area,SUP_186,186,SUP,Rhodotorula mucilaginosa,3.0,3777
+SUP_187.mzML Peak area,SUP_187,187,SUP,Rhodotorula glutinis,3.0,3985
+SUP_188.mzML Peak area,SUP_188,188,SUP,Rhodotorula mucilaginosa,3.0,4380
+SUP_189.mzML Peak area,SUP_189,189,SUP,Rhodotorula mucilaginosa,3.0,4669
+SUP_19.mzML Peak area,SUP_19,19,SUP,Rhodotorula mucilaginosa,1.0,"152A-12
+ BY32-A3"
+SUP_190.mzML Peak area,SUP_190,190,SUP,Rhodotorula mucilaginosa,3.0,"17-332M-1
+ BY115-F4"
+SUP_191.mzML Peak area,SUP_191,191,SUP,,3.0,"17-332D-2
+ BY115-B6"
+SUP_192.mzML Peak area,SUP_192,192,SUP,Rhodotorula dairenensis,3.0,Y3853
+SUP_193.mzML Peak area,SUP_193,193,SUP,Rhodotorula mucilaginosa,3.0,3381
+SUP_194.mzML Peak area,SUP_194,194,SUP,Rhodotorula dairenensis,3.0,3769
+SUP_196.mzML Peak area,SUP_196,196,SUP,Rhodotorula mucilaginosa,3.0,4201
+SUP_197.mzML Peak area,SUP_197,197,SUP,Rhodotorula mucilaginosa,3.0,4408
+SUP_198.mzML Peak area,SUP_198,198,SUP,Rhodotorula mucilaginosa,3.0,4920
+SUP_199.mzML Peak area,SUP_199,199,SUP,Rhodotorula mucilaginosa,3.0,"17-332M-2
+ BY115-F4"
+SUP_2.mzML Peak area,SUP_2,2,SUP,Rhodotorula mucilaginosa,1.0,"134A-3
+ BY30-D2"
+SUP_20.mzML Peak area,SUP_20,20,SUP,Rhodotorula mucilaginosa,1.0,102D-1 8130
+SUP_200.mzML Peak area,SUP_200,200,SUP,Rhodotorula mucilaginosa,3.0,"209-6-14
+ BY43-A2"
+SUP_201.mzML Peak area,SUP_201,201,SUP,Rhodotorula mucilaginosa,3.0,DBVPG 3044
+SUP_202.mzML Peak area,SUP_202,202,SUP,Rhodotorula mucilaginosa,3.0,3382
+SUP_203.mzML Peak area,SUP_203,203,SUP,Rhodotorula dairenensis,3.0,3770
+SUP_204.mzML Peak area,SUP_204,204,SUP,Rhodotorula mucilaginosa,3.0,3854
+SUP_205.mzML Peak area,SUP_205,205,SUP,Rhodotorula mucilaginosa,3.0,4202
+SUP_206.mzML Peak area,SUP_206,206,SUP,Rhodotorula mucilaginosa,3.0,4466
+SUP_207.mzML Peak area,SUP_207,207,SUP,Rhodotorula mucilaginosa,3.0,4945
+SUP_209.mzML Peak area,SUP_209,209,SUP,Rhodotorula mucilaginosa,3.0,"17-332C-1
+ BY115-G4"
+SUP_21.mzML Peak area,SUP_21,21,SUP,Rhodotorula mucilaginosa,1.0,"4M-1-2
+ BY8-D4"
+SUP_210.mzML Peak area,SUP_210,210,SUP,Rhodotorula mucilaginosa,3.0,3045
+SUP_211.mzML Peak area,SUP_211,211,SUP,Rhodotorula mucilaginosa,3.0,3383
+SUP_213.mzML Peak area,SUP_213,213,SUP,Rhodotorula mucilaginosa,3.0,3855
+SUP_214.mzML Peak area,SUP_214,214,SUP,Rhodotorula mucilaginosa,3.0,4203
+SUP_215.mzML Peak area,SUP_215,215,SUP,Rhodotorula taiwanensis,3.0,4530
+SUP_216.mzML Peak area,SUP_216,216,SUP,Rhodotorula mucilaginosa,3.0,4946
+SUP_217.mzML Peak area,SUP_217,217,SUP,Rhodotorula mucilaginosa,3.0,"25-0-2E333-1
+ BY120-A4"
+SUP_218.mzML Peak area,SUP_218,218,SUP,Rhodotorula mucilaginosa,3.0,"25-0-2E334-1
+ BY118-A8"
+SUP_219.mzML Peak area,SUP_219,219,SUP,Rhodotorula mucilaginosa,3.0,3090
+SUP_22.mzML Peak area,SUP_22,22,SUP,Rhodotorula mucilaginosa,1.0,"209-6-11
+ BY43-G1"
+SUP_220.mzML Peak area,SUP_220,220,SUP,Rhodotorula mucilaginosa,3.0,3384
+SUP_221.mzML Peak area,SUP_221,221,SUP,Rhodotorula dairenensis,3.0,3772
+SUP_222.mzML Peak area,SUP_222,222,SUP,Rhodotorula mucilaginosa,3.0,3856
+SUP_223.mzML Peak area,SUP_223,223,SUP,Rhodotorula mucilaginosa,3.0,4304
+SUP_224.mzML Peak area,SUP_224,224,SUP,Rhodotorula taiwanensis,3.0,4531
+SUP_225.mzML Peak area,SUP_225,225,SUP,Rhodotorula mucilaginosa,3.0,4947
+SUP_227.mzML Peak area,SUP_227,227,SUP,Rhodotorula mucilaginosa,3.0,"25-334Y-6
+ BY118-F9"
+SUP_228.mzML Peak area,SUP_228,228,SUP,Rhodotorula mucilaginosa,3.0,3235
+SUP_229.mzML Peak area,SUP_229,229,SUP,Rhodotorula mucilaginosa,3.0,3442
+SUP_230.mzML Peak area,SUP_230,230,SUP,Rhodotorula dairenensis,3.0,3773
+SUP_231.mzML Peak area,SUP_231,231,SUP,Rhodotorula mucilaginosa,3.0,3857
+SUP_232.mzML Peak area,SUP_232,232,SUP,Rhodotorula mucilaginosa,3.0,4376
+SUP_233.mzML Peak area,SUP_233,233,SUP,Rhodotorula mucilaginosa,3.0,4534
+SUP_234.mzML Peak area,SUP_234,234,SUP,Rhodotorula mucilaginosa,3.0,4949
+SUP_235.mzML Peak area,SUP_235,235,SUP,Rhodotorula mucilaginosa,3.0,"209-6-1
+ BY42-F9"
+SUP_236.mzML Peak area,SUP_236,236,SUP,Rhodotorula mucilaginosa,3.0,"209-6-12
+ BY43-H1"
+SUP_237.mzML Peak area,SUP_237,237,SUP,Rhodotorula mucilaginosa,3.0,3237
+SUP_238.mzML Peak area,SUP_238,238,SUP,Rhodotorula mucilaginosa,3.0,3443
+SUP_239.mzML Peak area,SUP_239,239,SUP,Rhodotorula mucilaginosa,3.0,3774
+SUP_24.mzML Peak area,SUP_24,24,SUP,Rhodotorula mucilaginosa,1.0,"17-337P-5
+ BY116-B7"
+SUP_240.mzML Peak area,SUP_240,240,SUP,Rhodotorula mucilaginosa,3.0,3858
+SUP_242.mzML Peak area,SUP_242,242,SUP,Rhodotorula paludigena,3.0,4610
+SUP_244.mzML Peak area,SUP_244,244,SUP,Rhodotorula mucilaginosa,3.0,4952
+SUP_245.mzML Peak area,SUP_245,245,SUP,Rhodotorula mucilaginosa,3.0,5227
+SUP_246.mzML Peak area,SUP_246,246,SUP,Rhodotorula mucilaginosa,3.0,6091
+SUP_247.mzML Peak area,SUP_247,247,SUP,Rhodotorula toruloides,3.0,6739
+SUP_248.mzML Peak area,SUP_248,248,SUP,Rhodotorula sp. clade XIII,3.0,7947
+SUP_249.mzML Peak area,SUP_249,249,SUP,Rhodotorula mucilaginosa,3.0,3236
+SUP_25.mzML Peak area,SUP_25,25,SUP,Rhodotorula mucilaginosa,1.0,"137C-3
+ BY30-I4"
+SUP_250.mzML Peak area,SUP_250,250,SUP,Rhodotorula paludigena,3.0,7316
+SUP_251.mzML Peak area,SUP_251,251,SUP,,3.0,17-333P-8
+SUP_252.mzML Peak area,SUP_252,252,SUP,,3.0,48D-1
+SUP_253.mzML Peak area,SUP_253,253,SUP,Rhodotorula mucilaginosa,3.0,4956
+SUP_254.mzML Peak area,SUP_254,254,SUP,Rhodotorula mucilaginosa,3.0,5228
+SUP_255.mzML Peak area,SUP_255,255,SUP,Rhodotorula mucilaginosa,3.0,6093
+SUP_256.mzML Peak area,SUP_256,256,SUP,Rhodotorula mucilaginosa,3.0,6742
+SUP_257.mzML Peak area,SUP_257,257,SUP,Rhodotorula mucilaginosa,3.0,8043
+SUP_258.mzML Peak area,SUP_258,258,SUP,Rhodotorula mucilaginosa,3.0,3445
+SUP_259.mzML Peak area,SUP_259,259,SUP,,3.0,10056
+SUP_26.mzML Peak area,SUP_26,26,SUP,Rhodotorula mucilaginosa,1.0,"212C-2
+ BY39-G3"
+SUP_260.mzML Peak area,SUP_260,260,SUP,,4.0,152D-2
+SUP_261.mzML Peak area,SUP_261,261,SUP,Rhodotorula sphaerocarpa,4.0,"86C-3
+ BY33-D3"
+SUP_262.mzML Peak area,SUP_262,262,SUP,Rhodotorula mucilaginosa,4.0,4957
+SUP_263.mzML Peak area,SUP_263,263,SUP,Rhodotorula mucilaginosa,4.0,5229
+SUP_264.mzML Peak area,SUP_264,264,SUP,Rhodotorula mucilaginosa,4.0,6094
+SUP_265.mzML Peak area,SUP_265,265,SUP,Rhodotorula mucilaginosa,4.0,6743
+SUP_266.mzML Peak area,SUP_266,266,SUP,Rhodotorula sp. clade I,4.0,8058
+SUP_267.mzML Peak area,SUP_267,267,SUP,Rhodotorula mucilaginosa,4.0,3446
+SUP_268.mzML Peak area,SUP_268,268,SUP,Rhodotorula mucilaginosa,4.0,10842
+SUP_269.mzML Peak area,SUP_269,269,SUP,,4.0,17-332Y-1
+SUP_27.mzML Peak area,SUP_27,27,SUP,Rhodotorula mucilaginosa,1.0,"25-0-2E390-1
+ BY126-F3"
+SUP_270.mzML Peak area,SUP_270,270,SUP,Rhodotorula diobovata,4.0,7-6-2003
+SUP_271.mzML Peak area,SUP_271,271,SUP,Rhodotorula mucilaginosa,4.0,4958
+SUP_272.mzML Peak area,SUP_272,272,SUP,Rhodotorula mucilaginosa,4.0,5235
+SUP_273.mzML Peak area,SUP_273,273,SUP,Rhodotorula toruloides,4.0,6121
+SUP_274.mzML Peak area,SUP_274,274,SUP,Rhodotorula mucilaginosa,4.0,6803
+SUP_275.mzML Peak area,SUP_275,275,SUP,Cystobasidium sp.,4.0,10075
+SUP_276.mzML Peak area,SUP_276,276,SUP,Rhodotorula mucilaginosa,4.0,3778
+SUP_277.mzML Peak area,SUP_277,277,SUP,Rhodotorula mucilaginosa,4.0,10882
+SUP_278.mzML Peak area,SUP_278,278,SUP,Rhodotorula sphaerocarpa,4.0,"86A-5
+ BY34-I6"
+SUP_279.mzML Peak area,SUP_279,279,SUP,Rhodotorula mucilaginosa,4.0,"186CL④-2
+ BY39-C9"
+SUP_28.mzML Peak area,SUP_28,28,SUP,Rhodotorula pacifica,1.0,1A-1-3 8130
+SUP_280.mzML Peak area,SUP_280,280,SUP,Rhodotorula mucilaginosa,4.0,4962
+SUP_281.mzML Peak area,SUP_281,281,SUP,Rhodotorula mucilaginosa,4.0,5236
+SUP_282.mzML Peak area,SUP_282,282,SUP,Rhodotorula diobovata,4.0,6195
+SUP_283.mzML Peak area,SUP_283,283,SUP,Rhodotorula mucilaginosa,4.0,7019
+SUP_284.mzML Peak area,SUP_284,284,SUP,Rhodotorula kratochvilovae,4.0,10753
+SUP_285.mzML Peak area,SUP_285,285,SUP,Rhodotorula mucilaginosa,4.0,3780
+SUP_286.mzML Peak area,SUP_286,286,SUP,Rhodotorula mucilaginosa,4.0,10886
+SUP_287.mzML Peak area,SUP_287,287,SUP,Rhodotorula toruloides,4.0,"152A-3
+ BY32-A2"
+SUP_288.mzML Peak area,SUP_288,288,SUP,Rhodotorula pacifica,4.0,1A-1-5
+SUP_289.mzML Peak area,SUP_289,289,SUP,Rhodotorula mucilaginosa,4.0,4963
+SUP_29.mzML Peak area,SUP_29,29,SUP,Rhodotorula mucilaginosa,1.0,"25-332D-2
+ BY119-I1 8/30"
+SUP_290.mzML Peak area,SUP_290,290,SUP,Rhodotorula mucilaginosa,4.0,5757
+SUP_291.mzML Peak area,SUP_291,291,SUP,Rhodotorula diobovata,4.0,6202
+SUP_292.mzML Peak area,SUP_292,292,SUP,Rhodotorula graminis,4.0,7021
+SUP_293.mzML Peak area,SUP_293,293,SUP,Rhodotorula mucilaginosa,4.0,10780
+SUP_294.mzML Peak area,SUP_294,294,SUP,Rhodotorula graminis,4.0,6083
+SUP_295.mzML Peak area,SUP_295,295,SUP,Rhodotorula mucilaginosa,4.0,DBVPG 10937
+SUP_296.mzML Peak area,SUP_296,296,SUP,Rhodotorula mucilaginosa,4.0,"2M-1-3
+ BY8-A3"
+SUP_297.mzML Peak area,SUP_297,297,SUP,Rhodotorula diobovata,4.0,"211C-2
+ BY37-F3"
+SUP_298.mzML Peak area,SUP_298,298,SUP,Rhodotorula mucilaginosa,4.0,4964
+SUP_299.mzML Peak area,SUP_299,299,SUP,Rhodotorula mucilaginosa,4.0,5758
+SUP_3.mzML Peak area,SUP_3,3,SUP,Rhodotorula mucilaginosa,1.0,98A-5
+SUP_30.mzML Peak area,SUP_30,30,SUP,Rhodotorula mucilaginosa,1.0,"2M-1-4
+ BY8-B3 8/30"
+SUP_300.mzML Peak area,SUP_300,300,SUP,Rhodotorula mucilaginosa,4.0,6593
+SUP_301.mzML Peak area,SUP_301,301,SUP,Rhodotorula paludigena,4.0,7323
+SUP_302.mzML Peak area,SUP_302,302,SUP,Rhodotorula sp. clade XI,4.0,10348
+SUP_303.mzML Peak area,SUP_303,303,SUP,Rhodotorula mucilaginosa,4.0,6092
+SUP_304.mzML Peak area,SUP_304,304,SUP,Rhodotorula mucilaginosa,4.0,17-333M-1
+SUP_305.mzML Peak area,SUP_305,305,SUP,,4.0,25-325P-1
+SUP_306.mzML Peak area,SUP_306,306,SUP,,4.0,25-327C-3
+SUP_307.mzML Peak area,SUP_307,307,SUP,Rhodotorula mucilaginosa,4.0,5225
+SUP_308.mzML Peak area,SUP_308,308,SUP,Rhodotorula mucilaginosa,4.0,5759
+SUP_309.mzML Peak area,SUP_309,309,SUP,Rhodotorula mucilaginosa,4.0,6649
+SUP_31.mzML Peak area,SUP_31,31,SUP,Rhodotorula mucilaginosa,1.0,"340-3
+ BY110-F1"
+SUP_310.mzML Peak area,SUP_310,310,SUP,Rhodotorula kratochvilovae,4.0,7539
+SUP_311.mzML Peak area,SUP_311,311,SUP,Rhodotorula kratochvilovae,4.0,10383
+SUP_312.mzML Peak area,SUP_312,312,SUP,Pseudomicrostroma phylloplanum,4.0,6740
+SUP_313.mzML Peak area,SUP_313,313,SUP,Rhodotorula mucilaginosa,4.0,5226
+SUP_314.mzML Peak area,SUP_314,314,SUP,Rhodotorula glutinis,4.0,6081
+SUP_317.mzML Peak area,SUP_317,317,SUP,Rhodotorula mucilaginosa,4.0,10619
+SUP_318.mzML Peak area,SUP_318,318,SUP,Rhodotorula mucilaginosa,4.0,6741
+SUP_319.mzML Peak area,SUP_319,319,SUP,,4.0,51A-3
+SUP_32.mzML Peak area,SUP_32,32,SUP,Rhodotorula mucilaginosa,1.0,"100D-1
+ BY31-H3"
+SUP_320.mzML Peak area,SUP_320,320,SUP,Rhodotorula graminis,4.0,Y2474
+SUP_321.mzML Peak area,SUP_321,321,SUP,Rhodotorula dairenensis,4.0,Y2504
+SUP_322.mzML Peak area,SUP_322,322,SUP,Rhodotorula mucilaginosa,4.0,Y2510
+SUP_323.mzML Peak area,SUP_323,323,SUP,Rhodotorula sphaerocarpa,4.0,Y7192
+SUP_325.mzML Peak area,SUP_325,325,SUP,Rhodotorula paludigena,4.0,Y12923
+SUP_326.mzML Peak area,SUP_326,326,SUP,Rhodotorula araucariae,4.0,Y17376
+SUP_327.mzML Peak area,SUP_327,327,SUP,,4.0,Y48721
+SUP_328.mzML Peak area,SUP_328,328,SUP,,,
+SUP_33.mzML Peak area,SUP_33,33,SUP,Rhodotorula mucilaginosa,1.0,"340-1
+ BY110-D1"
+SUP_334.mzML Peak area,SUP_334,334,SUP,Rhodotorula mucilaginosa,4.0,JES-025-001
+SUP_34.mzML Peak area,SUP_34,34,SUP,,1.0,"83E1
+ BY33-F1"
+SUP_35.mzML Peak area,SUP_35,35,SUP,,1.0,"17-331Y-5
+ BY117-B9"
+SUP_36.mzML Peak area,SUP_36,36,SUP,Rhodotorula mucilaginosa,1.0,"17-267M-1
+ BY121-A4"
+SUP_37.mzML Peak area,SUP_37,37,SUP,Rhodotorula paludigena,1.0,48A-15
+SUP_38.mzML Peak area,SUP_38,38,SUP,Rhodotorula mucilaginosa,1.0,"25-332C-1
+ BY119-C2"
+SUP_39.mzML Peak area,SUP_39,39,SUP,Rhodotorula mucilaginosa,1.0,"17-334Y-3
+ BY116-C9"
+SUP_4.mzML Peak area,SUP_4,4,SUP,Rhodotorula mucilaginosa,1.0,102C-2
+SUP_40.mzML Peak area,SUP_40,40,SUP,Rhodotorula mucilaginosa,1.0,"270H-1
+ BY113-D3"
+SUP_41.mzML Peak area,SUP_41,41,SUP,Rhodotorula mucilaginosa,1.0,107C-3
+SUP_42.mzML Peak area,SUP_42,42,SUP,Rhodotorula mucilaginosa,1.0,33A-4
+SUP_43.mzML Peak area,SUP_43,43,SUP,Rhodotorula toruloides,1.0,"152D-4
+ BY32-B4"
+SUP_44.mzML Peak area,SUP_44,44,SUP,Rhodotorula diobovata,1.0,7-9-2
+SUP_45.mzML Peak area,SUP_45,45,SUP,Rhodotorula mucilaginosa,1.0,"17Y-278-1
+ BY126-D5"
+SUP_46.mzML Peak area,SUP_46,46,SUP,Rhodotorula paludigena,1.0,43A-4
+SUP_47.mzML Peak area,SUP_47,47,SUP,Rhodotorula mucilaginosa,1.0,"25-331D-1
+ BY119-D1"
+SUP_48.mzML Peak area,SUP_48,48,SUP,Rhodotorula mucilaginosa,1.0,"25-333C-2
+ BY120-H5"
+SUP_49.mzML Peak area,SUP_49,49,SUP,Rhodotorula mucilaginosa,1.0,"270H-2
+ BY113-D4"
+SUP_5.mzML Peak area,SUP_5,5,SUP,Rhodotorula mucilaginosa,1.0,105A-2
+SUP_50.mzML Peak area,SUP_50,50,SUP,Rhodotorula mucilaginosa,1.0,"118C-2
+ BY31-G1"
+SUP_51.mzML Peak area,SUP_51,51,SUP,Rhodotorula mucilaginosa,1.0,"25-334D-3
+ BY118-F7"
+SUP_52.mzML Peak area,SUP_52,52,SUP,Rhodotorula mucilaginosa,1.0,1A-14
+SUP_53.mzML Peak area,SUP_53,53,SUP,Rhodotorula mucilaginosa,1.0,"211A-3
+ BY37-B3"
+SUP_54.mzML Peak area,SUP_54,54,SUP,Rhodotorula mucilaginosa,1.0,"17-0-2E390-1
+ BY126-B7"
+SUP_55.mzML Peak area,SUP_55,55,SUP,Rhodotorula mucilaginosa,1.0,"172A-1
+ BY40-A6"
+SUP_56.mzML Peak area,SUP_56,56,SUP,Rhodotorula mucilaginosa,1.0,22C-4
+SUP_57.mzML Peak area,SUP_57,57,SUP,Rhodotorula mucilaginosa,1.0,98D-11
+SUP_58.mzML Peak area,SUP_58,58,SUP,Rhodotorula mucilaginosa,1.0,"25-332Y-1
+ BY119-F3"
+SUP_59.mzML Peak area,SUP_59,59,SUP,Rhodotorula mucilaginosa,1.0,"25-333Y-9
+ BY120_C8"
+SUP_6.mzML Peak area,SUP_6,6,SUP,Rhodotorula mucilaginosa,1.0,"17-334Y-2
+ BY116-B9"
+SUP_60.mzML Peak area,SUP_60,60,SUP,Rhodotorula mucilaginosa,1.0,"25-325Y-1
+ BY120-D6"
+SUP_61.mzML Peak area,SUP_61,61,SUP,Rhodotorula toruloides,1.0,"152A-6
+ BY32-D2"
+SUP_62.mzML Peak area,SUP_62,62,SUP,Rhodotorula mucilaginosa,1.0,"17-338D-3
+ BY116-B5"
+SUP_63.mzML Peak area,SUP_63,63,SUP,Rhodotorula mucilaginosa,1.0,"17-0-2E390-2
+ BY126-C7"
+SUP_64.mzML Peak area,SUP_64,64,SUP,Rhodotorula mucilaginosa,1.0,"140A-3
+ BY30-G2"
+SUP_65.mzML Peak area,SUP_65,65,SUP,,1.0,"223D-8
+ BY35-B9"
+SUP_66.mzML Peak area,SUP_66,66,SUP,Rhodotorula mucilaginosa,1.0,"209-6-5
+ BY43-A1"
+SUP_67.mzML Peak area,SUP_67,67,SUP,Rhodotorula mucilaginosa,1.0,"17-333P-6
+ BY118-E1"
+SUP_68.mzML Peak area,SUP_68,68,SUP,Rhodotorula mucilaginosa,1.0,"17-325D-2
+ BY116-B4"
+SUP_69.mzML Peak area,SUP_69,69,SUP,Rhodotorula mucilaginosa,1.0,"17-325P-1
+ BY117-E2"
+SUP_7.mzML Peak area,SUP_7,7,SUP,Rhodotorula mucilaginosa,1.0,"17-329Y-4
+ BY115-H8"
+SUP_71.mzML Peak area,SUP_71,71,SUP,Rhodotorula dairenensis,1.0,"7W-292-3
+ BY53-A7"
+SUP_72.mzML Peak area,SUP_72,72,SUP,Rhodotorula mucilaginosa,1.0,"89D-3
+ BY32-I5"
+SUP_73.mzML Peak area,SUP_73,73,SUP,Rhodotorula mucilaginosa,1.0,"138A-1
+ BY31-C1"
+SUP_74.mzML Peak area,SUP_74,74,SUP,Rhodotorula mucilaginosa,1.0,"209-6-17
+ BY43-D2"
+SUP_75.mzML Peak area,SUP_75,75,SUP,Rhodotorula mucilaginosa,1.0,"137D-4
+ BY30-H6"
+SUP_76.mzML Peak area,SUP_76,76,SUP,Rhodotorula mucilaginosa,1.0,"25-337Y-1
+ BY118-I8"
+SUP_77.mzML Peak area,SUP_77,77,SUP,Rhodotorula mucilaginosa,1.0,"209-6-2
+ BY42-G9"
+SUP_78.mzML Peak area,SUP_78,78,SUP,Rhodotorula mucilaginosa,1.0,"25-332P-2
+ BY119-B2"
+SUP_79.mzML Peak area,SUP_79,79,SUP,Rhodotorula mucilaginosa,1.0,98C-7
+SUP_8.mzML Peak area,SUP_8,8,SUP,Rhodotorula mucilaginosa,1.0,"107A-6
+ BY31-B6"
+SUP_80.mzML Peak area,SUP_80,80,SUP,Rhodotorula pacifica,1.0,1B-1-2
+SUP_81.mzML Peak area,SUP_81,81,SUP,Rhodotorula mucilaginosa,1.0,98C-5
+SUP_83.mzML Peak area,SUP_83,83,SUP,Rhodotorula mucilaginosa,1.0,"152A-2
+ BY32-I1"
+SUP_86.mzML Peak area,SUP_86,86,SUP,Rhodotorula mucilaginosa,1.0,"25-333Y-10
+ BY120-D8"
+SUP_88.mzML Peak area,SUP_88,88,SUP,Rhodotorula toruloides,2.0,"152C-3
+ BY32-D3"
+SUP_89.mzML Peak area,SUP_89,89,SUP,Rhodotorula mucilaginosa,2.0,"4M-1-5
+ BY8-G4"
+SUP_9.mzML Peak area,SUP_9,9,SUP,Rhodotorula mucilaginosa,1.0,"17-390M-1
+ BY126-D7"
+SUP_91.mzML Peak area,SUP_91,91,SUP,Rhodotorula diobovata,2.0,"25-335P-1
+ BY120-A5"
+SUP_92.mzML Peak area,SUP_92,92,SUP,Rhodotorula taiwanensis,2.0,"S22D-1 
+ BY38-D8"
+SUP_93.mzML Peak area,SUP_93,93,SUP,Rhodotorula paludigena,2.0,48D-10
+SUP_95.mzML Peak area,SUP_95,95,SUP,Rhodotorula mucilaginosa,2.0,"86A-3
+ BY34-G6"
+SUP_96.mzML Peak area,SUP_96,96,SUP,Rhodotorula toruloides,2.0,"152A-4
+ BY32-B2"
+SUP_97.mzML Peak area,SUP_97,97,SUP,Rhodotorula mucilaginosa,2.0,"17-332P-1
+ BY115-D6"
+SUP_98.mzML Peak area,SUP_98,98,SUP,Rhodotorula mucilaginosa,2.0,"4M-1-4
+ BY8-F4"
+SUP_99.mzML Peak area,SUP_99,99,SUP,Rhodotorula mucilaginosa,2.0,102C-1
