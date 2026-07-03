@@ -60,3 +60,28 @@ this tree (linked via SRA/BioSample accessions in the metadata; user holds them 
 **Tags**: metabolomics, metadata, pairing, secretion, rhodotorula, data-structure, mzml, raw-data
 **mitigation_type**: ambient-awareness
 **structural_mitigation_candidate**: document these canonical key columns in DATA_DICTIONARY.md.
+
+### [2026-07-03] SIRIUS is installed on the cluster and usable both as a module and a conda env
+
+**Category**: tooling / environment
+**What happened**: `module load sirius` (5.8.1) works standalone (auto-loads `java` +
+`cplex-studio`). A conda env at
+`/bigdata/stajichlab/jstajich/projects/Metabolomics_Workshop/sirius-ms` has the same version.
+CSI:FingerID structure search and CANOPUS compound-class prediction call Boecker-lab web
+services and require `sirius login` first (currently not logged in) plus outbound internet
+from the node running it; `formula`/`fingerprint` (molecular formula + fragmentation tree)
+work fully offline.
+**Why it matters**: The `feature_index` column in `secretion_scores_all_features.csv.gz` /
+`uniquely_secreted_features.csv` (analysis/secreted_products) is the **0-based positional row
+index** in the aligned feature table, not the MZmine `row ID` column — confirmed by joining
+feature_index 195/3043 to row IDs 205/3663 by position. Any script joining these two files
+must join on position, not on an ID column.
+**Resolution**: `analysis/secreted_products/sirius_annotation/scripts/00_select_targets.py`
+does this positional join once and carries `row_id`/`adduct_rep_file` forward.
+**Raw MS2 export gap**: no MGF/GNPS/SIRIUS export exists anywhere in this project tree; MS2
+must be pulled directly from `mzML/C_*.mzML` / `ExFab_Supernatant/SUP_*.mzML` per feature
+(see [[ms2-extraction-from-mzml]] decision). `pyteomics` 5.x needs Python ≥3.10 (`X | Y`
+union-type syntax) — install/run it under `/usr/bin/python3.12`, not the cluster default
+py3.9 conda, and needs `lxml` + `psims` as companion packages.
+**Tags**: sirius, tooling, environment, feature-index, mzml, ms2, metabolomics
+**mitigation_type**: ambient-awareness

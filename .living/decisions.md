@@ -63,3 +63,27 @@ continuous, standard, and comparable across features.
 **Consequences**: Unique-set size is Tau-sensitive (25→431 across the sweep); 130 at the mid
 cut is reported as the defensible headline.
 **Tags**: specificity, tau, sensitivity, metabolomics
+
+### [2026-07-03] MS2 for SIRIUS is extracted directly from raw mzML per-feature, not via MZmine re-export
+
+**Context**: No MGF/GNPS/SIRIUS export exists for this project (see [[raw-data-location]]
+learning). Needed MS2 spectra for the 130 uniquely-secreted target features to run SIRIUS.
+**Decision**: For each target, use the aligned-feature table's `adduct_rep_file` column
+(MZmine's chosen representative raw file for that adduct row) to pick one mzML file, then
+scan it directly with `pyteomics.mzml` for the MS2 spectrum matching the feature's m/z
+(15 ppm) and RT (±0.15 min, widened to ±0.5 min on a miss), keeping the highest-TIC match.
+Where `adduct_rep_file` was blank (60/130 targets), fell back to the SUP_* sample with the
+highest per-sample peak area for that row.
+**Alternatives considered**: (a) reopening the MZmine project to re-run its GNPS/SIRIUS
+export module — rejected, no `.mzbatch`/project file was found on disk, only the flat
+aligned CSV and raw mzML remain; (b) `sirius lcms-align` direct-from-mzML feature finding —
+rejected for v1, since it re-detects features/alignment from scratch rather than reusing
+the already-curated 130-feature target list and its QC (Tau, FDR, detection rate).
+**Rationale**: `adduct_rep_file` is MZmine's own provenance field for "which raw run best
+represents this row" — the most defensible single file to search first; falling back to
+peak-area ranking is the natural analogue when that field is absent.
+**Consequences**: A minority of targets may still fail to match (DDA duty cycle means MS2
+isn't guaranteed to be triggered in the exact chosen file/window) — these are recorded as
+`no_ms2_match` in `mgf_export_summary.csv` rather than silently dropped, so the true annotation
+coverage is auditable.
+**Tags**: metabolomics, sirius, ms2, mgf-export, mzml, secretion
