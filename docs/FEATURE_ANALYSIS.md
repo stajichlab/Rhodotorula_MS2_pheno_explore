@@ -5,6 +5,57 @@
 
 ---
 
+## ⚠️ Caveats (added 2026-08-11 — read before citing any number below)
+
+A methods review of the Phase 0–2 pipeline that produced this document found that the
+headline correlations are **not yet trustworthy as evidence of a causal
+metabolite→phenotype relationship**. A corrected re-analysis is in progress at
+`analysis/phenotype_metabolite_association/` (see `.living/decisions.md` for the
+tracking entry). Specific concerns:
+
+1. **Species confound (Simpson's paradox risk) — the central issue.** `phase0_decision.json`
+   recorded `"strategy": "stratified_with_plate"` because Phase 0 detected a highly
+   significant species effect (F=32.65, p=1.1e-16). But `scripts/phase2_correlation_analysis.py`
+   only adds `Species` as a covariate when `'pooled' in decision['strategy']` — a branch
+   that is never taken for this run. **All correlations in this document (ρ=0.735 for
+   Feature 2755, etc.) were computed pooled across 16 species with Species *not*
+   regressed out**, despite Phase 0's own recommendation to do so. Consistent with this,
+   the already-completed `docs/PHASE3_STRATIFIED_ANALYSIS_SUMMARY.md` reran the
+   correlation *within* species and found **0% significant within-species correlations
+   in *R. mucilaginosa*** (n=205, 76% of samples) — only small species (n=4–10) showed
+   elevated hit rates, which at that sample size is also consistent with noise. The
+   pooled numbers in this document may largely reflect between-species metabolic
+   differences rather than a within-species, phenotype-driving effect.
+
+2. **Non-independent samples.** Each strain contributes both a `C_*` (cell pellet) and
+   `SUP_*` (supernatant) sample; Phase 2 treats all 590 as independent observations. The
+   two samples per strain are correlated (same genotype/species, and empirically their
+   L*/a*/b* values differ but are not independent), and the C/SUP compartment itself is
+   a known major axis of variation in this dataset (`.living/learnings.md` L-4). This
+   inflates the effective sample size used by the significance tests.
+
+3. **No permutation/holdout validation.** The two-stage BH-FDR correction assumes
+   independence and correct null behavior; no permutation null or replication/holdout
+   check has been run yet, both of which `analysis/README.md` already listed as
+   outstanding "Future Work."
+
+4. **Structural IDs are unverified guesses.** The carotenoid/xanthophyll/glycoside
+   interpretations below are m/z-based speculation, not annotations. None of these
+   features (2755, 6926, 6188, 1560, 5740, 2308) have been run through SIRIUS —
+   the existing SIRIUS pipeline (`analysis/secreted_products/sirius_annotation/`)
+   targets a different feature set (secreted-product candidates) and, separately, its
+   CSI:FingerID/CANOPUS steps have not yet completed successfully (missing `sirius
+   login`; see that analysis's manifest entry for the caveat).
+
+5. **`analysis/phase2_summary.json` is corrupted** (truncated mid-key, invalid JSON) —
+   a write was interrupted and never regenerated; treat any summary counts sourced from
+   it as unverified until the corrected re-run replaces it.
+
+**Bottom line:** treat every ρ/q-value below as provisional pending the corrected,
+species/pairing-aware re-analysis with permutation nulls and holdout replication.
+
+---
+
 ## Executive Summary
 
 The strongest metabolite-phenotype associations point to **three distinct metabolite classes**:

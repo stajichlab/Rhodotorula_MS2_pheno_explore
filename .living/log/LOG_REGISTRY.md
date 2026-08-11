@@ -4,3 +4,5 @@
 |------|-----------|---------|--------|----------|---------------|---------|-------------|--------|------|-----|
 | 2026-07-03 | 2026-07-03-001 | rhodotorula-ms2-pheno-explore | main | 13m | 0 |  | | complete | | [log](2026-07-03-001-rhodotorula-ms2-pheno-explore.md) |
 | 2026-07-03 | 2026-07-03-002 | rhodotorula-ms2-pheno-explore | main | 3m | 58 | Initialize mycelium living-repo framework and add GWAS/secretion outputs | | complete | | [log](2026-07-03-002-rhodotorula-ms2-pheno-explore.md) |
+| 2026-07-03 | 2026-07-03-003 | rhodotorula-ms2-pheno-explore | main | 0m | 0 |  | | complete | | [log](2026-07-03-003-rhodotorula-ms2-pheno-explore.md) |
+| 2026-08-11 | 2026-08-11-001 | rhodotorula-ms2-pheno-explore | main | 4m | 2 |  | | complete | | [log](2026-08-11-001-rhodotorula-ms2-pheno-explore.md) |
