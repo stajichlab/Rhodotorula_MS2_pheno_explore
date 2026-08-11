@@ -87,6 +87,14 @@ individually significant.
 *R. mucilaginosa* (species-stratification isn't needed with only one species), same
 global-calibration and top-hit-replication checks as script 04.
 
+`scripts/08_random_forest_module_test.py` — same design as script 06 but with a
+Random Forest instead of PLS, to check whether a non-linear/interaction-based
+multivariate signal exists where the linear PLS test found none. `max_features='sqrt'`
+is required for tractable runtime at 7,341 features (confirmed empirically: the
+sklearn default of considering all features at every split is >100x slower and buys no
+accuracy at this n/p ratio). Same strain-block permutation null with the `max_depth`
+grid search nested inside it.
+
 ## Results
 
 | Check | Result |
@@ -103,6 +111,7 @@ global-calibration and top-hit-replication checks as script 04.
 | *R. mucilaginosa* phenotype spread | L\* CV=2.3% (range 67.4-78.8); a\* CV=13.3% (0.6-14.4); b\* CV=34.7% (-0.3-8.7) — a\*/b\* have real spread, not a floor effect |
 | Multivariate/module-level test (PLS, best of 2/5/10 components, 4-fold GroupKFold by strain) | observed CV R²=**-0.09**; null 95% range=[-0.14, -0.03]; **permutation p=0.56** — indistinguishable from chance |
 | *R. mucilaginosa*-only holdout (strain-level 80/20, n=210 strains) | Spearman(ρ_train,test): L\*=0.19, **a\*=-0.46**, b\*=0.15; top-25/phenotype hit replication **3/75 (4.0%)** — chance level, same pattern as the pooled holdout |
+| Random Forest module-level test (non-linear; best of max_depth∈{6,None}, n_estimators=150, 4-fold GroupKFold by strain) | observed CV R²=**-0.026**; null 95% range=[-0.067, -0.008]; **permutation p=0.25** — not distinguishable from chance |
 
 **Bottom line:** once Species, Library Plate, and C/SUP sample type are jointly and
 correctly controlled for, **none of the original "high-confidence" metabolite-color
@@ -114,15 +123,19 @@ seen pooled, and its own dedicated strain-level holdout replicates at the same
 chance rate (3/75, 4.0%) as the pooled holdout. The multivariate/module-level test
 (script 06) rules out the remaining obvious alternative — that a joint, many-feature
 signal exists even though no single feature is significant: observed CV R²=-0.09 sits
-inside the permutation null's 95% range (p=0.56). The pooled ρ=0.7+ correlations in
-`FEATURE_ANALYSIS.md` were almost entirely a between-species confound (Simpson's
-paradox), compounded by a residualization bug and a missing/miscoded Species column.
+inside the permutation null's 95% range (p=0.56). Repeating that check with a
+non-linear model (Random Forest, script 08) in case PLS's linearity assumption was
+hiding an interaction-based signal gives the same answer: CV R²=-0.026, p=0.25. The
+pooled ρ=0.7+ correlations in `FEATURE_ANALYSIS.md` were almost entirely a
+between-species confound (Simpson's paradox), compounded by a residualization bug and a
+missing/miscoded Species column.
 
 This is a **negative result for this dataset/method as analyzed**, not proof that no
-metabolite controls pigmentation — see Next Steps. Four independent checks (FDR,
-permutation, holdout, and multivariate) now agree, which is a reasonably thorough case
-that there's no detectable single- or joint-feature MS2 signal for color phenotype in
-this dataset at this sample size, rather than a fragile null from any one test.
+metabolite controls pigmentation — see Next Steps. Five independent checks (FDR,
+permutation, pooled holdout, linear multivariate, and non-linear multivariate) now
+agree, which is a reasonably thorough case that there's no detectable single- or
+joint-feature MS2 signal for color phenotype in this dataset at this sample size,
+rather than a fragile null from any one test or model class.
 
 ## Caveats of this re-analysis itself
 
@@ -184,9 +197,10 @@ this pipeline:
 
 ## Next Steps
 
-1. ~~**Multivariate/module-level test**~~ — done (script 06): PLS regression against
-   L*/a*/b*, CV R² permutation-tested including the component-count selection step;
-   p=0.56, no evidence of a joint many-feature signal either.
+1. ~~**Multivariate/module-level test**~~ — done (scripts 06, 08): PLS (linear) and
+   Random Forest (non-linear) regression against L*/a*/b*, CV R² permutation-tested
+   including the hyperparameter-selection step; p=0.56 and p=0.25 respectively, no
+   evidence of a joint many-feature signal under either model class.
 2. **SIRIUS structural annotation** — still not attempted for any feature from this
    analysis, and arguably no longer well-motivated: after FDR, permutation, holdout, and
    multivariate tests all agree on a null result, there currently isn't a defensible
@@ -215,6 +229,8 @@ this pipeline:
 - `outputs/mucilaginosa_all_correlations.csv.gz`, `outputs/mucilaginosa_permutation_results.csv`,
   `outputs/mucilaginosa_phenotype_spread.csv`, `outputs/mucilaginosa_summary.json`.
 - `outputs/multivariate_permutation_null.csv`, `outputs/multivariate_module_test_summary.json`.
+- `outputs/random_forest_permutation_null.csv`, `outputs/random_forest_module_test_summary.json`,
+  `outputs/random_forest_feature_importances.csv`.
 - `outputs/mucilaginosa_holdout_calibration.csv`, `outputs/mucilaginosa_holdout_hit_replication.csv`,
   `outputs/mucilaginosa_holdout_summary.json`.
 - `outputs/numbers.json` — registered reportable values (via `register_value`).

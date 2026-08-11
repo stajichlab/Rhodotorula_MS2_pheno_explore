@@ -9,3 +9,4 @@ python3 scripts/04_replication_holdout.py
 python3 scripts/05_within_species_mucilaginosa.py
 N_PERM=300 python3 scripts/06_multivariate_module_test.py
 python3 scripts/07_mucilaginosa_holdout.py
+N_PERM=200 python3 scripts/08_random_forest_module_test.py

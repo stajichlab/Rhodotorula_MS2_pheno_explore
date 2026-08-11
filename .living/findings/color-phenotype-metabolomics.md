@@ -97,7 +97,29 @@ mixed-model framework), rather than continuing to re-slice this same MS2 dataset
 | 2026-08-11 | phenotype_metabolite_association v1 (scripts 06, 07) | Rhodotorula MS2 (550 samples corrected; R. mucilaginosa 415-sample subset for holdout) | Rhodotorula_MS2_pheno_explore | PLS CV R²=-0.09, permutation p=0.56; mucilaginosa-only holdout replication 3/75 (4.0%) | supports (F-001/F-002's negative conclusion) |
 
 ### Open Questions
-- Would a non-linear multivariate method (random forest, kernel PLS) recover a signal
-  that linear PLS misses, or is the null robust to model class too?
 - What sample size would be needed to detect a plausible single-gene effect size with
   this design (a formal power analysis hasn't been run)?
+
+## F-004: A non-linear multivariate model (Random Forest) finds no signal either — the null is robust to model class
+**Status:** preliminary
+**Claim:** F-003 asked whether a non-linear model might recover a joint signal that
+linear PLS missed. Re-running the same permutation-tested module-level design with a
+Random Forest (150 trees, `max_features='sqrt'`, `max_depth` grid-searched inside the
+permutation loop, same strain-grouped CV) gives the same answer: observed CV R²=-0.026,
+permutation null 95% range=[-0.067, -0.008], p=0.25.
+**Implications:** The null result in F-001/F-002/F-003 is not an artifact of PLS's
+linearity assumption — a tree-based model that can capture arbitrary feature
+interactions and non-linear dose-response relationships still finds nothing
+distinguishable from chance. Five independent checks (FDR, permutation, pooled holdout,
+linear multivariate, non-linear multivariate) now converge on the same negative result.
+**Tags:** metabolomics, random-forest, multivariate, cross-validation, non-linear, color-phenotype, negative-result
+
+### Evidence Ledger
+| Date | Run/Session | Dataset | Project | Result | Direction |
+|------|-------------|---------|---------|--------|-----------|
+| 2026-08-11 | phenotype_metabolite_association v1 (script 08) | Rhodotorula MS2 (550 samples, corrected) | Rhodotorula_MS2_pheno_explore | RF CV R²=-0.026, permutation p=0.25 | supports (F-001/F-002/F-003's negative conclusion) |
+
+### Open Questions
+- What sample size would be needed to detect a plausible single-gene effect size with
+  this design (a formal power analysis hasn't been run) — this remains the key
+  unanswered question after five converging negative checks.

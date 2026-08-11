@@ -1,0 +1,22 @@
+{
+  "max_depth_grid": [
+    "6",
+    "None"
+  ],
+  "n_estimators": 150,
+  "max_features": "sqrt",
+  "n_splits": 4,
+  "n_permutations": 200,
+  "observed_best_cv_r2": -0.026390172068544066,
+  "observed_best_max_depth": "None",
+  "per_phenotype_cv_r2_at_winning_depth": {
+    "Median_ColorLab_L*Mean": -0.04162732409997641,
+    "Median_ColorLab_a*Mean": -0.007031851025922492,
+    "Median_ColorLab_b*Mean": -0.030511341079729137
+  },
+  "null_r2_mean": -0.03556687087718381,
+  "null_r2_2p5": -0.06689233006084827,
+  "null_r2_97p5": -0.007598718972324058,
+  "permutation_pvalue": 0.2537313432835821,
+  "rng_seed": 20260811
+}

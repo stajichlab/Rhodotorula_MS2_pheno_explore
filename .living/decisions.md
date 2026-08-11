@@ -141,3 +141,30 @@ trivially vectorizable across all features, keeping runtime under 20s for the fu
 learning for the result and `analysis/phenotype_metabolite_association/PHENOTYPE_METABOLITE_ASSOCIATION.md`
 for full method/results. `docs/FEATURE_ANALYSIS.md` now carries a caveats section pointing here.
 **Tags**: metabolomics, statistics, partial-correlation, confounding, rhodotorula, correction
+
+### [2026-08-11] Repeated the PLS component-count grid search inside the permutation null, rather than permutation-testing a single fixed model
+
+**Context**: Building a multivariate/module-level test (`analysis/phenotype_metabolite_association/scripts/06_multivariate_module_test.py`)
+to check for a joint many-feature signal after the univariate scan found nothing. A
+naive design would pick the best PLS `n_components` once (by CV) on the real data, then
+permutation-test only that fixed model.
+**Decision**: The entire "grid-search over n_components, take the best CV R²" procedure
+is re-run inside each of the 300 strain-block permutations, so the null distribution
+already reflects the same winner's-curse-prone selection the observed statistic went
+through.
+**Alternatives considered**: (a) fix n_components a priori (e.g. always 5) — rejected,
+an arbitrary fixed choice could either miss a real signal at the wrong component count
+or (if tuned post hoc on the real data) bias the comparison in the observed statistic's
+favor; (b) permutation-test each grid value separately with its own null and Bonferroni-
+correct — rejected as unnecessarily conservative when the actual downstream question is
+just "best achievable CV R² vs. chance," which the nested design answers directly.
+**Rationale**: The univariate "top nominal" permutation tests in `03_permutation_null.py`
+already demonstrated the winner's-curse problem (75/92 candidates "significant" purely
+from being selected as the smallest p-values out of 7,341 tests); the same logic applies
+to model-selection over components, so the selection procedure itself must be inside the
+permutation loop to get a calibrated p-value.
+**Consequences**: ~5 min runtime for 300 permutations (grid of 3 component counts × 4
+folds × 2 fits — real + permuted — per permutation) instead of near-instant for a single
+fixed model; judged worth it for a calibrated result. Observed CV R²=-0.09 vs. null p=0.56
+— no joint signal detected.
+**Tags**: metabolomics, statistics, pls-regression, cross-validation, permutation, model-selection, rhodotorula

@@ -27,9 +27,10 @@ on.** Summary of what the corrected model + permutation null + holdout replicati
   CV=35%) does **not** recover a stronger within-species signal either (0 FDR hits,
   max |ρ|=0.196), and a dedicated strain-level holdout within that species replicates
   at chance too (3/75, 4.0%).
-- A multivariate/module-level test (PLS regression against L*/a*/b*, cross-validated
-  R² permutation-tested including the model-selection step) finds **no joint
-  many-feature signal** either: observed CV R²=-0.09, permutation p=0.56.
+- A multivariate/module-level test finds **no joint many-feature signal** either,
+  under a linear model (PLS: CV R²=-0.09, permutation p=0.56) or a non-linear one
+  (Random Forest: CV R²=-0.026, permutation p=0.25), both permutation-tested including
+  the hyperparameter-selection step.
 
 **Conclusion:** the ρ up to 0.735 reported throughout this document were almost
 entirely a between-species confound (Simpson's paradox), not evidence that any of
