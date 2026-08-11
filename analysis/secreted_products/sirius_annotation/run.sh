@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -l
 # Reproduce the SIRIUS MS2 structural-annotation step end to end.
 # Step 1 needs plain python3 (conda miniconda 3.9, pandas/csv only).
 # Step 2 needs python3.12 with pyteomics/lxml/psims installed
@@ -15,11 +15,11 @@
 #     --error=analysis/secreted_products/sirius_annotation/outputs/logs/slurm/%x-%j.log \
 #     analysis/secreted_products/sirius_annotation/scripts/03_sirius.sbatch
 set -euo pipefail
-cd "$(dirname "$0")"
 
+module load biopython
 python3 scripts/00_select_targets.py
 /usr/bin/python3.12 scripts/01_export_mgf.py
-bash scripts/02_run_sirius.sh
+sbatch scripts/02_run_sirius.sh
 
 echo "outputs written to outputs/ (sirius_targets.csv, sirius_targets.mgf, mgf_export_summary.csv, sirius_project/)"
 echo "NOTE: for the full formula+fingerprint+structure+canopus run, prefer 'sbatch scripts/03_sirius.sbatch' over this script's step 3 (see comments above)."

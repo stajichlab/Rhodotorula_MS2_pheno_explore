@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash -l
+#SBATCH -p epyc -c 4 --mem 32gb --out logs/sirius.%A.log
+
+CPU=4
+
 # Run SIRIUS on the exported MGF of uniquely-secreted MS2 spectra.
 #
 # formula/fingerprint/canopus/structure need a login (compute node needs
@@ -24,7 +28,7 @@ SIRIUS_HEAP_GB="${SIRIUS_HEAP_GB:-10}"  # override for larger SLURM allocations
 
 rm -rf "$OUTDIR"
 
-JAVA_OPTS="-Xmx${SIRIUS_HEAP_GB}G" sirius --cores 2 --instance-buffer 1 \
+JAVA_OPTS="-Xmx${SIRIUS_HEAP_GB}G" sirius --cores $CPU --instance-buffer 1 \
   --input "$MGF" --output "$OUTDIR" \
   formula --ppm-max 15 --ppm-max-ms2 15 --candidates 10 \
   fingerprint \
