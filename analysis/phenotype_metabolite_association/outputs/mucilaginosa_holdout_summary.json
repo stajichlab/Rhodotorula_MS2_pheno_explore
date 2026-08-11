@@ -1,0 +1,17 @@
+{
+  "species": "Rhodotorula mucilaginosa",
+  "test_frac_target": 0.2,
+  "n_strains_total": 210,
+  "n_test_strains": 42,
+  "n_train_rows": 332,
+  "n_test_rows": 83,
+  "spearman_calibration_by_phenotype": {
+    "Median_ColorLab_L*Mean": 0.1944191851175772,
+    "Median_ColorLab_a*Mean": -0.4622773848651911,
+    "Median_ColorLab_b*Mean": 0.14582604502029126
+  },
+  "top_hit_replication_rate": 0.04,
+  "n_top_hits_tested": 75,
+  "n_top_hits_replicated": 3,
+  "rng_seed": 20260811
+}

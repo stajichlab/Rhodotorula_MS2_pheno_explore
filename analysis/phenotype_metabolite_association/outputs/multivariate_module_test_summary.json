@@ -1,0 +1,21 @@
+{
+  "n_components_grid": [
+    2,
+    5,
+    10
+  ],
+  "n_splits": 4,
+  "n_permutations": 300,
+  "observed_best_cv_r2": -0.08955371342163149,
+  "observed_best_n_components": 2,
+  "per_phenotype_cv_r2_at_winning_k": {
+    "Median_ColorLab_L*Mean": -0.09339724525431742,
+    "Median_ColorLab_a*Mean": -0.07447796511424498,
+    "Median_ColorLab_b*Mean": -0.100785929896331
+  },
+  "null_r2_mean": -0.08601876999143966,
+  "null_r2_2p5": -0.14370196458202336,
+  "null_r2_97p5": -0.027182564999619702,
+  "permutation_pvalue": 0.5647840531561462,
+  "rng_seed": 20260811
+}

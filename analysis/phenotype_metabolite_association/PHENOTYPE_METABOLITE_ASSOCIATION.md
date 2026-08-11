@@ -72,6 +72,21 @@ with enough strains for this), dropping Species from the covariate set. Directly
 whether a real within-species (candidate-genetic) signal exists once between-species
 variation can't contribute to it.
 
+`scripts/06_multivariate_module_test.py` — a module-level test: PLS regression of the
+same rank-residualized 7,341-feature matrix against residualized [L*, a*, b*], scored by
+out-of-fold R² under `GroupKFold` (grouped by `strain_id`, same non-independence
+handling as elsewhere). The number of PLS components is chosen by a small grid search
+inside the CV, and — to avoid a repeat of the winner's-curse problem seen with the
+"top nominal" univariate candidates — the *entire* grid-search procedure (not a single
+fixed model) is re-run inside a strain-block permutation null (300 permutations). This
+tests whether a joint, many-feature signal exists even if no single feature is
+individually significant.
+
+`scripts/07_mucilaginosa_holdout.py` — the direct within-species analogue of
+`04_replication_holdout.py`: a plain strain-level 80/20 split restricted to
+*R. mucilaginosa* (species-stratification isn't needed with only one species), same
+global-calibration and top-hit-replication checks as script 04.
+
 ## Results
 
 | Check | Result |
@@ -86,6 +101,8 @@ variation can't contribute to it.
 | Holdout: train-selected top-25/phenotype hits replicating in test | **2/75 (2.7%)** — chance level |
 | *R. mucilaginosa*-only (n=415, 210 strains) corrected model, Tier1 hits | **0**; max \|ρ\|=0.196 |
 | *R. mucilaginosa* phenotype spread | L\* CV=2.3% (range 67.4-78.8); a\* CV=13.3% (0.6-14.4); b\* CV=34.7% (-0.3-8.7) — a\*/b\* have real spread, not a floor effect |
+| Multivariate/module-level test (PLS, best of 2/5/10 components, 4-fold GroupKFold by strain) | observed CV R²=**-0.09**; null 95% range=[-0.14, -0.03]; **permutation p=0.56** — indistinguishable from chance |
+| *R. mucilaginosa*-only holdout (strain-level 80/20, n=210 strains) | Spearman(ρ_train,test): L\*=0.19, **a\*=-0.46**, b\*=0.15; top-25/phenotype hit replication **3/75 (4.0%)** — chance level, same pattern as the pooled holdout |
 
 **Bottom line:** once Species, Library Plate, and C/SUP sample type are jointly and
 correctly controlled for, **none of the original "high-confidence" metabolite-color
@@ -93,12 +110,19 @@ associations survive** — not FDR correction, not a permutation null, not out-o
 replication. Restricting to *R. mucilaginosa* alone (which has genuine phenotype
 variance to work with, so this isn't a floor-effect issue) doesn't recover a
 stronger within-species signal either; effect sizes stay in the same ρ≈0.2 ceiling
-seen pooled. The pooled ρ=0.7+ correlations in `FEATURE_ANALYSIS.md` were almost
-entirely a between-species confound (Simpson's paradox), compounded by a residualization
-bug and a missing/miscoded Species column.
+seen pooled, and its own dedicated strain-level holdout replicates at the same
+chance rate (3/75, 4.0%) as the pooled holdout. The multivariate/module-level test
+(script 06) rules out the remaining obvious alternative — that a joint, many-feature
+signal exists even though no single feature is significant: observed CV R²=-0.09 sits
+inside the permutation null's 95% range (p=0.56). The pooled ρ=0.7+ correlations in
+`FEATURE_ANALYSIS.md` were almost entirely a between-species confound (Simpson's
+paradox), compounded by a residualization bug and a missing/miscoded Species column.
 
 This is a **negative result for this dataset/method as analyzed**, not proof that no
-metabolite controls pigmentation — see Next Steps.
+metabolite controls pigmentation — see Next Steps. Four independent checks (FDR,
+permutation, holdout, and multivariate) now agree, which is a reasonably thorough case
+that there's no detectable single- or joint-feature MS2 signal for color phenotype in
+this dataset at this sample size, rather than a fragile null from any one test.
 
 ## Caveats of this re-analysis itself
 
@@ -160,22 +184,24 @@ this pipeline:
 
 ## Next Steps
 
-1. **Multivariate/module-level test** (PLS-DA or sparse CCA of the feature matrix
-   against L*/a*/b*, corrected for the same covariates) — a real polygenic-style
-   pigment pathway might only show up as a joint signal, not a single top feature.
-2. **SIRIUS structural annotation of the strongest surviving within-species
-   candidates** (from `05_within_species_mucilaginosa.py`'s output, e.g. feature 5629 for
-   L*, feature 7172 for b*) rather than the already-refuted headline features — but
-   only after the SIRIUS login/walltime issues in `analysis/secreted_products/sirius_annotation/`
-   are fixed, and with the explicit understanding that even these candidates have not
-   passed holdout replication yet.
-3. **Holdout replication within *R. mucilaginosa*** specifically (script 05 currently
-   has permutation but no train/test split) — the pooled holdout in script 04 showed
-   near-chance replication, but that pools 17 species; a mucilaginosa-only holdout is
-   the more direct test of the user's genetics hypothesis.
+1. ~~**Multivariate/module-level test**~~ — done (script 06): PLS regression against
+   L*/a*/b*, CV R² permutation-tested including the component-count selection step;
+   p=0.56, no evidence of a joint many-feature signal either.
+2. **SIRIUS structural annotation** — still not attempted for any feature from this
+   analysis, and arguably no longer well-motivated: after FDR, permutation, holdout, and
+   multivariate tests all agree on a null result, there currently isn't a defensible
+   candidate feature list to annotate. Fixing the SIRIUS login/walltime issues in
+   `analysis/secreted_products/sirius_annotation/` remains useful for that analysis's
+   own (secretion-based, not phenotype-correlation-based) target list.
+3. ~~**Holdout replication within *R. mucilaginosa***~~ — done (script 07): strain-level
+   80/20 split, 3/75 (4.0%) top-hit replication, same chance-level pattern as the pooled
+   holdout in script 04.
 4. Once additional phenotype replicates arrive, revisit with the mixed-model upgrade
    described above — measurement noise may currently be swamping small true effects,
-   and a proper strain-level variance component would help separate the two.
+   and a proper strain-level variance component would help separate the two. Given four
+   independent negative checks, this (or a fundamentally different data type, e.g.
+   transcriptomics/genotype rather than a second cut of the same MS2 data) is probably
+   the more promising direction than further re-slicing this dataset.
 
 ## Key outputs
 
@@ -188,4 +214,7 @@ this pipeline:
   `outputs/holdout_summary.json`.
 - `outputs/mucilaginosa_all_correlations.csv.gz`, `outputs/mucilaginosa_permutation_results.csv`,
   `outputs/mucilaginosa_phenotype_spread.csv`, `outputs/mucilaginosa_summary.json`.
+- `outputs/multivariate_permutation_null.csv`, `outputs/multivariate_module_test_summary.json`.
+- `outputs/mucilaginosa_holdout_calibration.csv`, `outputs/mucilaginosa_holdout_hit_replication.csv`,
+  `outputs/mucilaginosa_holdout_summary.json`.
 - `outputs/numbers.json` — registered reportable values (via `register_value`).

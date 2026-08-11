@@ -69,3 +69,35 @@ not capturable as a single-feature linear/rank correlation.
 - Would stratifying R. mucilaginosa further (e.g. by phylogenomic clade, as
   `docs/PHASE3_STRATIFIED_ANALYSIS_SUMMARY.md` suggested) reveal sub-structure that a
   single pooled within-species model still averages away?
+
+## F-003: No joint (multivariate) MS2 signal for color phenotype either, and R. mucilaginosa's own holdout replicates at chance
+**Status:** preliminary
+**Claim:** Two further checks close out the obvious remaining alternatives to F-001/F-002.
+(a) A PLS-regression module-level test (all 7,341 residualized features jointly
+predicting residualized L*/a*/b*, cross-validated R² under strain-grouped k-fold, with
+the component-count model-selection step itself repeated inside a strain-block
+permutation null to avoid winner's-curse) finds no joint signal: observed CV R²=-0.09,
+permutation null 95% range=[-0.14, -0.03], p=0.56. (b) A dedicated strain-level 80/20
+holdout restricted to *R. mucilaginosa* alone (not pooled across species, unlike F-001's
+holdout) replicates the species' own top nominal candidates at 3/75 (4.0%) — chance
+level, with train/test effect-size calibration for a* actually negative (Spearman
+ρ=-0.46).
+**Implications:** Four independent checks (FDR, permutation, holdout, multivariate) now
+agree on the null result. This is a reasonably thorough case that no single- or
+joint-feature MS2 signal for color phenotype is detectable in this dataset at this
+sample size, rather than a fragile conclusion resting on one test. Further work should
+either bring in a different data type (transcriptomics, genotype/QTL) or wait for
+additional phenotype replicates to reduce measurement noise (see the analysis doc's
+mixed-model framework), rather than continuing to re-slice this same MS2 dataset.
+**Tags:** metabolomics, multivariate, pls-regression, cross-validation, rhodotorula-mucilaginosa, color-phenotype, negative-result
+
+### Evidence Ledger
+| Date | Run/Session | Dataset | Project | Result | Direction |
+|------|-------------|---------|---------|--------|-----------|
+| 2026-08-11 | phenotype_metabolite_association v1 (scripts 06, 07) | Rhodotorula MS2 (550 samples corrected; R. mucilaginosa 415-sample subset for holdout) | Rhodotorula_MS2_pheno_explore | PLS CV R²=-0.09, permutation p=0.56; mucilaginosa-only holdout replication 3/75 (4.0%) | supports (F-001/F-002's negative conclusion) |
+
+### Open Questions
+- Would a non-linear multivariate method (random forest, kernel PLS) recover a signal
+  that linear PLS misses, or is the null robust to model class too?
+- What sample size would be needed to detect a plausible single-gene effect size with
+  this design (a formal power analysis hasn't been run)?
