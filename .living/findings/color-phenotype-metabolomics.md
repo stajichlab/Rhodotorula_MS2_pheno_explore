@@ -121,5 +121,39 @@ linear multivariate, non-linear multivariate) now converge on the same negative 
 
 ### Open Questions
 - What sample size would be needed to detect a plausible single-gene effect size with
-  this design (a formal power analysis hasn't been run) — this remains the key
-  unanswered question after five converging negative checks.
+  this design — answered by F-005 below.
+
+## F-005: The design's minimum detectable effect (ρ≈0.34) is above the largest ρ ever observed (ρ≈0.20) — the "five converging negative checks" are underpowered, not decisive, for a modest true effect
+**Status:** preliminary
+**Claim:** A simulation-based power analysis for the Tier1 FDR criterion (|ρ|>0.30 &
+q<0.05, the criterion behind "0/12,269 hits survive") synthesizes a feature correlated
+with the real phenotype residual at a known ρ and re-runs the two-stage BH-FDR against
+the *real* background null p-values from the 7,341-feature scan (not idealized
+independent nulls), for both the pooled (n=550) and *R. mucilaginosa*-only (n=415)
+designs. Result: minimum detectable ρ at 80% power is ≈0.337-0.338 (pooled) and
+≈0.338-0.342 (mucilaginosa) across L*/a*/b* — essentially identical between designs, the
+extra df from dropping Species in the mucilaginosa-only model roughly offsetting its
+smaller n. Power at ρ=0.20 (the largest ρ ever actually observed anywhere in the
+corrected scan, F-001) is only 0-2%.
+**Implications:** This recalibrates F-001 through F-004. Those checks confidently rule
+out anything ≥ρ≈0.34 (which safely covers the original ρ=0.7+ headline claims — those
+remain refuted) but are uninformative about a true, modest ρ≈0.15-0.30 effect: this
+dataset at this sample size cannot distinguish "no effect" from "a real effect too small
+to detect here." The corrected next step is not further re-testing this same data with
+different methods (five have now been tried), but either lowering the detection floor
+(phenotype replicates + mixed-effects model, per the analysis doc's framework) or
+reducing the multiple-testing burden (a small, pathway-motivated feature set instead of
+scanning all 7,341 features).
+**Tags:** metabolomics, power-analysis, statistics, sample-size, color-phenotype, rhodotorula, methodology
+
+### Evidence Ledger
+| Date | Run/Session | Dataset | Project | Result | Direction |
+|------|-------------|---------|---------|--------|-----------|
+| 2026-08-11 | phenotype_metabolite_association v1 (script 09) | Rhodotorula MS2 (550-sample pooled and 415-sample R. mucilaginosa designs, simulated) | Rhodotorula_MS2_pheno_explore | min detectable ρ≈0.34 (80% power) both designs; power at ρ=0.20 is 0-2% | refines (F-001/F-002/F-003/F-004's negative conclusions -- confirms the strong-effect refutation, qualifies the modest-effect null) |
+
+### Open Questions
+- Would a targeted, pathway-motivated feature set (removing most of the multiple-testing
+  burden) meaningfully lower the detection floor without needing more samples?
+- How many phenotype replicates per strain would be needed, in a mixed-effects model, to
+  push the detection floor down to a biologically plausible single-gene effect size
+  (e.g. ρ≈0.15-0.20)?

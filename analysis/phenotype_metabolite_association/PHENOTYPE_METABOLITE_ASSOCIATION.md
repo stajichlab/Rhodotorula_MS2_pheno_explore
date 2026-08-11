@@ -95,6 +95,16 @@ sklearn default of considering all features at every split is >100x slower and b
 accuracy at this n/p ratio). Same strain-block permutation null with the `max_depth`
 grid search nested inside it.
 
+`scripts/09_power_analysis.py` — simulation-based power analysis for the primary
+detection criterion (Tier1 = |ρ|>0.30 AND two-stage BH q<0.05, exactly as in
+`02_corrected_correlation.py`): for a grid of true ρ values, repeatedly synthesizes one
+additional feature correlated with the real phenotype residual at exactly that ρ, and
+re-runs the two-stage BH-FDR against the **real** background null p-values from the
+7,341-feature scan (not idealized independent nulls), so the synthetic signal competes
+against the actual observed null distribution. Fraction of trials clearing Tier1 = power
+at that ρ. Run separately for the pooled (n=550) and *R. mucilaginosa*-only (n=415)
+designs.
+
 ## Results
 
 | Check | Result |
@@ -112,6 +122,10 @@ grid search nested inside it.
 | Multivariate/module-level test (PLS, best of 2/5/10 components, 4-fold GroupKFold by strain) | observed CV R²=**-0.09**; null 95% range=[-0.14, -0.03]; **permutation p=0.56** — indistinguishable from chance |
 | *R. mucilaginosa*-only holdout (strain-level 80/20, n=210 strains) | Spearman(ρ_train,test): L\*=0.19, **a\*=-0.46**, b\*=0.15; top-25/phenotype hit replication **3/75 (4.0%)** — chance level, same pattern as the pooled holdout |
 | Random Forest module-level test (non-linear; best of max_depth∈{6,None}, n_estimators=150, 4-fold GroupKFold by strain) | observed CV R²=**-0.026**; null 95% range=[-0.067, -0.008]; **permutation p=0.25** — not distinguishable from chance |
+| **Power** to detect ρ=0.20 via the Tier1 criterion (pooled, n=550; simulated, 300 trials/point, real background nulls) | **0-1%** across L\*/a\*/b\* — essentially undetectable |
+| **Power** to detect ρ=0.30 via the Tier1 criterion (pooled, n=550) | ~50-54% across phenotypes |
+| **Minimum detectable ρ at 80% power** — pooled (n=550) | **≈0.337-0.338** across L\*/a\*/b\* |
+| **Minimum detectable ρ at 80% power** — *R. mucilaginosa* only (n=415) | **≈0.338-0.342** across L\*/a\*/b\* (essentially identical to pooled — the extra covariate-adjustment df from dropping Species roughly offsets the smaller n) |
 
 **Bottom line:** once Species, Library Plate, and C/SUP sample type are jointly and
 correctly controlled for, **none of the original "high-confidence" metabolite-color
@@ -130,12 +144,23 @@ pooled ρ=0.7+ correlations in `FEATURE_ANALYSIS.md` were almost entirely a
 between-species confound (Simpson's paradox), compounded by a residualization bug and a
 missing/miscoded Species column.
 
-This is a **negative result for this dataset/method as analyzed**, not proof that no
-metabolite controls pigmentation — see Next Steps. Five independent checks (FDR,
-permutation, pooled holdout, linear multivariate, and non-linear multivariate) now
-agree, which is a reasonably thorough case that there's no detectable single- or
-joint-feature MS2 signal for color phenotype in this dataset at this sample size,
-rather than a fragile null from any one test or model class.
+**But this null result needs a crucial caveat that the power analysis (script 09)
+supplies:** the design's minimum detectable effect at 80% power is ρ≈0.34, and the
+*largest* ρ actually observed anywhere in the corrected 22,023-test scan was 0.19-0.20
+— squarely in the range where power is only 0-2%. In other words, five converging
+"negative" checks sound decisive, but four of them (FDR, permutation-on-selected-hits,
+holdout, and the multivariate tests) are all downstream of a detection threshold this
+sample size essentially cannot clear for a true effect in the ρ≈0.15-0.30 range. **The
+correct interpretation is not "there is no metabolite-color relationship" but "this
+dataset, at this sample size, cannot distinguish a true ρ≈0.15-0.30 effect from noise,
+and everything observed is consistent with either scenario."** Only effects ≥ρ≈0.34
+(which would explain ≥~12% of phenotype variance on their own) can be confidently ruled
+out — and the original headline claims (ρ up to 0.735) were far above that threshold, so
+they remain confidently refuted; a genuinely modest metabolite effect is not.
+
+This is a **negative result bounded by an explicit detection limit**, not proof that no
+metabolite controls pigmentation — see Next Steps, especially the phenotype-replicate /
+mixed-model path, which is the direct way to push the detection limit down.
 
 ## Caveats of this re-analysis itself
 
@@ -202,20 +227,32 @@ this pipeline:
    including the hyperparameter-selection step; p=0.56 and p=0.25 respectively, no
    evidence of a joint many-feature signal under either model class.
 2. **SIRIUS structural annotation** — still not attempted for any feature from this
-   analysis, and arguably no longer well-motivated: after FDR, permutation, holdout, and
-   multivariate tests all agree on a null result, there currently isn't a defensible
-   candidate feature list to annotate. Fixing the SIRIUS login/walltime issues in
+   analysis, and arguably premature: there currently isn't a defensible candidate
+   feature list to annotate (see point 5). Fixing the SIRIUS login/walltime issues in
    `analysis/secreted_products/sirius_annotation/` remains useful for that analysis's
    own (secretion-based, not phenotype-correlation-based) target list.
 3. ~~**Holdout replication within *R. mucilaginosa***~~ — done (script 07): strain-level
    80/20 split, 3/75 (4.0%) top-hit replication, same chance-level pattern as the pooled
    holdout in script 04.
-4. Once additional phenotype replicates arrive, revisit with the mixed-model upgrade
-   described above — measurement noise may currently be swamping small true effects,
-   and a proper strain-level variance component would help separate the two. Given four
-   independent negative checks, this (or a fundamentally different data type, e.g.
-   transcriptomics/genotype rather than a second cut of the same MS2 data) is probably
-   the more promising direction than further re-slicing this dataset.
+4. ~~**Power analysis**~~ — done (script 09): this is now the load-bearing next step's
+   *rationale*, not an open item. Minimum detectable ρ at 80% power is ≈0.34 for both
+   the pooled and mucilaginosa-only designs; the largest ρ ever observed (0.19-0.20) was
+   in the near-zero-power range. **The negative result is bounded, not absolute** — see
+   the Results section's "Bottom line" caveat.
+5. **Highest-priority remaining step: reduce the detection floor below ρ≈0.34.**
+   The power analysis shows this is the actual bottleneck, not any remaining statistical
+   test. Two concrete paths, in order of expected leverage:
+   - Bring in phenotype replicates and switch to the mixed-effects model described
+     above — replacing per-strain measurement noise with a proper variance component is
+     the most direct way to shrink the detection floor without a larger strain
+     collection.
+   - Restrict to a small, pathway-motivated feature set (e.g. candidate carotenoid
+     masses from `docs/CAROTENOID_GENE_BRIGHTNESS_ANALYSIS.md`) instead of scanning all
+     7,341 features — this doesn't change per-test power directly, but it removes most
+     of the multiple-testing burden driving the BH threshold, which is what pushed the
+     detectable-ρ floor up to 0.34 in the first place.
+6. A fundamentally different data type (genotype/QTL, transcriptomics) remains a fair
+   alternative to further re-slicing this same MS2 dataset, per `docs/GWAS_EXPERT_EVALUATION.md`.
 
 ## Key outputs
 
@@ -233,4 +270,5 @@ this pipeline:
   `outputs/random_forest_feature_importances.csv`.
 - `outputs/mucilaginosa_holdout_calibration.csv`, `outputs/mucilaginosa_holdout_hit_replication.csv`,
   `outputs/mucilaginosa_holdout_summary.json`.
+- `outputs/power_analysis_curve.csv`, `outputs/power_analysis_summary.json`.
 - `outputs/numbers.json` — registered reportable values (via `register_value`).

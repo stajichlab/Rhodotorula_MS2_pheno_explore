@@ -31,14 +31,22 @@ on.** Summary of what the corrected model + permutation null + holdout replicati
   under a linear model (PLS: CV R²=-0.09, permutation p=0.56) or a non-linear one
   (Random Forest: CV R²=-0.026, permutation p=0.25), both permutation-tested including
   the hyperparameter-selection step.
+- **Important caveat on all of the above (power analysis, script 09):** the minimum
+  effect size this design can detect at 80% power is **ρ≈0.34**; power to detect
+  ρ=0.20 (the largest value ever actually observed in the corrected scan) is only
+  **0-2%**. The negative result rules out anything ρ≥0.34 with confidence — which
+  safely covers the original ρ=0.7+ claims — but is **not informative** about whether a
+  true, modest ρ≈0.15-0.30 effect exists; this dataset at this sample size cannot tell
+  the difference between "no effect" and "an effect too small for this design to see."
 
 **Conclusion:** the ρ up to 0.735 reported throughout this document were almost
 entirely a between-species confound (Simpson's paradox), not evidence that any of
-these specific metabolite features drive color phenotype. See
+these specific metabolite features drive color phenotype — that part is confidently
+refuted. Whether a smaller, real effect exists is genuinely unresolved (underpowered,
+not disproven). See
 `analysis/phenotype_metabolite_association/PHENOTYPE_METABOLITE_ASSOCIATION.md` for
-full method, results, and next-steps (multivariate/module-level tests, SIRIUS
-annotation of the — still unvalidated — within-species candidates, and a framework for
-incorporating future phenotype replicates via a mixed-effects model).
+full method, results, and next-steps (phenotype replicates + mixed-effects model, or a
+pathway-targeted feature set, are the two concrete ways to lower the detection floor).
 
 The original caveats that motivated this re-analysis are kept below for the audit trail.
 

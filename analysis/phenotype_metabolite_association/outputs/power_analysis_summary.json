@@ -1,0 +1,29 @@
+{
+  "rho_grid": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5
+  ],
+  "n_trials_per_point": 300,
+  "tier1_rho_threshold": 0.3,
+  "tier1_q_threshold": 0.05,
+  "target_power": 0.8,
+  "min_detectable_rho_pooled_n550": {
+    "Median_ColorLab_L*Mean": 0.33666666666666667,
+    "Median_ColorLab_a*Mean": 0.33697478991596636,
+    "Median_ColorLab_b*Mean": 0.3384615384615384
+  },
+  "min_detectable_rho_mucilaginosa_n415": {
+    "Median_ColorLab_L*Mean": 0.338235294117647,
+    "Median_ColorLab_a*Mean": 0.3423076923076923,
+    "Median_ColorLab_b*Mean": 0.34009900990099007
+  },
+  "rng_seed": 20260811
+}
