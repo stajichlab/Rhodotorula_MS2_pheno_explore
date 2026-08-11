@@ -24,3 +24,14 @@
 - **Key outputs:** `outputs/sirius_targets.csv`, `outputs/sirius_targets.mgf` (117 spectra), `outputs/mgf_export_summary.csv` (per-feature match audit), `outputs/sirius_project/` (SIRIUS results).
 - **Caveats:** CSI:FingerID structure search and CANOPUS need `sirius login` (web service, needs internet) — not yet done as of v1; `formula`/`fingerprint` work offline, so molecular-formula/fragmentation-tree calls are unaffected by the login gap.
 - **Lineage:** child of `secreted_products` — consumes its 130 uniquely-secreted feature list directly.
+
+## phenotype_metabolite_association
+
+- **Path:** `analysis/phenotype_metabolite_association/` (`PHENOTYPE_METABOLITE_ASSOCIATION.md`, `run.sh`, `scripts/01-05_*.py`)
+- **Date:** 2026-08-11 · **Status:** complete (v1)
+- **Question:** Are the strong pooled metabolite-color correlations reported in `docs/FEATURE_ANALYSIS.md` (legacy Phase 2 pipeline) real, once species/plate/C-SUP confounds are properly controlled for and validated with a permutation null + holdout replication?
+- **Inputs:** `analysis/phase1_features_filtered.csv.gz`, `analysis/phase1_phenotype_data.csv.gz` (legacy Phase 0/1 outputs), `input_data/MS2_samples_combine.extended_metadata_with_strain_traits.tsv.gz` (for `ATTRIBUTE_species`/strain ID/C-SUP source, which the legacy pipeline's `Species` column lacked for ~55% of rows).
+- **Method:** joint rank-space OLS partial-Spearman correlation (Species + Library Plate + sample_type regressed out at once, fixing a sequential-residualization bug and a mis-encoded-Plate bug in `scripts/phase2_correlation_analysis.py`); two-stage BH-FDR; strain-block permutation null (5,000 perms, respects C/SUP pairing); species-stratified strain-level 80/20 holdout; single-species (*R. mucilaginosa*) re-run to test for a within-species signal.
+- **Headline:** **0/12,269** original Tier-1 hits survive correction (max corrected \|ρ\|=0.19 across all 22,023 tests); the 6 headline features named in `FEATURE_ANALYSIS.md` all fail permutation testing (17/17 pairs p>0.05); holdout replication of the strongest corrected candidates is at chance (2/75, 2.7%); restricting to *R. mucilaginosa* alone (n=415, 210 strains, real a\*/b\* phenotype spread) does not recover a stronger signal (0 FDR hits, max \|ρ\|=0.196). The original pooled ρ up to 0.735 were almost entirely a species confound (Simpson's paradox).
+- **Key outputs:** `outputs/corrected_tier1_hits.csv.gz`, `outputs/permutation_null_results.csv`, `outputs/holdout_summary.json`, `outputs/mucilaginosa_summary.json`, `outputs/numbers.json`.
+- **Lineage:** child of the legacy Phase 0-3 pipeline (`scripts/phase0-2_*.py`, docs in `docs/`); supersedes `docs/FEATURE_ANALYSIS.md`'s confidence claims (that file now carries a caveats addendum pointing here).

@@ -1,0 +1,18 @@
+{
+  "test_frac_target": 0.2,
+  "min_strains_for_split": 5,
+  "n_species_splittable": 8,
+  "n_species_total": 17,
+  "n_test_strains": 53,
+  "n_train_rows": 447,
+  "n_test_rows": 103,
+  "spearman_calibration_by_phenotype": {
+    "Median_ColorLab_L*Mean": 0.10122730461095296,
+    "Median_ColorLab_a*Mean": -0.4290934427061861,
+    "Median_ColorLab_b*Mean": 0.20231220126676017
+  },
+  "top_hit_replication_rate": 0.02666666666666667,
+  "n_top_hits_tested": 75,
+  "n_top_hits_replicated": 2,
+  "rng_seed": 20260811
+}

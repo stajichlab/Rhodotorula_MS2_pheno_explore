@@ -1,0 +1,8 @@
+{
+  "n_permutations": 5000,
+  "n_candidates_tested": 92,
+  "n_candidates_perm_significant_p05": 75,
+  "n_headline_features_tested": 17,
+  "n_headline_features_perm_significant_p05": 0,
+  "rng_seed": 20260811
+}

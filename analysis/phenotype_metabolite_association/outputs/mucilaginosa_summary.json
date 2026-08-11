@@ -1,0 +1,38 @@
+{
+  "species": "Rhodotorula mucilaginosa",
+  "n_samples": 415,
+  "n_strains": 210,
+  "phenotype_spread": [
+    {
+      "phenotype": "Median_ColorLab_L*Mean",
+      "mean": 73.05638186174608,
+      "sd": 1.6556986997787493,
+      "min": 67.3781915936672,
+      "max": 78.7654626667355,
+      "cv_abs": 0.022663300010011985
+    },
+    {
+      "phenotype": "Median_ColorLab_a*Mean",
+      "mean": 11.298042737056237,
+      "sd": 1.5035884177196983,
+      "min": 0.617828277405899,
+      "max": 14.4308860950165,
+      "cv_abs": 0.13308397327867305
+    },
+    {
+      "phenotype": "Median_ColorLab_b*Mean",
+      "mean": 3.9434599151547554,
+      "sd": 1.366428268516577,
+      "min": -0.319687422526735,
+      "max": 8.71567105384359,
+      "cv_abs": 0.3465049215450066
+    }
+  ],
+  "n_features_tested": 7341,
+  "tier1_fdr_hits": 0,
+  "max_abs_rho": 0.19638711102224296,
+  "n_permutations": 5000,
+  "n_candidates_perm_significant_p05": 76,
+  "n_headline_perm_significant_p05": 2,
+  "rng_seed": 20260811
+}

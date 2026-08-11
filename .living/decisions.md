@@ -109,3 +109,35 @@ under 16G shared.
 finishes the SIRIUS step end-to-end; `03_sirius.sbatch` must be submitted separately and waited
 on). Documented in the analysis manifest.
 **Tags**: hpcc, slurm, sbatch, sirius, memory, tooling
+
+### [2026-08-11] Corrected metabolite-color correlation via joint rank-space OLS residualization instead of patching the legacy sequential-covariate loop
+
+**Context**: `docs/FEATURE_ANALYSIS.md`'s headline metabolite-color associations
+(e.g. Feature 2755, ρ=0.735) come from `scripts/phase2_correlation_analysis.py`, which
+never actually took its own `'pooled' in decision['strategy']` branch (the strategy was
+`stratified_with_plate`), so Species was never regressed out despite Phase 0 flagging a
+significant species effect. Its `spearman_partial_corr()` helper also reassigned (rather
+than accumulated) the residual on each covariate loop iteration, so with >1 covariate only
+the last one would actually be controlled for, and Library Plate was regressed as a
+continuous variable via `pd.factorize` rather than one-hot encoded.
+**Decision**: Built a new analysis (`analysis/phenotype_metabolite_association/`) using a
+single joint OLS projection (rank-transform features/phenotype, regress out one design
+matrix containing one-hot Species + Library Plate + C/SUP sample_type at once, vectorized
+across all 7,341 features via one matrix multiply) rather than patching the loop-based
+original in place.
+**Alternatives considered**: (a) patch `phase2_correlation_analysis.py` in place — rejected,
+the legacy script is referenced by `docs/FEATURE_ANALYSIS.md`/`analysis/README.md` as a
+specific historical run and mixing "corrected" and "original" results in the same script
+would make the caveat harder to audit; (b) `statsmodels.MixedLM` with strain as a random
+effect — deferred to when real phenotype replicates exist (see analysis doc's "Framework
+for incorporating future phenotype replicates" section), since with only 1-2 samples/strain
+a permutation-based approach that explicitly respects the C/SUP pairing is more transparent
+than a mixed model with too few replicates per group to estimate variance components well.
+**Rationale**: A single joint projection is both the statistically correct way to do a
+partial correlation with multiple covariates (unlike the sequential-reassignment bug) and
+trivially vectorizable across all features, keeping runtime under 20s for the full
+22,023-test scan plus permutation/holdout checks.
+**Consequences**: 0/12,269 original Tier-1 hits survive; see [[species-confound-simpsons-paradox]]
+learning for the result and `analysis/phenotype_metabolite_association/PHENOTYPE_METABOLITE_ASSOCIATION.md`
+for full method/results. `docs/FEATURE_ANALYSIS.md` now carries a caveats section pointing here.
+**Tags**: metabolomics, statistics, partial-correlation, confounding, rhodotorula, correction

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "${BASH_SOURCE[0]}")"
+
+python3 scripts/01_prepare_data.py
+python3 scripts/02_corrected_correlation.py
+python3 scripts/03_permutation_null.py
+python3 scripts/04_replication_holdout.py
+python3 scripts/05_within_species_mucilaginosa.py

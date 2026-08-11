@@ -5,6 +5,38 @@
 
 ---
 
+## ⛔ UPDATE (2026-08-11): the corrected re-analysis is done — the headline hits do not survive
+
+The corrected, validated re-analysis at `analysis/phenotype_metabolite_association/`
+is now complete. **None of the correlations in this document should be cited or acted
+on.** Summary of what the corrected model + permutation null + holdout replication found:
+
+- Once Species, Library Plate, and C/SUP sample type are jointly (and correctly)
+  regressed out, **0 of the 12,269 original "Tier 1 high-confidence" hits survive**
+  FDR correction. Max |ρ| anywhere in the corrected 22,023-test scan is **0.19**.
+- Feature 2755 ("master brightness metabolite," originally ρ=0.735): corrected
+  **ρ=0.024, permutation p=0.69**. Features 6926 and 6188 similarly collapse to
+  ρ=0.08–0.09 with permutation p=0.12–0.14. **All 6 headline features named below,
+  across all reported phenotypes (17 feature×phenotype pairs), fail permutation
+  testing (p>0.05).**
+- Out-of-sample holdout replication of the strongest *corrected* candidates was at
+  chance level (2/75, 2.7%), and the train/test effect-size ranking was uncorrelated-to-
+  negatively-correlated (Spearman ρ_train,test = 0.10 / **-0.43** / 0.20 for L*/a*/b*).
+- Restricting to *R. mucilaginosa* alone (n=415 samples, 210 strains — the one species
+  with enough strains to test this, and with real phenotype spread: a* CV=13%, b*
+  CV=35%) does **not** recover a stronger within-species signal either (0 FDR hits,
+  max |ρ|=0.196).
+
+**Conclusion:** the ρ up to 0.735 reported throughout this document were almost
+entirely a between-species confound (Simpson's paradox), not evidence that any of
+these specific metabolite features drive color phenotype. See
+`analysis/phenotype_metabolite_association/PHENOTYPE_METABOLITE_ASSOCIATION.md` for
+full method, results, and next-steps (multivariate/module-level tests, SIRIUS
+annotation of the — still unvalidated — within-species candidates, and a framework for
+incorporating future phenotype replicates via a mixed-effects model).
+
+The original caveats that motivated this re-analysis are kept below for the audit trail.
+
 ## ⚠️ Caveats (added 2026-08-11 — read before citing any number below)
 
 A methods review of the Phase 0–2 pipeline that produced this document found that the

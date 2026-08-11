@@ -108,3 +108,55 @@ sirius_annotation/scripts/03_sirius.sbatch`, `--mem=32G`). Also see [[hpcc-sbatc
 memory for the `$0`/spool-dir path bug hit while building that same sbatch script.
 **Tags**: hpcc, slurm, oom, memory, cgroup, sirius, sbatch, tooling
 **mitigation_type**: ambient-awareness
+
+### [2026-08-11] The pooled metabolite-color correlations in docs/FEATURE_ANALYSIS.md were a species confound (Simpson's paradox), not a real signal
+
+**Category**: statistics / metabolomics
+**What happened**: Requested to build confidence in the strong metabolite-color
+correlations reported in `docs/FEATURE_ANALYSIS.md` (e.g. Feature 2755, ρ=0.735,
+q=2.4e-93 for brightness). Tracing the actual code (not just the docs) found Species was
+never regressed out despite Phase 0 detecting a significant species effect (see the
+paired [[joint-covariate-correction]] decision for the code-level cause). Rebuilding the
+correlation with Species + Library Plate + C/SUP sample_type jointly regressed out
+(`analysis/phenotype_metabolite_association/`) collapsed Feature 2755 from ρ=0.735 to
+ρ=0.024 (permutation p=0.69); **0 of the original 12,269 Tier-1 hits survived** the
+corrected model, a permutation null, or holdout replication (2/75 top corrected
+candidates replicated out-of-sample, chance level). Restricting to *R. mucilaginosa*
+alone (n=415, 210 strains — the only species with enough strains to test this, and with
+real a*/b* phenotype spread: CV 13% and 35% respectively) did not recover a stronger
+within-species signal either (max |ρ|=0.196, 0 FDR hits).
+**Why it matters**: A pooled correlation across multiple species/strains with real
+between-species phenotype and metabolite differences will produce large, highly
+"significant" correlations even with zero true within-species relationship — the
+metabolomics analogue of population stratification in GWAS (this project's own
+`docs/GWAS_EXPERT_EVALUATION.md` flags the same failure mode on the genotype side).
+Species (or any strong grouping variable) must be verified as actually controlled for by
+reading the code path taken, not just the intended design (`phase0_decision.json` said
+`stratified_with_plate`; the code silently didn't act on it).
+**Resolution**: Use `analysis/phenotype_metabolite_association/` outputs, not
+`docs/FEATURE_ANALYSIS.md`'s ρ/q-values, for any future claim about specific metabolite
+features driving color phenotype. That doc now carries a caveats section pointing here.
+**Tags**: metabolomics, statistics, confounding, simpsons-paradox, species, rhodotorula, correlation, validation
+**mitigation_type**: process-fix
+
+### [2026-08-11] `Species` column in phase1_phenotype_data.csv.gz is NaN for ~55% of rows (almost all SUP_* samples)
+
+**Category**: data-quality
+**What happened**: While building the species-corrected re-analysis, found
+`phase1_phenotype_data.csv.gz`'s `Species` column (used throughout the legacy Phase 0-3
+pipeline, including Phase 0's species-confound F-test) is NaN for 321/590 samples —
+nearly every `SUP_*` (supernatant) row — because it was populated only from cell-pellet
+metadata upstream. `ATTRIBUTE_species` in
+`input_data/MS2_samples_combine.extended_metadata_with_strain_traits.tsv.gz` is populated
+for both C_* and SUP_* (only 30/590 NaN) and was used instead. Also found one strain ID
+collision: `17-332Y-1` maps to two distinct C/SUP filename pairs (C_165/SUP_165,
+C_269/SUP_269), with SUP_165 and SUP_269 carrying byte-identical phenotype values — an
+upstream metadata bug, not a real replicate; those 4 rows are dropped.
+**Why it matters**: This means Phase 0's own species-effect significance test
+(F=32.65, p=1.1e-16) was itself computed on a `Species` column that was blank for most
+supernatant samples — worth keeping in mind if that number is ever cited going forward.
+**Resolution**: `analysis/phenotype_metabolite_association/scripts/01_prepare_data.py`
+uses `ATTRIBUTE_species` and drops the collision strain + any remaining missing-covariate
+rows (40/590 dropped total, 550 retained), with counts logged rather than silently coerced.
+**Tags**: metabolomics, data-quality, species, metadata, rhodotorula, join
+**mitigation_type**: process-fix
