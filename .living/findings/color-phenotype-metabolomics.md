@@ -158,41 +158,63 @@ scanning all 7,341 features).
   push the detection floor down to a biologically plausible single-gene effect size
   (e.g. ρ≈0.15-0.20)?
 
-## F-006: A pathway-targeted candidate list finds a real, well-replicated torularhodin-b* correlation that the untargeted scan was underpowered to detect
-**Status:** preliminary
-**Claim:** Acting on F-005's implication (lower the detection floor via a targeted
-feature set), `analysis/pathway_targeted_association/` matched a carotenoid/melanin/MAA
-target compound list (masses computed from formulas, selected before looking at
-phenotype data) against the **full 16,332-row raw feature table** (matching only the
-Phase-1-filtered 7,341 survivors found almost nothing -- see the paired decision entry).
-This found 3 candidates, including two torularhodin (the diagnostic red Rhodotorula
-pigment) matches that Phase-1's blanket QC filters had discarded. One
-(raw_position=12635, 11.5 ppm match, 32% detection rate) correlates with b\* (yellow-blue)
-at ρ=0.218 (q=4×10⁻⁶, strain-block permutation p=0.0002) in the full corrected model, and
-its effect size replicates almost exactly in a held-out set of strains (train ρ=0.199 vs.
+## F-006: A pathway-targeted candidate list finds a real, well-replicated correlation with b* — but SIRIUS refutes the torularhodin identification; the compound is unknown
+**Status:** preliminary (revised 2026-08-11 after SIRIUS confirmation attempt)
+
+**UPDATE (same day, after SIRIUS ran successfully):** the mass-only identification as
+torularhodin does **not** hold up. SIRIUS's formula assignment (isotope pattern + MS2
+fragmentation, run on all 3 candidates once the login/CLI-version/AOT-cache issues below
+were fixed) gives raw_position=12635 (the b\*-correlated feature) top formula
+**C30H52N4O6**, not torularhodin's C40H52O2; the other torularhodin candidate
+(raw_position=11564) resolves to C29H52N6O5; the shinorine candidate (raw_position=15041)
+resolves to C12H25NO11. None match the hypothesized compounds. CANOPUS classifies
+raw_position=12635 as "Amino acids and Peptides" pathway / "Open-chain polyketides"
+class (mixed/low confidence, 0.221) — not a carotenoid class at all. Structure-DB search
+confidence is also low (0.027-0.317 across all 3) with chemically implausible top hits
+(generic PubChem matches, not biosynthetically plausible for this organism). **The 15 ppm
+m/z-only match was a coincidental isobar, not a true identification, for all 3
+candidates.** The claim below is superseded on the identity question (struck through in
+spirit -- kept verbatim for the audit trail); the statistical result stands.
+
+**Claim (original, chemical-identity portion now refuted -- see UPDATE above):** Acting
+on F-005's implication (lower the detection floor via a targeted feature set),
+`analysis/pathway_targeted_association/` matched a carotenoid/melanin/MAA target
+compound list (masses computed from formulas, selected before looking at phenotype data)
+against the **full 16,332-row raw feature table** (matching only the Phase-1-filtered
+7,341 survivors found almost nothing -- see the paired decision entry). This found 3
+mass-only candidates, including two initially interpreted as torularhodin (the
+diagnostic red Rhodotorula pigment) that Phase-1's blanket QC filters had discarded --
+now known (per the UPDATE) to be a false identification. What remains true: one feature
+(raw_position=12635, 32% detection rate) correlates with b\* (yellow-blue) at ρ=0.218
+(q=4×10⁻⁶, strain-block permutation p=0.0002) in the full corrected model, and its
+effect size replicates almost exactly in a held-out set of strains (train ρ=0.199 vs.
 test ρ=0.197, same sign) -- the binary holdout "failure" (test p=0.060) reflects the
 smaller holdout sample's own power limit, not an inconsistent effect, unlike every
 candidate from the untargeted scan's holdout checks (F-001-F-004), which showed sign
 flips or near-zero test-set correlations.
-**Implications:** This is the strongest, best-replicated metabolite-phenotype signal
-found anywhere in this project's color-phenotype work, and directly validates the
-power-analysis-driven strategy (F-005): going from 22,023 tests to 9 dropped the
-detection floor enough to find an effect (ρ≈0.2) that was invisible to the untargeted
-approach. It is still a lead, not a confirmed identification -- no MS2/spectral
-confirmation yet, only 32% detection rate (consistent with a strain/species-specific
-pigment but means few samples drive the correlation), and a second, tighter-mass-match
-torularhodin candidate (2.5 ppm) shows no correlation at all, which needs resolving.
-**Tags:** metabolomics, carotenoid, torularhodin, targeted-analysis, color-phenotype, rhodotorula, positive-result
+**Implications:** The statistical result is the strongest, best-replicated
+metabolite-phenotype correlation found anywhere in this project's color-phenotype work,
+and directly validates the power-analysis-driven strategy (F-005): going from 22,023
+tests to 9 dropped the detection floor enough to find an effect (ρ≈0.2) that was
+invisible to the untargeted approach. But the compound behind it is now **unidentified**
+-- SIRIUS's own best guess (C30H52N4O6, tentatively "Amino acids and Peptides"/polyketide
+by CANOPUS, low confidence) is not chemically compelling either. The lesson for future
+targeted work: an m/z-only match, even within a tight ppm window, is a hypothesis to
+verify with formula/fragmentation evidence, not a result to report on its own -- exactly
+what happened here.
+**Tags:** metabolomics, carotenoid, torularhodin, targeted-analysis, color-phenotype, rhodotorula, positive-result, mass-identification-failure, sirius
 
 ### Evidence Ledger
 | Date | Run/Session | Dataset | Project | Result | Direction |
 |------|-------------|---------|---------|--------|-----------|
-| 2026-08-11 | pathway_targeted_association v1 | Rhodotorula MS2 full raw table (16,332 features), 550-sample corrected design | Rhodotorula_MS2_pheno_explore | torularhodin (raw_position=12635) x b*: rho=0.218, q=4e-6, permutation p=0.0002; holdout train/test rho=0.199/0.197 | refines (F-001-F-005: confirms the untargeted null was a power limit, not absence of signal, for at least this one candidate) |
+| 2026-08-11 | pathway_targeted_association v1 | Rhodotorula MS2 full raw table (16,332 features), 550-sample corrected design | Rhodotorula_MS2_pheno_explore | raw_position=12635 x b*: rho=0.218, q=4e-6, permutation p=0.0002; holdout train/test rho=0.199/0.197 | refines (F-001-F-005: confirms the untargeted null was a power limit, not absence of signal, for at least this one candidate) |
+| 2026-08-11 | pathway_targeted_association/sirius_annotation v1 (SIRIUS 6.3.12, formula+fingerprint+canopus+structures) | Same 3 candidate MS2 spectra | Rhodotorula_MS2_pheno_explore | Top formula for raw_position=12635 is C30H52N4O6 (not torularhodin C40H52O2); CANOPUS class confidence low (0.221); structure-DB confidence low (0.027) | contradicts (the torularhodin identity claim specifically; does not affect the statistical correlation) |
 
 ### Open Questions
-- Does the MS2 spectrum for raw_position=12635 match torularhodin's known
-  fragmentation pattern (SIRIUS, once the login issue is fixed, or manual comparison)?
-- Which species/strains carry this feature (32% detection rate) -- does it track known
-  torularhodin producers?
-- Why does the other, tighter-mass-match torularhodin candidate (raw_position=11564,
-  2.5 ppm) show no correlation at all -- isomer, isotope peak, or chance mass match?
+- What IS raw_position=12635 (m/z 565.398, RT 6.36 min, formula C30H52N4O6 per SIRIUS,
+  32% detection rate)? The b\*-correlation is real; the compound is not yet known.
+- Which species/strains carry this feature (32% detection rate) -- does it track any
+  known biology, now that "torularhodin" is off the table?
+- Would a proper carotenoid standard run (or a C30 column better suited to carotenoids
+  than this project's short C18 method) find real torularhodin/carotenoid features
+  elsewhere in the raw table that this 15 ppm/4-adduct search missed?

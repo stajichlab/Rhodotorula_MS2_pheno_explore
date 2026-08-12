@@ -91,52 +91,63 @@ associations (a*, L*) and the shinorine associations show weaker or sign-inconsi
 behavior between train/test and should be treated with more caution — a* in particular
 flips sign.
 
+## SIRIUS spectral confirmation (2026-08-11): torularhodin identity refuted
+
+`sirius_annotation/` (scripts 00-03) ran all 3 candidates through SIRIUS 6.3.12
+(formula → fingerprint → canopus → structures → write-summaries; see that folder's
+scripts for the SIRIUS 6.x-specific setup issues this took to resolve: an outdated
+5.8.1 module hitting a 404 API mismatch, a changed subcommand chaining order, and an
+install-dir AOT cache that SIGILL-crashed on this cluster's CPUs). Results:
+
+| raw_position | Hypothesized compound | SIRIUS top formula | CANOPUS class (confidence) | Structure-DB confidence |
+|---|---|---|---|---|
+| 12635 (the b\*-correlated one) | torularhodin (C40H52O2) | **C30H52N4O6** | Open-chain polyketides (0.221) | 0.027 |
+| 11564 | torularhodin (C40H52O2) | **C29H52N6O5** | Lipopeptides (0.078) | 0.052 |
+| 15041 | shinorine (C15H23N2O8) | **C12H25NO11** | Cyanogenic glycosides (0.996) | 0.317 |
+
+**None of the three hypothesized identities survive.** All three formulas are
+completely different molecular compositions from the targets, despite falling within
+the 15 ppm m/z-matching window used to select them — i.e., all three were coincidental
+isobars, not real identifications. CANOPUS and structure-DB confidence are low for the
+two former "torularhodin" candidates in particular (0.027-0.221), so SIRIUS itself isn't
+offering a confident alternative identity either.
+
 ## Interpretation
 
-**Torularhodin (raw_position=12635) correlating with b\* (yellow-blue axis) is the
-strongest, most biologically coherent, and best-replicated candidate found across this
-entire project's phenotype-metabolite work.** It:
-- Was pre-registered by chemistry (a known Rhodotorula pigment, not selected from the
-  correlation results), avoiding the winner's-curse problem that undermined the
-  untargeted scan's "top nominal" candidates.
-- Survives FDR correction and a strain-block permutation null on the full 550-sample data.
-- Shows near-identical effect size in an independent held-out set of strains, with the
-  binary non-replication being a holdout-sample-size power issue, not a sign/magnitude
-  inconsistency.
-- Points in the chemically sensible direction: torularhodin is a red-orange pigment: b*
-  is the yellow-blue CIELab axis, so this reads as "more torularhodin → shifts on the
-  yellow-blue axis," directionally consistent with an orange/red carotenoid's
-  contribution to perceived hue.
+**The statistical result stands; the chemical identity does not.** raw_position=12635's
+correlation with b\* is unaffected by this — same ρ=0.218, same permutation p=0.0002,
+same near-identical holdout replication (train ρ=0.199, test ρ=0.197) — this was always
+a claim about the correlation, verified independently of what the feature turned out to
+be. But the "torularhodin" framing throughout this document's Interpretation section
+(directional consistency with a red-orange pigment shifting the yellow-blue axis, etc.)
+does not apply: raw_position=12635 is now an **unidentified feature** (SIRIUS's best
+formula guess is C30H52N4O6, tentatively amino-acid/polyketide-related per CANOPUS, but
+at low confidence). This is the strongest, best-replicated *statistical* signal found in
+this project's phenotype-metabolite work — it just isn't attached to a known pigment
+biosynthesis pathway anymore.
 
-**This should still be treated as a strong lead, not a confirmed result**, because:
-- It is one candidate out of a short list, in a dataset where 8/9 targeted tests were
-  weaker or didn't hold up as cleanly — this isn't "everything replicated," it's "one
-  specific, chemically-motivated candidate replicated unusually well."
-- The identification is mass-only (11.5 ppm, wider than ideal, though within the 15 ppm
-  tolerance); MS2 spectral confirmation against a torularhodin reference/database has not
-  been done (see Next Steps).
-- Only 32% detection rate — consistent with a strain/species-specific pigment, but also
-  means the correlation is driven by a subset of samples; worth a spot-check of which
-  species/strains carry it.
-- This is a short (~9 min) reversed-phase run, not a dedicated carotenoid (C30) column;
-  RT 6.36 min (in the later half of the gradient) is at least directionally consistent
-  with a hydrophobic carotenoid, but retention behavior alone doesn't confirm identity.
+The lesson for future targeted searches on this dataset: an m/z-only match, even within
+a tight ppm window and even with a biologically plausible RT, is a hypothesis that needs
+formula/fragmentation confirmation before being reported as an identification — exactly
+what happened here, and worth remembering before the next pathway-targeted search.
 
 ## Next Steps
 
-1. **MS2/spectral confirmation**: this feature has an MS2 spectrum (`has_ms2=True`) —
-   run it through SIRIUS (once the login issue in
-   `analysis/secreted_products/sirius_annotation/` is fixed) or compare fragmentation
-   pattern manually against published torularhodin MS/MS data.
-2. **Spot-check which strains/species carry it** (32% detection rate) — does it track
-   with known torularhodin-producing species, or is it broader/narrower than expected?
-3. **Re-examine the other torularhodin candidate** (raw_position=11564, tighter 2.46 ppm
-   match but null correlation) — is it a genuine isomer/different ionization state, an
-   isotope peak, or a chance mass coincidence? Worth resolving before treating 12635 as
-   "the" torularhodin peak.
-4. If confirmed, this reopens the genetics side (`docs/CAROTENOID_GENE_BRIGHTNESS_ANALYSIS.md`,
-   `docs/BRIGHTNESS_GENETICS_STRATEGY.md`) with an actual metabolite anchor rather than
-   gene copy-number alone.
+1. ~~**MS2/spectral confirmation**~~ — done: SIRIUS refutes all 3 hypothesized
+   identities (see table above). What raw_position=12635 actually is remains open.
+2. **Spot-check which strains/species carry raw_position=12635** (32% detection rate) —
+   does it track any known biology now that the pigment-pathway framing is gone?
+3. ~~**Re-examine the other torularhodin candidate**~~ — resolved: raw_position=11564 is
+   also not torularhodin (C29H52N6O5), so there's no "which one is the real torularhodin"
+   question anymore — neither is.
+4. **Broaden or re-run the pathway search** with a wider RT/adduct net, or reconsider
+   whether this project's short C18 method (not a dedicated carotenoid C30 column) is
+   simply unlikely to retain/detect real carotenoids well, before spending more effort
+   on m/z-based carotenoid hunting in this specific dataset.
+5. Treat raw_position=12635 as an unidentified-but-statistically-real lead: worth a
+   dedicated identification effort (spectral library search, NIST/GNPS matching) if this
+   phenotype-metabolite connection is worth pursuing further, independent of the original
+   carotenoid hypothesis.
 
 ## Key outputs
 
@@ -146,4 +157,7 @@ entire project's phenotype-metabolite work.** It:
   matching results.
 - `outputs/targeted_correlation_results.csv`, `outputs/targeted_correlation_summary.json`,
   `outputs/targeted_permutation_results.csv`.
+- `sirius_annotation/outputs/sirius_project/formula_identifications.tsv`,
+  `structure_identifications.tsv`, `canopus_formula_summary.tsv` — SIRIUS 6.3.12 results
+  refuting the torularhodin/shinorine identities (see table above).
 - `outputs/targeted_holdout_results.csv`, `outputs/targeted_holdout_summary.json`.

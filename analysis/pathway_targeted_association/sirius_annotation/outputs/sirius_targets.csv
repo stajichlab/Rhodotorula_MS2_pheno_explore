@@ -1,0 +1,4 @@
+feature_index,row_id,mz,rt_min,charge,adduct,adduct_rep_file,rep_file_source,mzml_path,has_ms2
+11564,21315,565.405400,5.704949,1,[M+H]1+,C_64.mzML,max_peak_area_fallback,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_64.mzML,true
+12635,26444,565.397500,6.364676,1,[M+H]1+,C_155.mzML,max_peak_area_fallback,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_155.mzML,true
+15041,42268,360.149000,0.533658,1,[M+H]1+,C_73.mzML,max_peak_area_fallback,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_73.mzML,true

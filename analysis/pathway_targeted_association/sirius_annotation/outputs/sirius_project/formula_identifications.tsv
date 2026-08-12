@@ -1,0 +1,4 @@
+formulaRank	molecularFormula	adduct	precursorFormula	ZodiacScore	SiriusScoreNormalized	SiriusScore	TreeScore	IsotopeScore	numExplainedPeaks	explainedIntensity	medianMassErrorFragmentPeaks(ppm)	medianAbsoluteMassErrorFragmentPeaks(ppm)	massErrorPrecursor(ppm)	lipidClass	ionMass	retentionTimeInSeconds	retentionTimeInMinutes	formulaId	alignedFeatureId	compoundId	mappingFeatureId	overallFeatureQuality
+1	C12H25NO11	[M + H]+	C12H26NO11+		0.892	58.350	58.350	0.000	7	0.757	-2.035	2.035	-2.619		360.149	39	0.646	875212867068500756	875212846264752890	875212846256364281	42268	
+1	C29H52N6O5	[M + H]+	C29H53N6O5+		0.809	35.594	35.594	0.000	6	0.855	-2.786	2.786	-2.979		565.406	343	5.720	875212863209741056	875212846138923762	875212846109563633	21315	
+1	C30H52N4O6	[M + H]+	C30H53N4O6+		0.503	80.697	80.697	0.000	21	0.925	-2.489	2.489	3.083		565.398	381	6.352	875212866850396938	875212846243781366	875212846235392757	26444	

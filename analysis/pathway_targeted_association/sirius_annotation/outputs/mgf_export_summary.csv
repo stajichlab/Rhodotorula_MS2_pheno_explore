@@ -1,0 +1,4 @@
+feature_index,row_id,status,mzml_path,n_candidate_spectra,chosen_scan_id,chosen_tic,rt_window_widened
+11564,21315,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_64.mzML,1,controllerType=0 controllerNumber=1 scan=3355,988356.7004394531,False
+12635,26444,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_155.mzML,1,controllerType=0 controllerNumber=1 scan=3538,296178.24169921875,False
+15041,42268,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_73.mzML,1,controllerType=0 controllerNumber=1 scan=343,78585.10791015625,False

@@ -383,3 +383,152 @@ invocations -- no more rapid-fire live testing against the authenticated workspa
 **Status:** waiting on the user to re-login (second time) before resubmitting either
 job. Script fixes (chaining order + AOTMode=off) are complete and will be committed
 alongside this note. No SIRIUS results available yet from either job.
+
+---
+
+## Status check-in (this thread, no file changes)
+
+User asked "what's next on your list" after the Met~copper-AUC plotting work. Answered
+conversationally with a prioritized punch list, no files touched:
+1. Build `analysis/copper_metabolite_association/` (still not started; plan fixed
+   earlier this thread).
+2. Resolve the `TFCN_17-332M-1`/`C_190`/`SUP_190` conflict with Christian Ona.
+3. In `Rhodotorula_Rodeo`: holdout-replicate the Met signal (F-002); re-run
+   embedding-family-separation against the continuous phenotype (F-003, open).
+4. The actual cross-repo linkage once both analyses have hits.
+Lower priority / independent: the SIRIUS jobs above (blocked on re-login) and the
+July "Genome screen: antiSMASH + OrthoFinder" TODO. Offered to start on #1 next;
+awaiting user's go-ahead.
+
+---
+
+## Built analysis/copper_metabolite_association/ (this thread, item #1 above)
+
+User said "do 1, skip 2, drop both strain entries" -- confirmed the C_190/SUP_190
+conflict rows are permanently excluded (no reconciliation attempt), and gave the
+go-ahead to build the copper-AUC metabolite analysis.
+
+**Built, cell (`C_*`) and supernatant (`SUP_*`) as fully parallel independent tracks**
+(264 strains, 17 species each after cleanup), reusing
+`analysis/phenotype_metabolite_association`'s validated methodology wholesale rather
+than redesigning:
+- `scripts/01_prepare_data.py` -- joins copper AUC onto Phase 1's QC'd feature
+  matrix per track; drops the known conflict (2 rows) + "No MS2 Data" rows (2) +
+  7/track already-QC-excluded-upstream rows.
+- `scripts/02_confound_check.py` -- NEW step not in the color-phenotype pipeline
+  (explicit process improvement): tests whether copper AUC itself is
+  species/plate-confounded before correlating anything. Found species strongly
+  confounded in both tracks (p=5.8e-10) and, unexpectedly, that `Library Plate` is
+  **constant (=1.0) for every single SUP_* sample project-wide** (verified against
+  the full un-filtered phenotype table, not a bug in this analysis) -- logged as a
+  new `.living/learnings.md` entry since it'll matter for any future SUP-only or
+  pooled analysis. Plate is kept as a covariate for cell only.
+- `scripts/03_corrected_correlation.py` -- same joint rank-space partial-Spearman +
+  two-stage BH-FDR as the color analysis. **Result: 0/7,341 (cell) and 0/7,333
+  (supernatant) FDR hits, max |rho| ~0.22 both tracks.**
+- `scripts/04_power_analysis.py` -- run *immediately after* the correlation scan,
+  not last (explicit lesson from the color-phenotype thread, where the power
+  analysis landing last meant five null checks were reported before anyone knew
+  they were underpowered). **Result: min detectable rho at 80% power = 0.340
+  (cell) / 0.345 (supernatant) -- the observed max ~0.22 is well below this floor,
+  so the null result is underpowered, not disproven**, for the entire 0.15-0.30
+  range.
+- `scripts/05_permutation_null.py`, `06_holdout_replication.py` -- simpler than
+  the color analysis's versions since each track already has one row per strain
+  (no C/SUP pairing to preserve within a track), so permutation/holdout splitting
+  is a plain row operation, no strain-block machinery needed. Permutation confirms
+  top nominal p-values aren't degenerate (25/25 pass, expected for top-of-7341);
+  **holdout replication is 0/25 in both tracks**, calibration -0.226 (cell,
+  negative) / +0.031 (supernatant, ~zero).
+- `scripts/07_multivariate_module_test.py` (PLS) and `08_random_forest_module_test.py`
+  (RF) -- same nested grid-search-inside-permutation design as the color analysis.
+  RF sanity-checked with N_PERM=3 (both tracks near-zero/negative CV R^2, consistent
+  with the univariate null). **The full PLS run (N_PERM=300, both tracks) was still
+  running in the background when this session ended** -- machine was under heavy
+  load (load average 12 on 4 cores) so it ran much slower than the color analysis's
+  equivalent step; RF's full N_PERM=200 run had not yet been started (deferred to
+  avoid contending with the still-running PLS job for the same scarce cores).
+
+All 8 scripts lint clean (`scilintr`). Wrote `run.sh`,
+`COPPER_METABOLITE_ASSOCIATION.md` (numbers filled in through the holdout step;
+PLS/RF section left as "pending, to be filled in"), an `ANALYSIS_MANIFEST.md` entry
+(status: in progress), and `.living/findings/copper-metabolite-association.md`
+(F-001/F-002/F-003) + registry entry. TODO_REGISTRY.md's copper-metabolite item
+moved from open to in-progress with a link to the new doc.
+
+**Not yet done:** finish/report the PLS and RF results once the background job
+completes; the actual cross-repo linkage against `Rhodotorula_Rodeo`'s Met signal
+(still the real end goal, both analyses now have enough results to attempt it);
+resolving the TFCN_17-332M-1 conflict (explicitly deferred by the user, not
+forgotten).
+
+**Status check:** nothing committed. All new/modified files are uncommitted working-tree
+changes in `analysis/copper_metabolite_association/` (new), `analysis/ANALYSIS_MANIFEST.md`,
+`todo/TODO_REGISTRY.md`, `.living/{decisions,learnings}.md`,
+`.living/findings/{FINDINGS_REGISTRY,copper-metabolite-association}.md`. A background
+shell (PLS full run) was still active outside this turn's tool calls; results from it
+were not yet incorporated into any file when this session-end note was written.
+
+---
+
+## PLS results landed; RF launched (this thread, follow-up)
+
+The backgrounded PLS job (`07_multivariate_module_test.py`, N_PERM=300) completed
+(~14 min wall / ~18 min CPU, both tracks). **Notable, unexpected result:** observed
+CV R² is negative in both tracks (cell -0.0496, supernatant -0.0673 -- the model
+does not usefully predict copper AUC in absolute terms) but is **permutation-significant
+in both** (cell p=0.017, supernatant p=0.020): real data generalizes less badly than
+label-shuffled data (null mean R² -0.217/-0.226). This is a materially different
+result from the color-phenotype analysis's own PLS test (R²=-0.09, p=0.56, clearly
+null) -- flagged as F-004 in `.living/findings/copper-metabolite-association.md`,
+with an explicit caution not to oversell it (negative-but-less-bad-than-chance is not
+"the model works"; still needs the Random Forest result as a second check and
+eventual loadings inspection before treating as a real finding).
+
+`COPPER_METABOLITE_ASSOCIATION.md` updated with the PLS table/interpretation.
+`FINDINGS_REGISTRY.md` updated with the F-004 row.
+
+Launched the full Random Forest run (`08_random_forest_module_test.py`, N_PERM=200)
+in the background via the harness's tracked mechanism (first attempt used a raw
+`nohup ... &`, which doesn't notify on completion -- killed and relaunched properly
+so this session gets notified rather than needing to poll). Still running as of
+this note; RF sanity-checked earlier at N_PERM=3 (both tracks near-zero/negative CV
+R², consistent direction with PLS) but the real permutation-significance question is
+only answered by the full N_PERM=200 run.
+
+**Not yet done:** RF full results; updating `COPPER_METABOLITE_ASSOCIATION.md`'s
+headline section once RF lands; the cross-repo linkage to `Rhodotorula_Rodeo`'s Met
+signal; TFCN_17-332M-1 reconciliation (still deferred by user).
+
+---
+
+## Concurrent session: SIRIUS thread resolved — both jobs completed successfully
+
+After the AOT-cache fix (`-XX:AOTMode=off`) and a second re-login, both SIRIUS jobs
+completed cleanly (no crash, no login error) once resubmitted:
+
+- **pathway_targeted_association** (3 spectra): completed with real formula/CANOPUS/
+  structure-DB results. **Result: none of the 3 hypothesized pigment identities hold
+  up.** Top formulas are C30H52N4O6, C29H52N6O5, C12H25NO11 — none matches torularhodin
+  (C40H52O2) or shinorine (C15H23N2O8); all 3 were coincidental isobars within the 15 ppm
+  window. **The statistical correlation for raw_position=12635 x b\* (F-006, ρ=0.218,
+  permutation p=0.0002, near-identical holdout replication) is unaffected** — it's real,
+  it just isn't torularhodin. Updated `PATHWAY_TARGETED_ASSOCIATION.md`, F-006 in
+  `.living/findings/color-phenotype-metabolomics.md`, and both `ANALYSIS_MANIFEST.md`
+  entries to reflect this.
+- **secreted_products/sirius_annotation** (117 spectra): this one had actually
+  succeeded earlier (landed on a CPU-compatible node before the AOT fix existed) --
+  **79/117 formula IDs, 72 structure-DB hits, 75 CANOPUS compound-class calls**,
+  dominated by oligopeptides/small peptides/sesquiterpenoids/fatty esters. This
+  multi-month-blocked analysis (login → CLI version → chaining order → AOT cache, four
+  separate environment issues) is now genuinely complete. Manifest updated.
+
+**Caution logged twice this thread**: repeated live `sirius` CLI testing against the
+shared workspace broke the login twice during debugging (both times my own mistake,
+flagged directly to the user each time). Documented in `.living/learnings.md` as a real
+concurrency hazard, not a one-off — future SIRIUS debugging on this cluster should use
+`--help` only, or single isolated invocations.
+
+**Committed:** all of this session's SIRIUS-thread changes (docs, findings, manifest,
+fixed scripts) through the successful runs. Push still blocked by the SSH issue noted
+earlier in this file — several commits remain local-only on `main`.
