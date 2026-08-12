@@ -213,3 +213,35 @@ already-working 5.8.1 login does not carry over to 6.3.12 -- a fresh `sirius log
 required under the new module before rerunning either job.
 **Tags**: sirius, tooling, environment, hpcc, module, api-version, csi-fingerid
 **mitigation_type**: ambient-awareness
+
+### [2026-08-11] SIRIUS 6.x restructured its CLI subcommand chain: `structures` now depends on `canopus`, not the other way around
+
+**Category**: tooling / environment
+**What happened**: After switching to `sirius/6.3.12` (see the prior 5.8.1-vs-6.3.12
+learning), the existing pipeline command (`formula ... fingerprint structure canopus
+write-summaries`, unchanged since the SIRIUS 5.x era) failed immediately with
+`picocli.CommandLine$UnmatchedArgumentException: Unmatched argument at index N:
+'structure'`. Checking each subcommand's own `--help` (`sirius formula --help`,
+`sirius fingerprint --help`, `sirius canopus --help`) revealed the valid chain
+changed: `structures` (also accepts `structure-db-search`/`structure` as aliases,
+but only in the right position) is listed as a child `Command:` of `canopus`, not of
+`fingerprint` -- the correct order in 6.x is `formula -> fingerprint -> canopus ->
+structures -> write-summaries`, not the 5.x order (`formula -> fingerprint ->
+structure -> canopus -> write-summaries`).
+**Why it matters**: A parse-time `UnmatchedArgumentException` on a subcommand name
+that clearly exists (confirmed via `--help`) usually means a *chaining order*
+problem, not a missing/renamed subcommand -- worth checking each subcommand's own
+`Commands:` section in its `--help` output before assuming the flag/subcommand was
+removed.
+**Caution for next time**: diagnosing this involved several rapid, live `sirius`
+CLI invocations against the shared `~/.sirius-6.3` workspace in quick succession;
+this appears to have raced on the auth/refresh-token file and broke the just-confirmed
+login (`sirius login --show` went from showing an active subscription to "Not logged
+in" with no login command run in between). Prefer `--help` (no auth touched) over
+live dry-runs when debugging CLI syntax against a shared, authenticated workspace.
+**Resolution**: Fixed the subcommand order in all 4 copies of the pipeline command
+(`analysis/{secreted_products,pathway_targeted_association}/sirius_annotation/scripts/{02_run_sirius.sh,03_sirius.sbatch}`
+-- the interactive and sbatch variants in both analyses). Login needs to be redone
+before either job can be resubmitted.
+**Tags**: sirius, tooling, environment, cli, api-version, csi-fingerid, canopus
+**mitigation_type**: ambient-awareness
