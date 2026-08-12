@@ -1,0 +1,20 @@
+{
+  "track": "cell",
+  "n_cell_track_strains": 264,
+  "n_rodeo_met_strains": 251,
+  "n_common_strains": 241,
+  "n_permutations": 5000,
+  "rng_seed": 20260811,
+  "correlations": {
+    "PLS": {
+      "rho": 0.07705242530210216,
+      "parametric_p": 0.23336761965659403,
+      "permutation_p": 0.23975204959008198
+    },
+    "RandomForest": {
+      "rho": 0.05015170755602443,
+      "parametric_p": 0.4383373855165612,
+      "permutation_p": 0.4375124975004999
+    }
+  }
+}

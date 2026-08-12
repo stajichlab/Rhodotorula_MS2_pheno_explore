@@ -1,0 +1,14 @@
+{
+  "cell": {
+    "n_permutations": 5000,
+    "n_candidates_tested": 25,
+    "n_candidates_perm_significant_p05": 25,
+    "rng_seed": 20260811
+  },
+  "supernatant": {
+    "n_permutations": 5000,
+    "n_candidates_tested": 25,
+    "n_candidates_perm_significant_p05": 25,
+    "rng_seed": 20260811
+  }
+}

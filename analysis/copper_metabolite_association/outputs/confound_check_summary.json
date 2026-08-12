@@ -1,0 +1,33 @@
+{
+  "cell": {
+    "n": 264,
+    "species": {
+      "kruskal_h": 61.8815149116017,
+      "kruskal_p": 5.808730568557832e-10,
+      "n_groups_tested": 10,
+      "n_groups_excluded_small": 7
+    },
+    "Library Plate": {
+      "kruskal_h": 21.185716931821048,
+      "kruskal_p": 9.632842554857537e-05,
+      "n_groups_tested": 4,
+      "n_groups_excluded_small": 0
+    }
+  },
+  "supernatant": {
+    "n": 264,
+    "species": {
+      "kruskal_h": 61.8815149116017,
+      "kruskal_p": 5.808730568557832e-10,
+      "n_groups_tested": 10,
+      "n_groups_excluded_small": 7
+    },
+    "Library Plate": {
+      "kruskal_h": null,
+      "kruskal_p": null,
+      "n_groups_tested": 1,
+      "n_groups_excluded_small": 0,
+      "note": "constant or too few groups for this track -- excluded as a covariate"
+    }
+  }
+}

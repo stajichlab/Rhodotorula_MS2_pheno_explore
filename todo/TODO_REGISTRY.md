@@ -29,6 +29,7 @@ All future work items, ideas, and planned improvements for this project are trac
 | Identify uniquely & highly secreted products → candidate genes | high | in-progress | analysis | 2026-07-02 | Jason Stajich | [identify-secreted-products-and-candidate-genes.md](identify-secreted-products-and-candidate-genes.md) |
 | Genome screen: antiSMASH + OrthoFinder + PA/metabolite-GWAS for secreted candidates | high | open | analysis | 2026-07-02 | Jason Stajich | — |
 | SIRIUS/GNPS structural annotation of top uniquely-secreted MS2 spectra | high | open | analysis | 2026-07-02 | Jason Stajich | — |
-| Relate copper-AUC phenotype (`rhodotorula_auc_copper`) to metabolite composition | high | open | analysis | 2026-08-11 | Jason Stajich | — |
+| Relate copper-AUC phenotype (`rhodotorula_auc_copper`) to metabolite composition | high | complete | analysis | 2026-08-11 | Jason Stajich | [../analysis/copper_metabolite_association/COPPER_METABOLITE_ASSOCIATION.md](../analysis/copper_metabolite_association/COPPER_METABOLITE_ASSOCIATION.md) |
+| Cross-repo: link copper-AUC↔metabolite hits (once found) to Rhodotorula_Rodeo's secreted-protein/metal-resistance predictions | medium | complete | analysis | 2026-08-11 | Jason Stajich | [../analysis/copper_metabolite_association/COPPER_METABOLITE_ASSOCIATION.md](../analysis/copper_metabolite_association/COPPER_METABOLITE_ASSOCIATION.md) |
 
 <!-- Add new entries above this line -->

@@ -1,0 +1,87 @@
+dataset_name: rhodotorula_auc_copper
+description: >
+  Copper stress-response phenotype for Rhodotorula strains, one row per strain/isolate.
+  mean_auc_rate summarizes the area under the growth curve under copper challenge
+  (higher = more copper-tolerant/faster growth under copper stress). Join keys
+  MS2_SAMPLE_Cell / MS2_SAMPLE_Supernatant link each row to the C_*/SUP_* sample
+  columns in the MS2 aligned-feature table (Rhodotorula_MS2_aligned_features_ms2.csv.gz),
+  intended for a future metabolite-composition ~ copper-sensitivity association analysis.
+format: CSV (gzip-compressed)
+
+columns:
+  - name: SAMPLE_NAME
+    type: str
+    description: Strain/isolate label as recorded by the source lab. Not a unique key — see notes.
+    nullable: false
+    notes: >
+      One value (TFCN_17-332M-1) appears twice, mapped to the same MS2 sample pair
+      (C_190/SUP_190) but with two different mean_auc_rate and Strain ID values.
+      Unresolved as of ingestion; both rows for C_190/SUP_190 are excluded downstream.
+
+  - name: SPECIES
+    type: categorical
+    description: Species assignment for the isolate.
+    nullable: false
+    values:
+      - Rhodotorula mucilaginosa
+      - Rhodotorula paludigena
+      - Rhodotorula toruloides
+      - Rhodotorula dairenensis
+      - Rhodotorula diobovata
+      - (12 additional species, 275 rows total, R. mucilaginosa dominant at 209/275)
+    notes: >
+      17 unique species values total; heavily imbalanced toward R. mucilaginosa.
+
+  - name: mean_auc_rate
+    type: float
+    description: >
+      Mean area-under-curve growth rate under copper stress challenge; the copper
+      sensitivity/resistance phenotype value for this dataset.
+    units: AUC (assay-specific; unit definition not yet confirmed with source — see provenance.md)
+    nullable: false
+    notes: >
+      Observed range 0.806–29.835, mean 22.23, median 23.20, population sd 4.12 (n=275).
+
+  - name: MS2_SAMPLE_Cell
+    type: str
+    description: >
+      Join key to the C_* sample columns in Rhodotorula_MS2_aligned_features_ms2.csv.gz
+      (cell-fraction metabolomics).
+    nullable: false
+    notes: >
+      Literal value "No MS2 Data" for 2 rows (TFCN_122C-2, TFCN_138A-1) indicates no
+      metabolomics counterpart exists for that strain — exclude from any join.
+
+  - name: MS2_SAMPLE_Supernatant
+    type: str
+    description: >
+      Join key to the SUP_* sample columns in Rhodotorula_MS2_aligned_features_ms2.csv.gz
+      (supernatant/secretome metabolomics).
+    nullable: false
+    notes: >
+      Literal value "No MS2 Data" for 2 rows, same strains as MS2_SAMPLE_Cell.
+
+  - name: Location
+    type: str
+    description: Free-text isolation location/geographic origin of the strain.
+    nullable: true
+    notes: >
+      70/275 (25.5%) missing.
+
+  - name: Medium
+    type: str
+    description: Growth medium used for the copper assay.
+    nullable: true
+    notes: >
+      Effectively empty — only 1/275 rows populated. Do not rely on this column;
+      confirm assay medium with the data source before use.
+
+  - name: Strain ID
+    type: int
+    description: Numeric strain identifier.
+    nullable: false
+    notes: >
+      All 275 values are individually unique, but see SAMPLE_NAME notes — the
+      TFCN_17-332M-1 duplicate assigns two different Strain ID values (190, 304)
+      to the same MS2_SAMPLE_Cell/Supernatant pair (C_190/SUP_190), which is the
+      actual conflict (not the Strain ID column itself).

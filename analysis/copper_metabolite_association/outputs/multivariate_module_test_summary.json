@@ -1,0 +1,38 @@
+{
+  "cell": {
+    "n_samples": 264,
+    "n_features_used": 7341,
+    "n_components_grid": [
+      2,
+      5,
+      10
+    ],
+    "n_splits": 4,
+    "n_permutations": 300,
+    "observed_best_cv_r2": -0.049614587916206904,
+    "observed_best_n_components": 10,
+    "null_r2_mean": -0.21710818091349968,
+    "null_r2_2p5": -0.37857211837242466,
+    "null_r2_97p5": -0.05808966361032495,
+    "permutation_pvalue": 0.016611295681063124,
+    "rng_seed": 20260811
+  },
+  "supernatant": {
+    "n_samples": 264,
+    "n_features_used": 7333,
+    "n_components_grid": [
+      2,
+      5,
+      10
+    ],
+    "n_splits": 4,
+    "n_permutations": 300,
+    "observed_best_cv_r2": -0.06727014371029635,
+    "observed_best_n_components": 10,
+    "null_r2_mean": -0.22574518585279074,
+    "null_r2_2p5": -0.4100807500839361,
+    "null_r2_97p5": -0.07363130113458882,
+    "permutation_pvalue": 0.019933554817275746,
+    "rng_seed": 20260811
+  }
+}

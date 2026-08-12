@@ -305,3 +305,30 @@ concurrency hazard with this tool's auth token handling. Going forward: test wit
 commands against the same authenticated workspace while debugging.
 **Tags**: sirius, tooling, environment, hpcc, jvm, aot, cpu-compatibility, carotenoid, torularhodin, formula-assignment
 **mitigation_type**: ambient-awareness
+
+### [2026-08-11] `Library Plate` in `phase1_phenotype_data.csv.gz` is constant (=1.0) for every SUP_* sample, project-wide
+
+**Category**: data-quality
+**What happened**: Building `analysis/copper_metabolite_association/scripts/02_confound_check.py`,
+a Kruskal-Wallis test of `Library Plate` crashed with "fewer than 2 groups" for the
+supernatant track. Investigation (checking the *full* `phase1_phenotype_data.csv.gz`,
+not just this analysis's 264-row subset) confirmed all 295/295 `SUP_*` rows in the
+entire project have `Library Plate = 1.0`, while `C_*` rows are properly spread across
+4 plates (1-4, n=50-81 each, 23 NaN). This is the same shape of gap as the earlier
+`Species` column finding (`.living/learnings.md`, 2026-07-02: `Species` is NaN for
+~55% of rows, almost all SUP_*) — plate/batch metadata appears to have only been
+tracked for the cell-pellet processing batch, not supernatant.
+**Why it matters**: Any future analysis that includes `Library Plate` as a covariate
+for a supernatant-only or C/SUP-pooled model needs to know this column carries zero
+information for `SUP_*` samples specifically -- including it as a covariate for a
+supernatant-only design is not merely uninformative, it makes the design matrix
+column constant/degenerate (breaks `pd.get_dummies(..., drop_first=True)` producing
+a rank-deficient design, or in a pooled C/SUP model just adds no correction for that
+half of the rows).
+**Resolution**: `02_confound_check.py` was rewritten to detect and report a
+covariate with <2 usable groups per track as "constant/unusable" rather than crash;
+`03_corrected_correlation.py` and downstream scripts drop `Library Plate` from the
+supernatant track's covariate list entirely (cell track keeps it, where it is a real,
+significant confound, p=9.6e-5).
+**Tags**: metabolomics, data-quality, library-plate, metadata, rhodotorula, sup-samples, confound
+**mitigation_type**: ambient-awareness

@@ -1,0 +1,22 @@
+{
+  "cell": {
+    "n_species_splittable": 7,
+    "n_species_total": 17,
+    "n_train_rows": 216,
+    "n_test_rows": 48,
+    "spearman_calibration_train_vs_test": -0.22555892382091763,
+    "top_hit_replication_rate": 0.0,
+    "n_top_hits_tested": 25,
+    "n_top_hits_replicated": 0
+  },
+  "supernatant": {
+    "n_species_splittable": 7,
+    "n_species_total": 17,
+    "n_train_rows": 216,
+    "n_test_rows": 48,
+    "spearman_calibration_train_vs_test": 0.031476361839107944,
+    "top_hit_replication_rate": 0.0,
+    "n_top_hits_tested": 25,
+    "n_top_hits_replicated": 0
+  }
+}
