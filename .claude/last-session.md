@@ -104,3 +104,101 @@ lowering the detection floor below ρ≈0.34 — either bring in phenotype repli
 switch to the mixed-effects model already documented in the analysis doc, or restrict
 to a small pathway-motivated feature set to cut the multiple-testing burden that
 pushed the floor up to 0.34.
+
+**Status check (end of this thread):** all of this session's own work is committed
+(local `main`, through the amended power-analysis commit; push still blocked by the
+SSH issue above). The only remaining uncommitted changes in the working tree
+(`.living/decisions.md`, `.living/learnings.md`, `DATA_DESCRIPTION.md`,
+`data/DATA_MANIFEST.md`, `data/metadata/`, `todo/TODO_REGISTRY.md`,
+`input_data/Rhodotorula_AUC_copper.20260811.csv.gz`) all belong to the concurrent
+copper-AUC ingestion session described above, not to this one — intentionally left
+untouched/uncommitted here since that session flagged unresolved data-quality issues
+(the `TFCN_17-332M-1` / `C_190`/`SUP_190` conflict) pending human review before those
+files should be committed. Nothing further to log for the power-analysis work itself.
+
+---
+
+## Copper-AUC ↔ metabolite association: work plan (planning only, no files changed)
+
+Follow-up in the copper-AUC ingestion thread: outlined (in chat, not yet written to a
+doc/script) a work plan for `analysis/copper_metabolite_association/` (new folder, not
+yet created), explicitly designed to reuse the color-phenotype pipeline's now-validated
+methodology and avoid repeating its mistakes:
+
+1. **Prerequisites/blockers**: resolve the `TFCN_17-332M-1`/`C_190`/`SUP_190` conflict
+   with Christian Ona; verify `MS2_SAMPLE_Cell`/`Supernatant` ID overlap with the actual
+   feature table (not yet checked); decide whether to test cell (`C_*`) and supernatant
+   (`SUP_*`) fractions in parallel or sequentially — asked the user, not yet answered.
+2. **Steps**: `01_prepare_data` (reuse existing species/strain-ID merge logic) →
+   confound check (species/plate/fraction on `mean_auc_rate` itself) →
+   `02_corrected_correlation` (joint rank-space partial-Spearman + BH-FDR) →
+   **power analysis moved to step 3, run early** (explicit lesson pulled from the
+   concurrent session's finding that the color analysis's ρ≈0.34 detection floor,
+   discovered only after FDR/permutation/holdout work, recalibrated its whole null-result
+   narrative; copper has a smaller usable n=271 so the floor is expected to be worse) →
+   permutation null → species-stratified/mucilaginosa-only holdout → PLS + Random Forest
+   multivariate module tests (hyperparameter selection inside the permutation null, per
+   the nested-design fix already validated in this repo).
+3. No code, docs, or `.living/` entries were created for this plan yet — it is a proposal
+   pending the user's fraction-scope answer and prerequisite resolution.
+
+**Follow-up (fraction scope resolved + secretome-linkage question)**: user confirmed
+cell (`C_*`) and supernatant (`SUP_*`) fractions run as **parallel** tracks, not
+sequential — logged as a decision in `.living/decisions.md`
+("Copper-AUC metabolite association will test cell and supernatant fractions as
+parallel tracks, not sequentially"). User also asked whether the copper/color
+metabolite data can be connected to genome-derived secreted-protein predictions
+(a separate dataset they have, not yet in the repo). Answered: yes, feasible, and
+overlaps with two things already in this repo — the open TODO "Genome screen:
+antiSMASH + OrthoFinder + PA/metabolite-GWAS for secreted candidates" and the
+`secreted_products` analysis (130 uniquely-secreted MS2 features, SIRIUS structural
+annotation in progress). Asked the user two clarifying questions (data location/format;
+per-gene vs. per-species/strain aggregation level) — answered: user will provide a file,
+predictions are **per-gene calls**, so they'll need aggregation to species/strain level
+before joining to metabolite/phenotype tables. No file has been handed off yet; ingestion
+and the aggregation-scheme design are blocked on seeing its actual columns. No files were
+changed by this turn beyond the one decision-log entry above; the concurrent session
+continued its own work in parallel (`analysis/pathway_targeted_association/`,
+`reference_material/pigment_pathway_targets/` — untracked, not reviewed here, belongs to
+that session).
+
+---
+
+## Concurrent session note (pathway-targeted analysis — completed, committed)
+
+Following up on the power-analysis thread above: built
+`analysis/pathway_targeted_association/` in response to the user's request for a
+pathway-focused analysis to improve detection power (F-005 showed the untargeted scan
+can't detect true ρ<0.34).
+
+**What was built:** a chemistry-motivated candidate compound list (carotenoid pathway +
+DOPA-melanin precursors + mycosporine-like amino acids, per the user's scope choice;
+masses computed from molecular formulas, not hand-typed), matched by 15 ppm m/z + adduct
+against the MS2 feature table, then run through the same corrected-correlation +
+permutation + holdout pipeline as the parent analysis, but on ~9 tests instead of 22,023.
+
+**Key methodological catch:** matching only the Phase-1-filtered 7,341 features (the
+"obvious" choice, matching every other script's convention) found almost nothing.
+Matching the **full 16,332-row raw table** found 3 candidates, including two torularhodin
+matches that Phase 1's blanket prevalence filter had silently discarded — exactly what a
+strain-specific pigment looks like. Documented as a decision entry and in
+`01_match_targets.py`'s docstring so it isn't rediscovered the hard way.
+
+**Result:** torularhodin (raw_position=12635) correlates with b* (yellow-blue) at
+ρ=0.218, q=4×10⁻⁶, strain-block permutation p=0.0002. Holdout replication: train ρ=0.199
+vs. test ρ=0.197 — nearly identical effect size; the binary "did not replicate" call
+(test p=0.060) is a small-holdout-sample power issue, not a sign/magnitude flip like
+every candidate from the untargeted scan's holdout checks. **This is the strongest,
+best-replicated lead in this project's phenotype-metabolite work** — but still needs
+MS2/spectral confirmation before being treated as an identification (see the analysis
+doc's Next Steps: SIRIUS once login is fixed, spot-check which strains carry it, resolve
+why a second, tighter-mass-match torularhodin candidate shows no correlation at all).
+
+**Logged:** F-006 in `.living/findings/color-phenotype-metabolomics.md`;
+`analysis/ANALYSIS_MANIFEST.md` and `reference_material/REFERENCE_MANIFEST.md` updated.
+
+**Committed:** yes (commit `4172559` on `main`), but push is still blocked — same missing
+SSH key in this shell. `.living/decisions.md` required a careful manual split to commit
+only this session's new entry without touching the concurrent session's still-uncommitted
+one (verified byte-identical restoration afterward via diff). All concurrent-session files
+remain exactly as that session left them, untouched.
