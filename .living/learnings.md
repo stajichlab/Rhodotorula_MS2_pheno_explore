@@ -184,3 +184,32 @@ pipeline already does (`01_prepare_data.py`) on every future phenotype ingestion
 joins via `MS2_SAMPLE_Cell`/`MS2_SAMPLE_Supernatant`.
 **Tags**: metabolomics, data-quality, metadata, rhodotorula, join, duplicate-records, copper
 **mitigation_type**: process-fix
+
+### [2026-08-11] SIRIUS 5.8.1's CSI:FingerID/CANOPUS calls fail with a 404 loop, not a login error -- the installed CLI is a major version behind the web API
+
+**Category**: tooling / environment
+**What happened**: After the user fixed the `sirius login` issue (confirmed working via
+`sirius login --show`, active academic subscription), both SIRIUS jobs (pathway-targeted
+candidates and the secreted_products rerun) hung in an infinite exponential-backoff retry
+loop: `WARNING: Request to Server failed! ... Bad HTTP Response Code: 404 ... GET:
+https://academic.csi.bright-giant.com/v2.6/api/fingerid/data?predictor=1`. This looks
+superficially like another login problem but isn't -- it's a **client/server API version
+mismatch**: the only `module load sirius` available (5.8.1) is calling an old
+`/v2.6/api/...` path that the current Bright Giant server no longer serves. A web search
+confirmed the current upstream release is SIRIUS 6.3.12 (5.8.1 -> 6.3.12 is a major
+version jump). Both jobs were killed (`scancel`) rather than left to burn their 2h/20h
+walltime allocations on a loop that would never succeed.
+**Why it matters**: A 404 in SIRIUS's web-service calls after login is confirmed working
+should prompt checking the installed CLI version against the current upstream release,
+not more login debugging -- the error message doesn't distinguish the two failure modes.
+**Resolution**: User installed `sirius/6.3.12` as a new module. Hit two follow-on snags,
+both resolved: (1) the module file initially pointed at
+`/opt/linux/rocky/8.x/x86_64/pkgs/sirius/6.3.12/bin`, but the package was actually
+unpacked under a sibling `6.0/` directory -- a module-file path bug, not a broken
+install (confirmed the `6.0/bin/sirius --version` binary correctly self-reports as
+"SIRIUS 6.3.12"); user fixed the module file's path. (2) SIRIUS keeps a
+**separate workspace per major version** (`~/.sirius-5.8` vs. `~/.sirius-6.3`), so the
+already-working 5.8.1 login does not carry over to 6.3.12 -- a fresh `sirius login` is
+required under the new module before rerunning either job.
+**Tags**: sirius, tooling, environment, hpcc, module, api-version, csi-fingerid
+**mitigation_type**: ambient-awareness

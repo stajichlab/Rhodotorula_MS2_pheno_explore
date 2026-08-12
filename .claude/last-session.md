@@ -233,3 +233,26 @@ reviewed yet.
 
 **Decision logged:** `.living/decisions.md` — why the pathway-targeted SIRIUS folder
 mirrors but doesn't merge with secreted_products', and why the walltime was bumped.
+
+---
+
+## Concurrent session update: both SIRIUS jobs failed with a version-mismatch 404, not a login problem
+
+Both submitted jobs (27392492, 27392493) hung in an infinite retry loop hitting
+`404` on `GET .../v2.6/api/fingerid/data` -- looked like another login issue but
+wasn't. Diagnosed via `sirius login --show` (confirmed still logged in) plus a web
+search confirming the module-loaded `sirius/5.8.1` is a major version behind current
+upstream (6.3.12) -- the old client is calling an API path the server no longer
+serves. Both jobs killed with `scancel` rather than burning their walltime allocation.
+
+User installed `sirius/6.3.12` as a new module; hit two follow-on snags, both now
+fixed by the user: (1) the module file initially pointed at a `6.3.12/` package path
+that didn't exist (package was actually under a sibling `6.0/` dir) -- fixed by the
+user; (2) SIRIUS keeps a separate auth workspace per major version
+(`~/.sirius-5.8` vs `~/.sirius-6.3`), so a fresh `sirius login` is needed under the
+new module before rerunning. **Logged as a learning in `.living/learnings.md`.**
+
+**Status:** waiting on the user to complete `sirius login` under `sirius/6.3.12`.
+Once confirmed (`sirius login --show`), resubmit both jobs unchanged (their `module
+load sirius` line already resolves to 6.3.12 by default now, verified). No script
+changes needed. No results yet -- neither job produced usable output.
