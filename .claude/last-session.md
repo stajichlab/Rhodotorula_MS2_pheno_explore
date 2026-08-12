@@ -532,3 +532,129 @@ concurrency hazard, not a one-off — future SIRIUS debugging on this cluster sh
 **Committed:** all of this session's SIRIUS-thread changes (docs, findings, manifest,
 fixed scripts) through the successful runs. Push still blocked by the SSH issue noted
 earlier in this file — several commits remain local-only on `main`.
+
+---
+
+## copper_metabolite_association v1 complete (this thread, final update)
+
+The backgrounded Random Forest run (`08_random_forest_module_test.py`, N_PERM=200,
+both tracks) completed (~35 min). **Result: only partially corroborates the PLS
+finding.** Cell track: CV R²=0.0005, permutation p=0.030 (significant, agrees with
+PLS's cell p=0.017). Supernatant track: CV R²=-0.0288, permutation p=0.199 (NOT
+significant — falls inside the null's own 95% range), unlike PLS which was
+significant there too (p=0.020).
+
+**Net read, logged as F-005 in `.living/findings/copper-metabolite-association.md`:**
+tentative evidence for a weak, diffuse joint metabolite signal in the **cell
+(intracellular)** fraction specifically — corroborated by two independent model
+classes (PLS + RF both p<0.05) — while the supernatant multivariate result is
+single-model-class only (PLS significant, RF not) and should be treated with more
+skepticism. Neither is practically predictive (CV R²≈0) or identifies any single
+feature; this is a "there might be something diffuse here" signal, not a discovery.
+
+**Finalized this session:**
+- `COPPER_METABOLITE_ASSOCIATION.md` — status changed to complete (v1); PLS+RF
+  tables and the nuanced cell-vs-supernatant headline written up.
+- `.living/findings/copper-metabolite-association.md` — F-005 added (RF
+  corroboration nuance); F-004 cross-referenced to it.
+- `.living/findings/FINDINGS_REGISTRY.md` — F-005 row added.
+- `analysis/ANALYSIS_MANIFEST.md` — **re-added** the `copper_metabolite_association`
+  entry (a concurrent session's full-file rewrite of this manifest had silently
+  dropped it between when it was first written and now — no conflict/error, just a
+  last-writer-wins overwrite; worth knowing this can happen when multiple sessions
+  touch the same manifest file across turns).
+- `todo/TODO_REGISTRY.md` — copper-metabolite item moved from in-progress to
+  complete.
+
+**Not yet done (tracked in the separate, still-open TODO item "Cross-repo: link
+copper-AUC↔metabolite hits..."):** the actual cross-reference between this
+analysis's cell-track signal and `Rhodotorula_Rodeo`'s genome-side methionine
+finding (F-002 there) — do the same strains drive both? Not attempted this
+session. TFCN_17-332M-1 reconciliation remains deferred by user request.
+
+**Status check:** nothing committed this session. All changes are uncommitted
+working-tree edits in `analysis/copper_metabolite_association/` (new, 8 scripts +
+outputs for both tracks), `analysis/ANALYSIS_MANIFEST.md`, `todo/TODO_REGISTRY.md`,
+`.living/{decisions,learnings}.md`,
+`.living/findings/{FINDINGS_REGISTRY,copper-metabolite-association}.md`. No
+background jobs remain active as of this note.
+
+---
+
+## Cross-repo linkage done: script 09, closes the loop (this thread, final)
+
+User said "okay take that on next" -- go ahead with the cross-repo cross-reference
+flagged as the next step. Built
+`scripts/09_cross_reference_genome_signal.py`: refits the cell track's winning PLS
+(n_components=10) and Random Forest (max_depth=None) models to get an **out-of-fold
+predicted copper-AUC score per strain** (not just the aggregate R² from 07/08),
+then correlates that score against `Rhodotorula_Rodeo`'s genome-side species-corrected
+Met-usage residual, for the 241 strains present in both datasets.
+
+**Hit one real bug during development**: joining on the cell track's own `strain_id`
+column (which is `ATTRIBUTE_ID_1` from the extended metadata) only matched 98/264
+strains against Rodeo's `LOCUSTAG` -- turned out `strain_id` drops the `TFCN_`/`NRRL_`
+prefix that `LOCUSTAG` keeps (e.g. `strain_id="100D-1"` vs `LOCUSTAG="TFCN100D1"`).
+Switched to joining on `SAMPLE_NAME` instead (the raw copper-file strain name, still
+carried in `sample_design.csv`), which recovered 241/264 -- matches the coverage
+already established when Rodeo's own `01b_build_continuous_cohort.py` joined the same
+copper file. A sanity check (independently-loaded `mean_auc_rate` must agree exactly
+between the two repos' copies) confirmed the join is correct.
+
+**Result: null.** PLS out-of-fold prediction vs. genome Met residual: ρ=+0.077,
+permutation p=0.240. Random Forest: ρ=+0.050, permutation p=0.438. n=241. Logged as
+F-006 in `.living/findings/copper-metabolite-association.md`: the weak cell-fraction
+metabolite signal (F-004/F-005) and the weak genome methionine signal (Rodeo F-002)
+are **not** carried by the same strains -- two independent findings, not one shared
+biology. This is the actual answer to the user's original question from earlier in
+this thread ("is it possible to connect the metabolite data to secreted-protein
+predictions") -- a clean negative for this specific pairing, not a positive discovery,
+but a real answer rather than an unfinished thread.
+
+**Finalized:** `COPPER_METABOLITE_ASSOCIATION.md` (new cross-reference section,
+replaced the old "Next steps" placeholder), `.living/decisions.md` (1 new entry on
+the out-of-fold-prediction method and the join-key gotcha), `.living/findings/`
+(F-006 + registry row), `analysis/ANALYSIS_MANIFEST.md` (cross-repo check section
+added to the copper entry), `run.sh` (step 9 added, with a note that it depends on
+Rodeo's `met_vs_copper_auc_data.csv` already existing), `todo/TODO_REGISTRY.md`
+(the cross-repo TODO moved to complete). Script lints clean.
+
+**This closes out the entire copper-AUC thread from this session**: ingestion →
+cross-repo metal_resistance upgrade → plotting → in-repo metabolite association →
+cross-repo signal comparison. Nothing left open except the deferred
+TFCN_17-332M-1 reconciliation and lower-priority exploratory ideas noted in the
+findings file's "Open Questions" sections. Nothing committed.
+
+---
+
+## Concurrent session: broader SIRIUS profiling submitted, session closing overnight
+
+User asked to broaden SIRIUS profiling beyond F-006's 3-candidate search (~200-500
+features). Widening the pathway target list alone (37 compounds across
+carotenoid/sterol/melanin/MAA/flavin classes, 30 ppm) only reached 32 matched
+features — reaching 200-500 that way would need either many more compound classes or
+a much looser ppm tolerance (which would reintroduce the false-positive-match risk
+F-006 just demonstrated). Combined that 32 with the top-80-by-nominal-p features from
+each of the three already-completed corrected statistical scans (color-phenotype
+pooled, copper-AUC cell, copper-AUC supernatant) for **263 total features**
+(`analysis/pathway_targeted_association/sirius_annotation_broad/`,
+`target_provenance.csv` records which source(s) each came from). Logged as a decision
+in `.living/decisions.md`.
+
+**Session closing for the day** (user's request) while this runs. The MGF export
+(263 mzML scans) was first tried interactively and had to be killed mid-run when the
+session needed to close — nothing was written yet (confirmed: 0-byte output, no
+summary CSV), so **converted it into a single combined sbatch job**
+(`scripts/03_export_and_run.sbatch`: MGF export via python3.12, then SIRIUS
+formula→fingerprint→canopus→structures→write-summaries with the AOT/chaining fixes
+already baked in) so both steps persist on the cluster independent of this
+interactive session. **Submitted as job 27396079, 10h walltime, running as of this
+note.** Next session: check `squeue -j 27396079` / the job log
+(`sirius_broad_profiling-27396079.log`) first; if complete, review
+`outputs/sirius_project/*.tsv` and update F-006/ANALYSIS_MANIFEST.md/findings with
+what the 263 features actually are, cross-referencing `target_provenance.csv` to see
+which came from the pathway search vs. which statistical track(s).
+
+**Committed:** scripts and setup (target lists, matching scripts, sbatch job) —
+results not yet available, nothing to report on those until the job finishes. Push
+still blocked by the same SSH issue noted earlier in this file.

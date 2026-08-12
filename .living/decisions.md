@@ -231,3 +231,33 @@ convention (`analysis/<name>/sirius_annotation/`).
 running as of this entry; results not yet available -- will be logged as a finding once
 complete.
 **Tags**: sirius, metabolomics, carotenoid, torularhodin, slurm, tooling, methodology
+
+### [2026-08-11] Broader SIRIUS profiling combines a widened pathway search with top statistical hits, rather than loosening ppm tolerance to hit an arbitrary count
+
+**Context**: After F-006 showed the narrow 3-candidate pathway search's mass matches
+were false identifications, the user asked for SIRIUS profiling on a broader set
+(~200-500 features). Widening the pathway target list alone (37 compounds across
+carotenoid/sterol/melanin/MAA/flavin classes, 30 ppm instead of 15) only reached 32
+matched features -- reaching 200-500 that way would require either dozens more
+compound classes or a much looser ppm tolerance, the latter of which would reintroduce
+exactly the false-positive-match risk F-006 just demonstrated.
+**Decision**: Combined the widened pathway search (32 features,
+`scripts/04_match_targets_broad.py`) with the top-80-by-nominal-p features from each of
+the three already-completed corrected statistical scans (color-phenotype pooled,
+copper-AUC cell, copper-AUC supernatant; 231 unique features after union) into one
+263-feature SIRIUS profiling set (`sirius_annotation_broad/scripts/00_select_targets.py`).
+**Alternatives considered**: (a) loosen ppm further (e.g. 50-100 ppm) to hit the count
+purely via the pathway list -- rejected, dilutes the "chemistry-motivated" rationale
+into noise; (b) profile only the statistical hits, dropping the pathway angle --
+rejected, the pathway search is still a distinct and legitimate real question worth
+keeping separate/labeled.
+**Rationale**: Profiling the top statistical hits from already-validated (permutation +
+holdout-checked) scans tells us what SIRIUS thinks those specific features chemically
+are, independent of any pigment-pathway hypothesis -- directly useful regardless of
+what class they turn out to be, and doesn't require inventing more candidate compounds
+to reach a target count.
+**Consequences**: `sirius_annotation_broad/outputs/target_provenance.csv` records which
+source(s) each feature came from (a feature can appear in multiple tracks). MGF export
+for 263 spectra takes noticeably longer than the earlier 3- and 117-spectra runs;
+submitted as its own dedicated sbatch job (`sirius_broad_profiling`, 8 cores/32G/8h).
+**Tags**: sirius, metabolomics, targeted-analysis, methodology, carotenoid, statistics

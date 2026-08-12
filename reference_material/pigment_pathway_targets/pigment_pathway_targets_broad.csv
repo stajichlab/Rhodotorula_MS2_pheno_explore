@@ -1,0 +1,297 @@
+compound,formula,monoisotopic_mass,category,pathway_step,confidence,adduct,charge,expected_mz,notes
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+H]1+,1,545.50808,
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+Na]1+,1,567.49002,
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+K]1+,1,583.46396,
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+2H]2+,2,273.25768,
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+3H]3+,3,182.50754,
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M-H2O+H]1+,1,527.49751,
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+NH3+H]1+,1,562.53463,
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+ACN+H]1+,1,586.53463,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+H]1+,1,543.49243,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+Na]1+,1,565.47437,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+K]1+,1,581.44831,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+2H]2+,2,272.24985,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+3H]3+,3,181.83566,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M-H2O+H]1+,1,525.48186,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+NH3+H]1+,1,560.51898,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+ACN+H]1+,1,584.51898,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+H]1+,1,541.47678,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+Na]1+,1,563.45872,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+K]1+,1,579.43266,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+2H]2+,2,271.24203,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+3H]3+,3,181.16378,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M-H2O+H]1+,1,523.46621,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+NH3+H]1+,1,558.50333,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+ACN+H]1+,1,582.50333,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+H]1+,1,539.46113,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+Na]1+,1,561.44307,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+K]1+,1,577.41701,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+2H]2+,2,270.2342,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+3H]3+,3,180.49189,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M-H2O+H]1+,1,521.45056,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+NH3+H]1+,1,556.48768,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+ACN+H]1+,1,580.48768,
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+H]1+,1,537.44548,isomeric with gamma-/beta-carotene
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+Na]1+,1,559.42742,isomeric with gamma-/beta-carotene
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+K]1+,1,575.40136,isomeric with gamma-/beta-carotene
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+2H]2+,2,269.22638,isomeric with gamma-/beta-carotene
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+3H]3+,3,179.82001,isomeric with gamma-/beta-carotene
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M-H2O+H]1+,1,519.43491,isomeric with gamma-/beta-carotene
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+NH3+H]1+,1,554.47203,isomeric with gamma-/beta-carotene
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+ACN+H]1+,1,578.47203,isomeric with gamma-/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M+H]1+,1,537.44548,isomeric with lycopene/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M+Na]1+,1,559.42742,isomeric with lycopene/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M+K]1+,1,575.40136,isomeric with lycopene/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M+2H]2+,2,269.22638,isomeric with lycopene/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M+3H]3+,3,179.82001,isomeric with lycopene/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M-H2O+H]1+,1,519.43491,isomeric with lycopene/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M+NH3+H]1+,1,554.47203,isomeric with lycopene/beta-carotene
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization,high,[M+ACN+H]1+,1,578.47203,isomeric with lycopene/beta-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M+H]1+,1,537.44548,isomeric with lycopene/gamma-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M+Na]1+,1,559.42742,isomeric with lycopene/gamma-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M+K]1+,1,575.40136,isomeric with lycopene/gamma-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M+2H]2+,2,269.22638,isomeric with lycopene/gamma-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M+3H]3+,3,179.82001,isomeric with lycopene/gamma-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M-H2O+H]1+,1,519.43491,isomeric with lycopene/gamma-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M+NH3+H]1+,1,554.47203,isomeric with lycopene/gamma-carotene
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization,high,[M+ACN+H]1+,1,578.47203,isomeric with lycopene/gamma-carotene
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M+H]1+,1,535.42983,diagnostic Rhodotorula pigment
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M+Na]1+,1,557.41177,diagnostic Rhodotorula pigment
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M+K]1+,1,573.38571,diagnostic Rhodotorula pigment
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M+2H]2+,2,268.21855,diagnostic Rhodotorula pigment
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M+3H]3+,3,179.14813,diagnostic Rhodotorula pigment
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M-H2O+H]1+,1,517.41926,diagnostic Rhodotorula pigment
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M+NH3+H]1+,1,552.45638,diagnostic Rhodotorula pigment
+torulene,C40H54,534.42255,carotenoid,extra desaturation,high,[M+ACN+H]1+,1,576.45638,diagnostic Rhodotorula pigment
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M+H]1+,1,565.40401,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M+Na]1+,1,587.38595,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M+K]1+,1,603.35989,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M+2H]2+,2,283.20564,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M+3H]3+,3,189.13952,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M-H2O+H]1+,1,547.39344,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M+NH3+H]1+,1,582.43056,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation,high,[M+ACN+H]1+,1,606.43056,"diagnostic Rhodotorula pigment; refuted for raw_position 11564/12635 by SIRIUS, still valid to search elsewhere"
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M+H]1+,1,397.34649,
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M+Na]1+,1,419.32844,
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M+K]1+,1,435.30237,
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M+2H]2+,2,199.17688,
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M+3H]3+,3,133.12035,
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M-H2O+H]1+,1,379.33593,
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M+NH3+H]1+,1,414.37304,
+ergosterol,C28H44O1,396.33922,sterol,major fungal membrane sterol,high,[M+ACN+H]1+,1,438.37304,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M+H]1+,1,429.33632,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M+Na]1+,1,451.31827,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M+K]1+,1,467.2922,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M+2H]2+,2,215.1718,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M+3H]3+,3,143.78362,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M-H2O+H]1+,1,411.32576,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M+NH3+H]1+,1,446.36287,
+ergosterol_peroxide,C28H44O3,428.32905,sterol,oxidized ergosterol,medium,[M+ACN+H]1+,1,470.36287,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M+H]1+,1,385.34649,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M+Na]1+,1,407.32844,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M+K]1+,1,423.30237,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M+2H]2+,2,193.17688,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M+3H]3+,3,129.12035,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M-H2O+H]1+,1,367.33593,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M+NH3+H]1+,1,402.37304,
+zymosterol,C27H44O1,384.33922,sterol,ergosterol pathway intermediate,medium,[M+ACN+H]1+,1,426.37304,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M+H]1+,1,427.39344,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M+Na]1+,1,449.37539,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M+K]1+,1,465.34932,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M+2H]2+,2,214.20036,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M+3H]3+,3,143.136,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M-H2O+H]1+,1,409.38288,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M+NH3+H]1+,1,444.41999,
+lanosterol,C30H50O1,426.38617,sterol,ergosterol pathway intermediate,medium,[M+ACN+H]1+,1,468.41999,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M+H]1+,1,399.36214,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M+Na]1+,1,421.34409,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M+K]1+,1,437.31802,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M+2H]2+,2,200.18471,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M+3H]3+,3,133.79223,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M-H2O+H]1+,1,381.35158,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M+NH3+H]1+,1,416.38869,
+episterol,C28H46O1,398.35487,sterol,ergosterol pathway intermediate,medium,[M+ACN+H]1+,1,440.38869,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+H]1+,1,198.07608,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+Na]1+,1,220.05803,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+K]1+,1,236.03197,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+2H]2+,2,99.54168,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+3H]3+,3,66.69688,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M-H2O+H]1+,1,180.06552,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+NH3+H]1+,1,215.10263,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+ACN+H]1+,1,239.10263,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M+H]1+,1,150.05495,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M+Na]1+,1,172.0369,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M+K]1+,1,188.01084,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M+2H]2+,2,75.53112,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M+3H]3+,3,50.68984,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M-H2O+H]1+,1,132.04439,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M+NH3+H]1+,1,167.0815,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,DHI,medium,[M+ACN+H]1+,1,191.0815,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+H]1+,1,194.04478,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+Na]1+,1,216.02673,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+K]1+,1,232.00067,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+2H]2+,2,97.52603,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+3H]3+,3,65.35311,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M-H2O+H]1+,1,176.03422,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+NH3+H]1+,1,211.07133,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+ACN+H]1+,1,235.07133,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M+H]1+,1,169.04954,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M+Na]1+,1,191.03148,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M+K]1+,1,207.00542,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M+2H]2+,2,85.02841,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M+3H]3+,3,57.02136,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M-H2O+H]1+,1,151.03897,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M+NH3+H]1+,1,186.07608,
+homogentisic_acid,C8H8O4,168.04226,melanin_precursor,pyomelanin precursor (HGA pathway),medium,[M+ACN+H]1+,1,210.07608,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M+H]1+,1,201.03936,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M+Na]1+,1,223.02131,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M+K]1+,1,238.99525,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M+2H]2+,2,101.02332,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M+3H]3+,3,67.68464,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M-H2O+H]1+,1,183.0288,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M+NH3+H]1+,1,218.06591,
+4-maleylacetoacetate,C8H8O6,200.03209,melanin_precursor,HGA pathway intermediate,low,[M+ACN+H]1+,1,242.06591,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+H]1+,1,260.11286,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+Na]1+,1,282.09481,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+K]1+,1,298.06875,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+2H]2+,2,130.56007,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+3H]3+,3,87.37581,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M-H2O+H]1+,1,242.1023,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+NH3+H]1+,1,277.13941,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+ACN+H]1+,1,301.13941,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M+H]1+,1,360.15272,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M+Na]1+,1,382.13466,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M+K]1+,1,398.1086,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M+2H]2+,2,180.58,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M+3H]3+,3,120.72242,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M-H2O+H]1+,1,342.14215,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M+NH3+H]1+,1,377.17927,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine",low,[M+ACN+H]1+,1,401.17927,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M+H]1+,1,347.14489,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M+Na]1+,1,369.12684,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M+K]1+,1,385.10077,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M+2H]2+,2,174.07608,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M+3H]3+,3,116.38648,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M-H2O+H]1+,1,329.13433,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M+NH3+H]1+,1,364.17144,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine",low,[M+ACN+H]1+,1,388.17144,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+H]1+,1,245.1132,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+Na]1+,1,267.09514,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+K]1+,1,283.06908,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+2H]2+,2,123.06024,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+3H]3+,3,82.37592,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M-H2O+H]1+,1,227.10263,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+NH3+H]1+,1,262.13975,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+ACN+H]1+,1,286.13975,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M+H]1+,1,275.12376,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M+Na]1+,1,297.10571,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M+K]1+,1,313.07964,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M+2H]2+,2,138.06552,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M+3H]3+,3,92.37944,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M-H2O+H]1+,1,257.1132,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M+NH3+H]1+,1,292.15031,
+palythinol,C11H18N2O6,274.11649,maa,hydroxylated palythine,low,[M+ACN+H]1+,1,316.15031,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M+H]1+,1,301.13941,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M+Na]1+,1,323.12136,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M+K]1+,1,339.09529,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M+2H]2+,2,151.07334,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M+3H]3+,3,101.05132,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M-H2O+H]1+,1,283.12885,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M+NH3+H]1+,1,318.16596,
+asterina-330,C13H20N2O6,300.13214,maa,"MAA, alanine substituted",low,[M+ACN+H]1+,1,342.16596,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M+H]1+,1,301.13941,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M+Na]1+,1,323.12136,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M+K]1+,1,339.09529,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M+2H]2+,2,151.07334,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M+3H]3+,3,101.05132,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M-H2O+H]1+,1,283.12885,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M+NH3+H]1+,1,318.16596,
+usujirene,C13H20N2O6,300.13214,maa,"MAA, threonine-derived isomer",low,[M+ACN+H]1+,1,342.16596,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M+H]1+,1,306.11834,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M+Na]1+,1,328.10029,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M+K]1+,1,344.07422,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M+2H]2+,2,153.56281,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M+3H]3+,3,102.71097,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M-H2O+H]1+,1,288.10778,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M+NH3+H]1+,1,323.14489,
+mycosporine-serine,C12H19N1O8,305.11107,maa,"MAA core, serine-substituted",low,[M+ACN+H]1+,1,347.14489,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M+H]1+,1,377.14556,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M+Na]1+,1,399.12751,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M+K]1+,1,415.10144,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M+2H]2+,2,189.07642,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M+3H]3+,3,126.3867,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M-H2O+H]1+,1,359.135,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M+NH3+H]1+,1,394.17211,
+riboflavin,C17H20N4O6,376.13828,flavin,"vitamin B2, yellow pigment",medium,[M+ACN+H]1+,1,418.17211,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M+H]1+,1,457.11189,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M+Na]1+,1,479.09384,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M+K]1+,1,495.06777,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M+2H]2+,2,229.05958,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M+3H]3+,3,153.04215,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M-H2O+H]1+,1,439.10133,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M+NH3+H]1+,1,474.13844,
+FMN,C17H21N4O9P1,456.10462,flavin,flavin mononucleotide,medium,[M+ACN+H]1+,1,498.13844,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M+H]1+,1,786.16441,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M+Na]1+,1,808.14636,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M+K]1+,1,824.12029,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M+2H]2+,2,393.58584,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M+3H]3+,3,262.72632,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M-H2O+H]1+,1,768.15385,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M+NH3+H]1+,1,803.19096,
+FAD,C27H33N9O15P2,785.15714,flavin,flavin adenine dinucleotide,medium,[M+ACN+H]1+,1,827.19096,
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M+H]1+,1,551.42474,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M+Na]1+,1,573.40669,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M+K]1+,1,589.38062,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M+2H]2+,2,276.21601,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M+3H]3+,3,184.47977,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M-H2O+H]1+,1,533.41418,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M+NH3+H]1+,1,568.45129,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene,C40H54O1,550.41747,carotenoid,hypothetical hydroxylated torulene,low,[M+ACN+H]1+,1,592.45129,not a confirmed natural product; included only as an ester-formation scaffold
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M+H]1+,1,761.62311,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M+Na]1+,1,783.60505,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M+K]1+,1,799.57899,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M+2H]2+,2,381.31519,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M+3H]3+,3,254.54589,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M-H2O+H]1+,1,743.61254,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M+NH3+H]1+,1,778.64966,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C14:0(myristoyl)-ester,C54H80O2,760.61583,carotenoid,hypothetical xanthophyll ester,low,[M+ACN+H]1+,1,802.64966,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M+H]1+,1,789.65441,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M+Na]1+,1,811.63635,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M+K]1+,1,827.61029,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M+2H]2+,2,395.33084,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M+3H]3+,3,263.88965,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M-H2O+H]1+,1,771.64384,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M+NH3+H]1+,1,806.68096,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:0(palmitoyl)-ester,C56H84O2,788.64713,carotenoid,hypothetical xanthophyll ester,low,[M+ACN+H]1+,1,830.68096,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M+H]1+,1,787.63876,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M+Na]1+,1,809.6207,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M+K]1+,1,825.59464,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M+2H]2+,2,394.32302,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M+3H]3+,3,263.21777,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M-H2O+H]1+,1,769.62819,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M+NH3+H]1+,1,804.66531,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C16:1(palmitoleoyl)-ester,C56H82O2,786.63148,carotenoid,hypothetical xanthophyll ester,low,[M+ACN+H]1+,1,828.66531,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M+H]1+,1,817.68571,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M+Na]1+,1,839.66765,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M+K]1+,1,855.64159,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M+2H]2+,2,409.34649,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M+3H]3+,3,273.23342,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M-H2O+H]1+,1,799.67514,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M+NH3+H]1+,1,834.71226,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:0(stearoyl)-ester,C58H88O2,816.67843,carotenoid,hypothetical xanthophyll ester,low,[M+ACN+H]1+,1,858.71226,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M+H]1+,1,815.67006,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M+Na]1+,1,837.652,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M+K]1+,1,853.62594,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M+2H]2+,2,408.33867,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M+3H]3+,3,272.56154,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M-H2O+H]1+,1,797.65949,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M+NH3+H]1+,1,832.69661,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:1(oleoyl)-ester,C58H86O2,814.66278,carotenoid,hypothetical xanthophyll ester,low,[M+ACN+H]1+,1,856.69661,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M+H]1+,1,813.65441,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M+Na]1+,1,835.63635,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M+K]1+,1,851.61029,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M+2H]2+,2,407.33084,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M+3H]3+,3,271.88965,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M-H2O+H]1+,1,795.64384,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M+NH3+H]1+,1,830.68096,"speculative ester scaffold, not a confirmed natural product"
+hydroxy-torulene-C18:2(linoleoyl)-ester,C58H84O2,812.64713,carotenoid,hypothetical xanthophyll ester,low,[M+ACN+H]1+,1,854.68096,"speculative ester scaffold, not a confirmed natural product"
