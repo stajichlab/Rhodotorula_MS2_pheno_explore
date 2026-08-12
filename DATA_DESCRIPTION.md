@@ -65,6 +65,45 @@ Located: `input_data/`
 
 ---
 
+### 3. **Rhodotorula_AUC_copper.20260811.csv.gz** (29 KB compressed)
+**Source:** Copper stress-response growth curves; `mean_auc_rate` summarizes each strain's
+growth-curve area under the curve under copper challenge (higher = more copper-tolerant/faster
+growth under copper stress; not yet independently verified against the acquisition protocol —
+see `data/metadata/rhodotorula_auc_copper/provenance.md`).
+**Shape:** 275 rows × 8 columns
+
+**Key Columns:**
+
+| Column | Type | Example | Notes |
+|--------|------|---------|-------|
+| `SAMPLE_NAME` | String | "DBVPG_10075" | Strain/isolate label; not unique (see Known Issues) |
+| `SPECIES` | String | "Rhodotorula mucilaginosa" | 17 species represented; `R. mucilaginosa` dominates (209/275) |
+| `mean_auc_rate` | Float | 0.81–29.84 | Copper AUC phenotype value; mean 22.2, median 23.2, sd 4.1 |
+| `MS2_SAMPLE_Cell` | String | "C_275" | Join key to `C_*` columns in the MS2 feature table; `"No MS2 Data"` for 2 rows |
+| `MS2_SAMPLE_Supernatant` | String | "SUP_275" | Join key to `SUP_*` columns in the MS2 feature table; `"No MS2 Data"` for 2 rows |
+| `Location` | String | "Italy: Miage glacier..." | 70/275 missing |
+| `Medium` | String | — | Effectively empty (1/275 non-null) |
+| `Strain ID` | Int | 275 | Numeric strain identifier; all 275 values unique (but see Known Issues) |
+
+**Known issues (see `data/metadata/rhodotorula_auc_copper/provenance.md` for full detail):**
+- `SAMPLE_NAME = "TFCN_17-332M-1"` appears twice, both mapping to `MS2_SAMPLE_Cell = C_190` /
+  `MS2_SAMPLE_Supernatant = SUP_190`, but with two different `mean_auc_rate` values
+  (22.484 vs 23.761) and two different `Strain ID` values (190 vs 304). **Both rows for
+  C_190/SUP_190 are excluded from downstream use until the source data are reconciled**
+  (user decision, 2026-08-11).
+- 2 rows (`TFCN_122C-2`, `TFCN_138A-1`) have `MS2_SAMPLE_Cell`/`MS2_SAMPLE_Supernatant`
+  = `"No MS2 Data"` — no metabolomics counterpart, so they cannot be used in any
+  metabolite-association analysis.
+- Not yet checked against the full `C_*`/`SUP_*` sample ID set in
+  `Rhodotorula_MS2_aligned_features_ms2.csv.gz` for exact overlap — do this at analysis time.
+
+**Intended use:** future analysis relating copper sensitivity/resistance (`mean_auc_rate`)
+to metabolite composition (cell and/or supernatant), mirroring the existing color-phenotype
+association work in `analysis/phenotype_metabolite_association/`. Not yet used in any analysis
+as of ingestion (2026-08-11).
+
+---
+
 ## Phase 0: Batch Assessment & QC
 
 **Script:** `scripts/phase0_batch_assessment.py`  

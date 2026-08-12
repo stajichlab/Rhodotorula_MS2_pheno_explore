@@ -160,3 +160,27 @@ uses `ATTRIBUTE_species` and drops the collision strain + any remaining missing-
 rows (40/590 dropped total, 550 retained), with counts logged rather than silently coerced.
 **Tags**: metabolomics, data-quality, species, metadata, rhodotorula, join
 **mitigation_type**: process-fix
+
+### [2026-08-11] Strain-ID-to-MS2-sample collisions recur across independent phenotype files — check for them on every new phenotype ingestion
+
+**Category**: data-quality
+**What happened**: The newly ingested `rhodotorula_auc_copper` dataset
+(`input_data/Rhodotorula_AUC_copper.20260811.csv.gz`) has the same shape of bug already
+seen in the color-phenotype file: `SAMPLE_NAME = "TFCN_17-332M-1"` appears twice, both
+mapped to the same `MS2_SAMPLE_Cell`/`MS2_SAMPLE_Supernatant` pair (`C_190`/`SUP_190`) but
+with two different `mean_auc_rate` values and two different `Strain ID` values (190 vs
+304) — directly analogous to the `17-332Y-1` → `{C_165/SUP_165, C_269/SUP_269}` collision
+found earlier in `phase1_phenotype_data.csv.gz` (see entry above). Two independent
+phenotype files from this project both had a strain incorrectly sharing/duplicating an
+MS2 sample ID.
+**Why it matters**: This is not a one-off fluke in a single file — it looks like a
+recurring upstream metadata issue (possibly in how strain IDs get assigned to MS2 sample
+runs). Any new phenotype file joined to the MS2 feature table via `C_*`/`SUP_*` IDs should
+be checked for duplicate/conflicting sample-ID mappings before use, not assumed clean.
+**Resolution**: For `rhodotorula_auc_copper`, both `C_190`/`SUP_190` rows are excluded
+pending reconciliation (user decision, see `.living/decisions.md`), rather than guessing
+which value is correct. Recommend running the same duplicate-ID check the color-phenotype
+pipeline already does (`01_prepare_data.py`) on every future phenotype ingestion that
+joins via `MS2_SAMPLE_Cell`/`MS2_SAMPLE_Supernatant`.
+**Tags**: metabolomics, data-quality, metadata, rhodotorula, join, duplicate-records, copper
+**mitigation_type**: process-fix
