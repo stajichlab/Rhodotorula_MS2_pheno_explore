@@ -202,3 +202,34 @@ SSH key in this shell. `.living/decisions.md` required a careful manual split to
 only this session's new entry without touching the concurrent session's still-uncommitted
 one (verified byte-identical restoration afterward via diff). All concurrent-session files
 remain exactly as that session left them, untouched.
+
+---
+
+## Concurrent session note (SIRIUS runs launched, in progress)
+
+User confirmed they fixed the SIRIUS login issue and pushed the earlier commits. Verified
+independently (`sirius login --show`, after `module load sirius`): active academic
+subscription confirmed working.
+
+**What was built:** `analysis/pathway_targeted_association/sirius_annotation/` (scripts
+00-03), mirroring `secreted_products/sirius_annotation/`'s target-selection ->
+mzML-MS2-export -> sbatch-SIRIUS pattern, for the 3 F-006 pathway-targeted candidates
+(torularhodin x2 raw_position 11564/12635, shinorine x1 raw_position 15041). All 3
+exported to MGF successfully (`outputs/sirius_targets.mgf`, `outputs/mgf_export_summary.csv`).
+Also bumped `secreted_products/sirius_annotation/scripts/03_sirius.sbatch`'s walltime
+8h->20h (the prior run's failure was a walltime cancellation ~3h into CANOPUS, not an
+undersized allocation) before resubmitting it now that login works.
+
+**Submitted (both running as of this note):**
+- Job 27392492: pathway-targeted, 3 spectra, `--time=02:00:00` — small, should finish
+  quickly.
+- Job 27392493: secreted_products rerun, 117 spectra, `--time=20:00:00`.
+
+**Not yet done:** results review, findings/manifest updates for whichever
+finishes, and a commit of the new `sirius_annotation/` scripts + any results. This will
+continue once at least the small (pathway-targeted) job completes — do not report
+SIRIUS results as available until that notification actually arrives; nothing has been
+reviewed yet.
+
+**Decision logged:** `.living/decisions.md` — why the pathway-targeted SIRIUS folder
+mirrors but doesn't merge with secreted_products', and why the walltime was bumped.

@@ -200,3 +200,34 @@ metabolite-color signal found anywhere in this project's phenotype-metabolite wo
 Documented as a lesson in `01_match_targets.py`'s docstring for future targeted work
 on this dataset.
 **Tags**: metabolomics, targeted-analysis, feature-filtering, carotenoid, methodology, rhodotorula
+
+### [2026-08-11] Set up SIRIUS structural annotation for the 3 pathway-targeted candidates, and reran the secreted_products SIRIUS batch with login fixed
+
+**Context**: User confirmed `sirius login` is now working (verified independently via
+`sirius login --show`, active academic subscription). Two SIRIUS runs were pending: the
+secreted_products batch (117 spectra, twice failed at CSI:FingerID/CANOPUS on missing
+login, second attempt also Slurm-cancelled at 8h walltime ~3h into CANOPUS), and the new
+pathway-targeted candidates from F-006 (torularhodin x2, shinorine x1) which had never
+been run through SIRIUS at all.
+**Decision**: Built `analysis/pathway_targeted_association/sirius_annotation/` (scripts
+00-03) mirroring `secreted_products/sirius_annotation/`'s pattern (target selection ->
+MGF export via mzML scan -> sbatch SIRIUS run), with one deliberate difference: the
+representative-file fallback searches both `C_*` and `SUP_*` peak-area columns (not
+SUP-only, since these candidates aren't compartment-restricted the way secreted_products'
+targets are). Also bumped `secreted_products/sirius_annotation/scripts/03_sirius.sbatch`'s
+walltime from 8h to 20h before resubmitting, since the prior cancellation was a walltime
+problem, not a resource-size problem.
+**Alternatives considered**: (a) combine both target sets into one MGF/one sirius
+invocation to save JVM startup overhead -- rejected, keeps the two analyses' outputs
+cleanly separated under their own `sirius_annotation/outputs/sirius_project/`, and the
+overhead difference is negligible next to per-compound CSI:FingerID/CANOPUS network time;
+(b) reuse secreted_products' own scripts by appending the 3 new targets to its target
+list -- rejected, would conflate two logically distinct analyses' provenance.
+**Rationale**: Small, self-contained analysis-specific SIRIUS folders keep provenance
+and output locations obvious per-analysis, consistent with this project's existing
+convention (`analysis/<name>/sirius_annotation/`).
+**Consequences**: Two Slurm jobs submitted (27392492: pathway-targeted, 3 spectra,
+--time=02:00:00; 27392493: secreted_products rerun, 117 spectra, --time=20:00:00). Both
+running as of this entry; results not yet available -- will be logged as a finding once
+complete.
+**Tags**: sirius, metabolomics, carotenoid, torularhodin, slurm, tooling, methodology

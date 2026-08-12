@@ -6,10 +6,18 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=32G
-#SBATCH --time=08:00:00
+#SBATCH --time=20:00:00
 #SBATCH --output=%x-%j.log
 #SBATCH --error=%x-%j.log
 # Submit from analysis/secreted_products/sirius_annotation/: sbatch scripts/03_sirius.sbatch
+#
+# --time bumped 8h -> 20h 2026-08-11: the two prior attempts (a) failed at
+# every CSI:FingerID/CANOPUS step with "Service URL is null" (missing `sirius
+# login`, now fixed and confirmed via `sirius login --show`) and (b) the
+# second attempt was separately cancelled by Slurm at the 8h wall clock ~3h
+# into the CANOPUS step, having only reached 86/131 instance directories.
+# Login is fixed, but structure/CANOPUS calls are slow network round-trips
+# per compound, so walltime is bumped generously rather than guessing again.
 #
 # Runs SIRIUS as its own dedicated allocation instead of inside a shared
 # interactive session. An earlier attempt in a 16G interactive job (job
