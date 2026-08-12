@@ -1,0 +1,13 @@
+{
+  "n_candidate_features": 3,
+  "n_tests": 9,
+  "n_significant_q05": 5,
+  "n_significant_permutation_p05": 5,
+  "n_permutations": 5000,
+  "detection_rates": {
+    "11564": 0.1690909090909091,
+    "12635": 0.32,
+    "15041": 0.6818181818181818
+  },
+  "rng_seed": 20260811
+}

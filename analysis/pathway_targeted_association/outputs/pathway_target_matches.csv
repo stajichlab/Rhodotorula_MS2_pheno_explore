@@ -1,0 +1,4 @@
+raw_position,row_id,survived_phase1_qc,observed_mz,observed_adduct,observed_rt_min,has_ms2,compound,category,pathway_step,confidence,target_adduct,expected_mz,ppm_error_mz,parent_mass_ppm_error,notes
+11564,21315,False,565.4054,[M+H]1+,5.704949,True,torularhodin,carotenoid,torulene oxidation (terminal),high,[M+H]1+,565.40401,2.46,,"diagnostic Rhodotorula/Sporidiobolus pigment (red); carboxylic acid, may prefer negative mode / [M-H]-"
+12635,26444,False,565.3975,[M+H]1+,6.364676,True,torularhodin,carotenoid,torulene oxidation (terminal),high,[M+H]1+,565.40401,11.51,,"diagnostic Rhodotorula/Sporidiobolus pigment (red); carboxylic acid, may prefer negative mode / [M-H]-"
+15041,42268,True,360.149,[M+H]1+,0.533658,True,shinorine,maa,"MAA, glycine+serine substituted",low,[M+H]1+,360.15272,10.33,,

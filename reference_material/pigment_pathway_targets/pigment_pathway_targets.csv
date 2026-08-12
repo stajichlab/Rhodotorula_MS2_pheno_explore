@@ -1,0 +1,69 @@
+compound,formula,monoisotopic_mass,category,pathway_step,confidence,adduct,charge,expected_mz,notes
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+H]1+,1,545.50808,first committed carotenoid; colorless
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+Na]1+,1,567.49002,first committed carotenoid; colorless
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M+2H]2+,2,273.25768,first committed carotenoid; colorless
+phytoene,C40H64,544.5008,carotenoid,PSY product (step 1),high,[M-H2O+H]1+,1,527.49751,first committed carotenoid; colorless
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+H]1+,1,543.49243,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+Na]1+,1,565.47437,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M+2H]2+,2,272.24985,
+phytofluene,C40H62,542.48515,carotenoid,desaturation step 2,high,[M-H2O+H]1+,1,525.48186,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+H]1+,1,541.47678,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+Na]1+,1,563.45872,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M+2H]2+,2,271.24203,
+zeta-carotene,C40H60,540.4695,carotenoid,desaturation step 3,high,[M-H2O+H]1+,1,523.46621,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+H]1+,1,539.46113,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+Na]1+,1,561.44307,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M+2H]2+,2,270.2342,
+neurosporene,C40H58,538.45385,carotenoid,desaturation step 4,high,[M-H2O+H]1+,1,521.45056,
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+H]1+,1,537.44548,isomeric with gamma-/beta-carotene; cannot distinguish by mass alone
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+Na]1+,1,559.42742,isomeric with gamma-/beta-carotene; cannot distinguish by mass alone
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M+2H]2+,2,269.22638,isomeric with gamma-/beta-carotene; cannot distinguish by mass alone
+lycopene,C40H56,536.4382,carotenoid,desaturation step 5 (linear),high,[M-H2O+H]1+,1,519.43491,isomeric with gamma-/beta-carotene; cannot distinguish by mass alone
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization (CrtYB),high,[M+H]1+,1,537.44548,isomeric with lycopene/beta-carotene; cannot distinguish by mass alone
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization (CrtYB),high,[M+Na]1+,1,559.42742,isomeric with lycopene/beta-carotene; cannot distinguish by mass alone
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization (CrtYB),high,[M+2H]2+,2,269.22638,isomeric with lycopene/beta-carotene; cannot distinguish by mass alone
+gamma-carotene,C40H56,536.4382,carotenoid,monocyclization (CrtYB),high,[M-H2O+H]1+,1,519.43491,isomeric with lycopene/beta-carotene; cannot distinguish by mass alone
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization (CrtYB),high,[M+H]1+,1,537.44548,isomeric with lycopene/gamma-carotene; cannot distinguish by mass alone; major yellow-orange pigment
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization (CrtYB),high,[M+Na]1+,1,559.42742,isomeric with lycopene/gamma-carotene; cannot distinguish by mass alone; major yellow-orange pigment
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization (CrtYB),high,[M+2H]2+,2,269.22638,isomeric with lycopene/gamma-carotene; cannot distinguish by mass alone; major yellow-orange pigment
+beta-carotene,C40H56,536.4382,carotenoid,bicyclization (CrtYB),high,[M-H2O+H]1+,1,519.43491,isomeric with lycopene/gamma-carotene; cannot distinguish by mass alone; major yellow-orange pigment
+torulene,C40H54,534.42255,carotenoid,beta-carotene + extra desaturation,high,[M+H]1+,1,535.42983,diagnostic Rhodotorula/Sporidiobolus pigment (orange-red)
+torulene,C40H54,534.42255,carotenoid,beta-carotene + extra desaturation,high,[M+Na]1+,1,557.41177,diagnostic Rhodotorula/Sporidiobolus pigment (orange-red)
+torulene,C40H54,534.42255,carotenoid,beta-carotene + extra desaturation,high,[M+2H]2+,2,268.21855,diagnostic Rhodotorula/Sporidiobolus pigment (orange-red)
+torulene,C40H54,534.42255,carotenoid,beta-carotene + extra desaturation,high,[M-H2O+H]1+,1,517.41926,diagnostic Rhodotorula/Sporidiobolus pigment (orange-red)
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation (terminal),high,[M+H]1+,1,565.40401,"diagnostic Rhodotorula/Sporidiobolus pigment (red); carboxylic acid, may prefer negative mode / [M-H]-"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation (terminal),high,[M+Na]1+,1,587.38595,"diagnostic Rhodotorula/Sporidiobolus pigment (red); carboxylic acid, may prefer negative mode / [M-H]-"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation (terminal),high,[M+2H]2+,2,283.20564,"diagnostic Rhodotorula/Sporidiobolus pigment (red); carboxylic acid, may prefer negative mode / [M-H]-"
+torularhodin,C40H52O2,564.39673,carotenoid,torulene oxidation (terminal),high,[M-H2O+H]1+,1,547.39344,"diagnostic Rhodotorula/Sporidiobolus pigment (red); carboxylic acid, may prefer negative mode / [M-H]-"
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+H]1+,1,198.07608,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+Na]1+,1,220.05803,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M+2H]2+,2,99.54168,
+L-DOPA,C9H11N1O4,197.06881,melanin_precursor,tyrosinase substrate,medium,[M-H2O+H]1+,1,180.06552,
+dopaquinone,C9H9N1O4,195.05316,melanin_precursor,tyrosinase product,low,[M+H]1+,1,196.06043,"highly reactive/unstable, unlikely to be detected intact"
+dopaquinone,C9H9N1O4,195.05316,melanin_precursor,tyrosinase product,low,[M+Na]1+,1,218.04238,"highly reactive/unstable, unlikely to be detected intact"
+dopaquinone,C9H9N1O4,195.05316,melanin_precursor,tyrosinase product,low,[M+2H]2+,2,98.53386,"highly reactive/unstable, unlikely to be detected intact"
+dopaquinone,C9H9N1O4,195.05316,melanin_precursor,tyrosinase product,low,[M-H2O+H]1+,1,178.04987,"highly reactive/unstable, unlikely to be detected intact"
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,"DHI, downstream of DOPA",medium,[M+H]1+,1,150.05495,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,"DHI, downstream of DOPA",medium,[M+Na]1+,1,172.0369,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,"DHI, downstream of DOPA",medium,[M+2H]2+,2,75.53112,
+"5,6-dihydroxyindole",C8H7N1O2,149.04768,melanin_precursor,"DHI, downstream of DOPA",medium,[M-H2O+H]1+,1,132.04439,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+H]1+,1,194.04478,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+Na]1+,1,216.02673,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M+2H]2+,2,97.52603,
+DHICA,C9H7N1O4,193.03751,melanin_precursor,"5,6-dihydroxyindole-2-carboxylic acid",medium,[M-H2O+H]1+,1,176.03422,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+H]1+,1,260.11286,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+Na]1+,1,282.09481,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M+2H]2+,2,130.56007,
+mycosporine-glycine,C11H17N1O6,259.10559,maa,MAA core,low,[M-H2O+H]1+,1,242.1023,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine substituted",low,[M+H]1+,1,360.15272,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine substituted",low,[M+Na]1+,1,382.13466,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine substituted",low,[M+2H]2+,2,180.58,
+shinorine,C15H23N2O8,359.14544,maa,"MAA, glycine+serine substituted",low,[M-H2O+H]1+,1,342.14215,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine substituted",low,[M+H]1+,1,347.14489,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine substituted",low,[M+Na]1+,1,369.12684,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine substituted",low,[M+2H]2+,2,174.07608,
+porphyra-334,C14H22N2O8,346.13762,maa,"MAA, glycine+threonine substituted",low,[M-H2O+H]1+,1,329.13433,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+H]1+,1,245.1132,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+Na]1+,1,267.09514,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M+2H]2+,2,123.06024,
+palythine,C10H16N2O5,244.10592,maa,MAA core,low,[M-H2O+H]1+,1,227.10263,

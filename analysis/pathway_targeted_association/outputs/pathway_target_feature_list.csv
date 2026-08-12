@@ -1,0 +1,4 @@
+raw_position,row_id,survived_phase1_qc,observed_mz,observed_rt_min,compound,category,confidence,ppm_error_mz
+11564,21315,False,565.4054,5.704949,torularhodin,carotenoid,high,2.46
+12635,26444,False,565.3975,6.364676,torularhodin,carotenoid,high,11.51
+15041,42268,True,360.149,0.533658,shinorine,maa,low,10.33

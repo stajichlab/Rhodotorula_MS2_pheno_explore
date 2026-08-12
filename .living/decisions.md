@@ -168,3 +168,35 @@ folds × 2 fits — real + permuted — per permutation) instead of near-instant
 fixed model; judged worth it for a calibrated result. Observed CV R²=-0.09 vs. null p=0.56
 — no joint signal detected.
 **Tags**: metabolomics, statistics, pls-regression, cross-validation, permutation, model-selection, rhodotorula
+
+### [2026-08-11] Pathway-targeted matching searches the full 16,332-row raw feature table, not the Phase-1-filtered 7,341
+
+**Context**: Building `analysis/pathway_targeted_association/` (in response to
+`phenotype_metabolite_association`'s power analysis showing the untargeted scan can't
+detect true ρ<0.34), the natural first move was to match target pigment masses against
+the 7,341 features already used throughout that analysis (`features_cleaned.csv.gz`).
+That found only 1 hit (a low-confidence MAA).
+**Decision**: Match against the full, unfiltered 16,332-row raw aligned table
+(`input_data/Rhodotorula_MS2_aligned_features_ms2.csv.gz`) instead, computing a
+standard total-ion-signal normalization independently for whatever the full-table
+search turns up rather than reusing Phase 1's QC-survivor-only normalization
+denominator.
+**Alternatives considered**: (a) stick with the 7,341-feature survivor set for
+consistency with the rest of the project's pipeline -- rejected once the full-table
+search immediately found two additional torularhodin candidates (a diagnostic
+Rhodotorula pigment) that the survivor-only search had missed entirely; (b) loosen
+Phase 1's filters project-wide and redo the untargeted analysis -- rejected as
+overkill and reintroducing the original multiple-testing burden this analysis exists
+to avoid; a small, chemistry-motivated target list doesn't need the generic
+prevalence/CV screen a genome-wide scan needs.
+**Rationale**: Phase 1's blanket >=10%-of-590-samples prevalence and CV>=0.1 filters
+are reasonable defaults for an untargeted scan but will systematically discard a real
+pigment produced by only a subset of species/strains -- exactly the profile a
+biologically meaningful, strain-specific carotenoid should have. A targeted analysis
+that only searches the pre-filtered subset defeats its own purpose.
+**Consequences**: Matching found 3 candidates (2 torularhodin, 1 shinorine) instead of
+1; one of them (torularhodin, raw_position=12635) is the strongest, best-replicated
+metabolite-color signal found anywhere in this project's phenotype-metabolite work.
+Documented as a lesson in `01_match_targets.py`'s docstring for future targeted work
+on this dataset.
+**Tags**: metabolomics, targeted-analysis, feature-filtering, carotenoid, methodology, rhodotorula

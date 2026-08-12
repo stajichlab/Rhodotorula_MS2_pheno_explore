@@ -1,0 +1,8 @@
+{
+  "n_test_strains": 53,
+  "n_train_rows": 447,
+  "n_test_rows": 103,
+  "n_pairs_tested": 9,
+  "n_replicated": 0,
+  "rng_seed": 20260811
+}

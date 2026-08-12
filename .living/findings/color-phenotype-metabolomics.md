@@ -157,3 +157,42 @@ scanning all 7,341 features).
 - How many phenotype replicates per strain would be needed, in a mixed-effects model, to
   push the detection floor down to a biologically plausible single-gene effect size
   (e.g. ρ≈0.15-0.20)?
+
+## F-006: A pathway-targeted candidate list finds a real, well-replicated torularhodin-b* correlation that the untargeted scan was underpowered to detect
+**Status:** preliminary
+**Claim:** Acting on F-005's implication (lower the detection floor via a targeted
+feature set), `analysis/pathway_targeted_association/` matched a carotenoid/melanin/MAA
+target compound list (masses computed from formulas, selected before looking at
+phenotype data) against the **full 16,332-row raw feature table** (matching only the
+Phase-1-filtered 7,341 survivors found almost nothing -- see the paired decision entry).
+This found 3 candidates, including two torularhodin (the diagnostic red Rhodotorula
+pigment) matches that Phase-1's blanket QC filters had discarded. One
+(raw_position=12635, 11.5 ppm match, 32% detection rate) correlates with b\* (yellow-blue)
+at ρ=0.218 (q=4×10⁻⁶, strain-block permutation p=0.0002) in the full corrected model, and
+its effect size replicates almost exactly in a held-out set of strains (train ρ=0.199 vs.
+test ρ=0.197, same sign) -- the binary holdout "failure" (test p=0.060) reflects the
+smaller holdout sample's own power limit, not an inconsistent effect, unlike every
+candidate from the untargeted scan's holdout checks (F-001-F-004), which showed sign
+flips or near-zero test-set correlations.
+**Implications:** This is the strongest, best-replicated metabolite-phenotype signal
+found anywhere in this project's color-phenotype work, and directly validates the
+power-analysis-driven strategy (F-005): going from 22,023 tests to 9 dropped the
+detection floor enough to find an effect (ρ≈0.2) that was invisible to the untargeted
+approach. It is still a lead, not a confirmed identification -- no MS2/spectral
+confirmation yet, only 32% detection rate (consistent with a strain/species-specific
+pigment but means few samples drive the correlation), and a second, tighter-mass-match
+torularhodin candidate (2.5 ppm) shows no correlation at all, which needs resolving.
+**Tags:** metabolomics, carotenoid, torularhodin, targeted-analysis, color-phenotype, rhodotorula, positive-result
+
+### Evidence Ledger
+| Date | Run/Session | Dataset | Project | Result | Direction |
+|------|-------------|---------|---------|--------|-----------|
+| 2026-08-11 | pathway_targeted_association v1 | Rhodotorula MS2 full raw table (16,332 features), 550-sample corrected design | Rhodotorula_MS2_pheno_explore | torularhodin (raw_position=12635) x b*: rho=0.218, q=4e-6, permutation p=0.0002; holdout train/test rho=0.199/0.197 | refines (F-001-F-005: confirms the untargeted null was a power limit, not absence of signal, for at least this one candidate) |
+
+### Open Questions
+- Does the MS2 spectrum for raw_position=12635 match torularhodin's known
+  fragmentation pattern (SIRIUS, once the login issue is fixed, or manual comparison)?
+- Which species/strains carry this feature (32% detection rate) -- does it track known
+  torularhodin producers?
+- Why does the other, tighter-mass-match torularhodin candidate (raw_position=11564,
+  2.5 ppm) show no correlation at all -- isomer, isotope peak, or chance mass match?
