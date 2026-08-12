@@ -256,3 +256,130 @@ new module before rerunning. **Logged as a learning in `.living/learnings.md`.**
 Once confirmed (`sirius login --show`), resubmit both jobs unchanged (their `module
 load sirius` line already resolves to 6.3.12 by default now, verified). No script
 changes needed. No results yet -- neither job produced usable output.
+
+---
+
+## Copper-AUC ↔ genome secretome: cross-repo work in Rhodotorula_Rodeo (this thread)
+
+Follow-up in the copper-AUC thread: user asked whether the copper phenotype (and
+metabolite data generally) could connect to genome-derived secreted-protein
+predictions, and pointed at
+`/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Rodeo/tables/All_Taxa/`
+(a BFD-style genome annotation database, `db/BFD.All_Taxa.duckdb`, 272 annotated
+genomes, SignalP/TargetP/TMHMM/WolfPsort/PredGPI secretome predictions, Pfam/MEROPS/
+CAZy domains) as the data source. That repo turned out to have standing infrastructure
+directly relevant: `PLAN_secretome.md`/`REPORT_secretome.md` (secretome definition +
+domain enrichment, already complete) and `metal_resistance/` (`PLAN_metal_resistance.md`,
+a pLM-embedding framework for heavy-metal resistance, including copper, whose own plan
+explicitly flagged a "phenotype gap" -- only a 9-strain binary top-performer cohort
+existed, 7 of them annotated).
+
+User chose to use the copper-AUC data to upgrade that framework's cohort rather than
+build an independent metabolite×secretome test in this repo. Work done **in
+Rhodotorula_Rodeo** (a separate git repo, not committed by this session -- see its own
+`git status`):
+- `metal_resistance/scripts/01b_build_continuous_cohort.py` -- joins `mean_auc_rate`
+  onto the 272-genome DB via the same strain-name normalization `01_build_cohort.py`
+  uses, reading the copper CSV directly from this repo's `input_data/` (no copy/
+  duplication). Output: `cohort/cohort_continuous.csv`, **253/272 annotated genomes
+  (93%) covered**, up from 7/272. Drops the same `TFCN_17-332M-1` conflict rows this
+  repo already flagged and excludes.
+- `metal_resistance/scripts/04b_composition_baseline_continuous.py` -- extends the
+  existing binary composition-baseline screen to the continuous phenotype: species-
+  partial Spearman (rank-space OLS residualization on species, reusing this repo's own
+  validated method from `02_corrected_correlation.py`) + a 2000-permutation null, for
+  (a) whole-proteome AA usage and (b) copy number of 18 copper-tagged Pfam families.
+  **Result:** whole-proteome methionine usage correlates with copper AUC after species
+  correction (ρ=+0.20, q=0.0073, permutation p=0.0025) -- biologically plausible (Met is
+  a known Cu(I)-ligand residue) and convergent with an earlier uncorrected marginal Met
+  hit in that framework's candidate-protein test. Copper-tagged Pfam family (Cu-oxidase
+  etc.) pooled correlations were strong (ρ up to +0.38) but **did not survive species
+  correction** (best q=0.055) -- same species-confound pattern this repo already found
+  for metabolite-color correlations (Simpson's paradox).
+- Logged in `Rhodotorula_Rodeo`'s own `.living/decisions.md` (1 new entry),
+  `.living/findings/metal-resistance.md` (new topic file, F-001/F-002/F-003-open),
+  `PLAN_metal_resistance.md` (Phenotype-gap note + Phase 0b/1b sections updated).
+  `validate_structure.py` passes there (1 pre-existing, unrelated warning:
+  `analysis/ideas/` has no IDEAS.md). Both new scripts lint clean with `scilintr`
+  after fixing two `unchecked-merge` findings (added `validate=`).
+- **Nothing committed in either repo this turn** -- all changes (both repos) are
+  uncommitted working-tree edits, per this project's practice of not committing
+  without being asked.
+
+**This repo's own changes this turn:** `.living/decisions.md` (1 new entry
+cross-referencing the Rhodotorula_Rodeo work), `todo/TODO_REGISTRY.md` (added
+"Cross-repo: link copper-AUC↔metabolite hits (once found) to Rhodotorula_Rodeo's
+secreted-protein/metal-resistance predictions", medium priority). No changes to any
+metabolite data, scripts, or the still-not-yet-built
+`analysis/copper_metabolite_association/`.
+
+**Next steps (not started):**
+1. Build the in-repo `analysis/copper_metabolite_association/` (C_*/SUP_* parallel
+   tracks, per earlier decision) -- independent of the Rhodotorula_Rodeo work above.
+2. In Rhodotorula_Rodeo: holdout-replicate the Met signal; re-run the embedding-based
+   family-separation step (`05_analyze_embeddings.py`) against the continuous
+   phenotype instead of the binary cohort (flagged as F-003, open, not addressed this
+   session -- may need embedding coverage extended beyond the original 9-strain set).
+3. Once both analyses produce hits, cross-reference copper-associated metabolite
+   features against copper-associated genome signals (Met usage, specific gene
+   families) for the same strains -- the actual "connect metabolites to secreted-protein
+   predictions" goal the user asked about, not yet done.
+
+---
+
+## Plot of the Met~copper-AUC correlation (this thread, still in Rhodotorula_Rodeo)
+
+User asked for plots demonstrating the F-002 methionine finding, plus a plain CSV to
+independently validate in R. Added (in `Rhodotorula_Rodeo`, not this repo):
+- `metal_resistance/scripts/04c_plot_met_correlation.py` → two-panel figure
+  (`results/figures/met_vs_copper_auc.png`): (a) pooled raw Met-fraction vs.
+  mean_auc_rate, points colored by species; (b) species-partial version (both
+  variables rank-residualized on species). Iterated on jitter twice -- first attempt
+  scaled jitter to the raw min-gap between distinct Met values and was invisible;
+  fixed by scaling jitter width to ~2.5x the typical spacing over the full range
+  instead, which properly un-stacks the heavily overplotted stripes.
+- `results/figures/met_vs_copper_auc_data.csv` (251 rows: LOCUSTAG, species,
+  met_fraction, mean_auc_rate, plus both species-partial rank-residual columns) for
+  independent re-plotting/validation in R -- `cor.test(..., method="spearman")` on
+  the two residual columns should reproduce the reported ρ=+0.203, p=0.0012.
+- Surfaced two caveats while building this that weren't obvious from the summary
+  numbers alone, now added to `.living/findings/metal-resistance.md` F-002: (1)
+  `aa_frequency` is stored to only 4 decimal places, so Met fraction is effectively
+  quantized (19 distinct values across 251 genomes, only 4 within *R. mucilaginosa*);
+  (2) 3 species have exactly 1 genome each, so their species-dummy regression
+  forces their residual to ~0 (zero residual d.f. for a singleton group, not a real
+  "no effect").
+- Both new-script lint checks pass (`scilintr`, after adding `ANALYSIS_OK[sample-filter]`
+  for the dropna). `PLAN_metal_resistance.md`'s Phase 1b section updated to point at
+  the plot/CSV. Nothing committed (same as the rest of this cross-repo work).
+
+---
+
+## Concurrent session update: SIRIUS 6.x AOT crash fixed; torularhodin ID cast into doubt
+
+Continuing the SIRIUS thread: after fixing the subcommand chaining order (see the
+earlier note in this file), the resubmitted job crashed instantly with a JVM `SIGILL`
+(`AdapterBlob` frame, confirmed via `hs_err_pid*.log`) -- SIRIUS 6.x's launcher prefers
+a shared, install-dir "Leyden AOT Cache" that was apparently built for an incompatible
+CPU/JDK combo. Fixed by adding `-XX:AOTMode=off` to `JAVA_OPTS` in all 4 copies of the
+pipeline command (interactive + sbatch, both analyses) -- bypasses the cache entirely
+rather than touching the shared install (which would affect other users of the module).
+
+**More important finding from the same debugging**: with `formula` (offline, no login)
+running successfully, its actual output shows the top-ranked molecular formula for the
+strongest F-006 torularhodin candidate (raw_position=12635) is **C30H52N4O6**, not
+torularhodin's C40H52O2 -- the other candidate (11564) top-ranks as C29H52N6O5 too.
+Neither is torularhodin. **The statistical correlation (F-006, ρ=0.218 with b*,
+permutation- and holdout-validated) is not in question -- only the chemical identity
+as torularhodin is.** Needs a `--full-summary` review (not just top-1 hit) before
+concluding what raw_position=12635 actually is; this will be the next step once a
+clean full job run completes.
+
+**Caution logged (second occurrence)**: repeated live `sirius` CLI testing against the
+shared `~/.sirius-6.3` workspace broke the login a second time. Own mistake, flagged
+directly to the user. Going forward in this thread: `--help` only, or single isolated
+invocations -- no more rapid-fire live testing against the authenticated workspace.
+
+**Status:** waiting on the user to re-login (second time) before resubmitting either
+job. Script fixes (chaining order + AOTMode=off) are complete and will be committed
+alongside this note. No SIRIUS results available yet from either job.

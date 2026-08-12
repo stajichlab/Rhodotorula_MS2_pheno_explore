@@ -22,7 +22,7 @@ rm -rf "$OUTDIR"
 # Subcommand chain fixed 2026-08-11 for SIRIUS 6.x: `structures` now depends on
 # CANOPUS output and must come AFTER `canopus`; the 5.x order (...fingerprint,
 # structure, canopus...) throws a picocli UnmatchedArgumentException in 6.x.
-JAVA_OPTS="-Xmx${SIRIUS_HEAP_GB}G" sirius --cores $CPU --instance-buffer 1 \
+JAVA_OPTS="-Xmx${SIRIUS_HEAP_GB}G -XX:AOTMode=off" sirius --cores $CPU --instance-buffer 1 \
   --input "$MGF" --output "$OUTDIR" \
   formula --ppm-max 15 --ppm-max-ms2 15 --candidates 10 \
   fingerprint \

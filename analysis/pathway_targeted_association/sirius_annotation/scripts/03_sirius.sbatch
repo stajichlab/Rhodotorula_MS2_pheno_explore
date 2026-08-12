@@ -33,7 +33,7 @@ SIRIUS_HEAP_GB="${SIRIUS_HEAP_GB:-10}"
 
 rm -rf "$OUTDIR"
 
-JAVA_OPTS="-Xmx${SIRIUS_HEAP_GB}G" sirius --cores "${SLURM_CPUS_PER_TASK:-4}" \
+JAVA_OPTS="-Xmx${SIRIUS_HEAP_GB}G -XX:AOTMode=off" sirius --cores "${SLURM_CPUS_PER_TASK:-4}" \
   --input "$MGF" --output "$OUTDIR" \
   formula --ppm-max 15 --ppm-max-ms2 15 --candidates 10 \
   fingerprint \

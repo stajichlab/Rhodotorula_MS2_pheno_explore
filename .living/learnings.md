@@ -245,3 +245,63 @@ live dry-runs when debugging CLI syntax against a shared, authenticated workspac
 before either job can be resubmitted.
 **Tags**: sirius, tooling, environment, cli, api-version, csi-fingerid, canopus
 **mitigation_type**: ambient-awareness
+
+### [2026-08-11] Scatter-plot jitter width must scale to the visible axis range, not to the raw min-gap between distinct data values
+
+**Category**: visualization / gotcha
+**What happened**: Plotting whole-proteome Met fraction vs. copper AUC
+(`Rhodotorula_Rodeo/metal_resistance/scripts/04c_plot_met_correlation.py`, cross-repo
+work from this project's copper-AUC thread) revealed the source `aa_frequency` table
+stores values to only 4 decimal places, so Met fraction is effectively quantized (19
+distinct values across 251 genomes, only 4 within the dominant species). First jitter
+attempt scaled the jitter width to the *minimum gap* between adjacent distinct values
+(`np.diff(sorted_unique).min() * 0.3`) — that minimum gap was tiny (0.0001) relative
+to the full axis range (0.015-0.021), so the jitter was invisible and the plot still
+showed solid vertical overplotted stripes.
+**Why it matters**: This is a general trap whenever real data has ties/quantization:
+the "obviously principled" jitter scale (tied to actual value spacing) can be
+dominated by one outlier-small gap and produce a jitter that does nothing visually,
+even though the code runs without error and looks reasonable on inspection.
+**Resolution**: Scaled jitter width instead to a fraction of the *full axis range*
+divided by the number of distinct values (`2.5 * range / (n_unique - 1)`), which
+properly fans out same/adjacent-valued points into a readable cloud. Documented as
+deliberate in the script's docstring ("blends points 1-2 quantization steps apart —
+an honest representation of how little the raw precision actually resolves").
+**Tags**: visualization, matplotlib, jitter, plotting, quantization, gotcha
+**mitigation_type**: ambient-awareness
+
+### [2026-08-11] SIRIUS 6.x's shared install-dir AOT cache crashes with SIGILL on incompatible CPUs; the m/z-only torularhodin match doesn't hold up to SIRIUS's own formula assignment
+
+**Category**: tooling / environment / metabolomics
+**What happened**: After fixing the subcommand chaining order (prior learning), the
+resubmitted job crashed instantly with a JVM-level `SIGILL` (`AdapterBlob` frame) rather
+than a SIRIUS-level error. Root cause: SIRIUS 6.x's launcher script implements a
+"Leyden AOT Cache" (`-XX:AOTCache=...`) that prefers a pre-built cache file under the
+**shared, install-dir** location (`$APP_HOME/aot`) over any per-user/per-node cache --
+that shared cache was apparently built on a CPU/JDK combination incompatible with the
+node this job landed on (AMD EPYC 7713, confirmed via `hs_err_pid*.log`), producing
+illegal instructions when JIT-compiled/cached code assumed unavailable CPU features.
+Fixed by adding `-XX:AOTMode=off` to `JAVA_OPTS` in all 4 copies of the pipeline
+command -- this bypasses the cache entirely (a few extra seconds of JIT warmup, negligible
+next to a multi-minute/hour SIRIUS run) rather than trying to force-regenerate the shared
+cache, which would affect every other user of this install.
+**Second, more consequential finding from the same debugging**: once `formula` (offline,
+no login needed) ran successfully, its actual formula-candidate output
+(`formula_identifications.tsv`) showed the top-ranked molecular formula for the
+strongest F-006 torularhodin candidate (raw_position=12635, m/z 565.398) is
+**C30H52N4O6**, not torularhodin's C40H52O2 -- and the other torularhodin candidate
+(raw_position=11564) top-ranked as C29H52N6O5. Neither is torularhodin. This means the
+15 ppm m/z-only match in `pathway_targeted_association` was very likely a coincidental
+isobar, not a true identification -- SIRIUS's isotope-pattern + MS2-fragmentation-based
+formula assignment disagrees with the naive mass match. **The statistical correlation
+(F-006, ρ=0.218 with b*, permutation- and holdout-validated) is not in question -- only
+the chemical identity as torularhodin is.** Needs a proper `--full-summary` review
+(not just the top-1 hit) before concluding what raw_position=12635 actually is.
+**Caution reiterated**: repeated live `sirius` CLI testing against the shared
+`~/.sirius-6.3` workspace broke the login a second time (see the prior chaining-order
+learning for the first instance) -- confirms this isn't a one-off fluke but a real
+concurrency hazard with this tool's auth token handling. Going forward: test with
+`--help` (safe) or single, isolated invocations only; never rapid-fire multiple `sirius`
+commands against the same authenticated workspace while debugging.
+**Tags**: sirius, tooling, environment, hpcc, jvm, aot, cpu-compatibility, carotenoid, torularhodin, formula-assignment
+**mitigation_type**: ambient-awareness
