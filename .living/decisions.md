@@ -261,3 +261,41 @@ source(s) each feature came from (a feature can appear in multiple tracks). MGF 
 for 263 spectra takes noticeably longer than the earlier 3- and 117-spectra runs;
 submitted as its own dedicated sbatch job (`sirius_broad_profiling`, 8 cores/32G/8h).
 **Tags**: sirius, metabolomics, targeted-analysis, methodology, carotenoid, statistics
+
+### [2026-08-12] SIRIUS profiling of the full pre-FDR color-phenotype candidate set (827 features), run fresh rather than reusing overlapping prior annotations
+
+**Context**: User asked for SIRIUS on "all the features that are candidate even before
+multiple testing correction," then clarified scope to color-explaining features
+specifically. Filtering `phenotype_metabolite_association`'s corrected correlations to
+nominal (pre-FDR) `pval_corrected<0.05` across all 3 CIELab channels (L*/a*/b*) gives
+827 unique features (203/355/317 per channel, no cross-channel overlap) — far more than
+the top-80-per-track subset `sirius_annotation_broad` used for the same statistical
+track. 19 of these 827 already have SIRIUS results from `sirius_annotation_broad` and
+`secreted_products/sirius_annotation`.
+**Decision**: Created a new sibling folder,
+`phenotype_metabolite_association/sirius_annotation_color_all/`, and re-ran the full
+827-feature set from scratch in one self-contained SIRIUS project rather than reusing
+the 19 overlapping prior results.
+**Alternatives considered**: (a) tighter uncorrected threshold (e.g. p<0.01) to shrink
+the set — rejected by user, who wanted the literal pre-correction set; (b) reuse the 19
+already-annotated features and only export/run the 808 new ones — rejected: the ~15
+minutes of extra compute to redo 19 features is far cheaper than the complexity and
+provenance risk of merging two separately-run SIRIUS projects (different SIRIUS
+invocations can in principle rank formula candidates slightly differently run-to-run;
+one clean project avoids that ambiguity entirely).
+**Rationale**: `feature_index` in `corrected_all_correlations.csv.gz` is a positional
+index into `features_cleaned.csv.gz`'s columns, not a raw-table row position — this
+project's existing `sirius_annotation_broad/scripts/00_select_targets.py` already
+established the correct translation (column headers of `features_cleaned.csv.gz` ARE
+the raw_position values); confirmed this still holds here (translated result equaled
+the untranslated `feature_index` values for the color track by coincidence, verified
+independently before trusting it).
+**Consequences**: SLURM job `sirius_color_all` (27419982) submitted, 8 cores/32GB, 16h
+budget (scaled from the broad run's 263-feature/1h28m observed rate with margin, since
+per-feature runtime scaled non-linearly between the 117- and 263-feature runs — see
+learnings). Results and a merge/lineage note pending job completion. Also motivated a
+(not-yet-implemented) plan for profiling the entire 16,332-feature dataset via sharded
+SLURM array jobs, gated on validating that SIRIUS's shared-workspace auth token
+tolerates concurrent access (two prior learnings document it breaking under repeated
+serial CLI invocations) — tracked in `todo/TODO_REGISTRY.md`, not started.
+**Tags**: sirius, metabolomics, color-phenotype, methodology, multiple-testing, slurm

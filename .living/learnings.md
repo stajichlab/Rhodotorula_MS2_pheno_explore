@@ -332,3 +332,31 @@ supernatant track's covariate list entirely (cell track keeps it, where it is a 
 significant confound, p=9.6e-5).
 **Tags**: metabolomics, data-quality, library-plate, metadata, rhodotorula, sup-samples, confound
 **mitigation_type**: ambient-awareness
+
+### [2026-08-12] SIRIUS per-feature runtime scales worse than linearly with batch size, not flat
+
+**Category**: tooling / performance / metabolomics
+**What happened**: Comparing wall-clock time across this project's SIRIUS runs (same
+8-core allocation, same `formula`/`fingerprint`/`canopus`/`structures` toolchain):
+117 features (`secreted_products/sirius_annotation`) took 12m47s (~6.6s/feature); 263
+features (`pathway_targeted_association/sirius_annotation_broad`) took 1h27m56s
+(~20.1s/feature) — a ~3x per-feature slowdown for only a ~2.25x increase in feature
+count. Extrapolating the worse (263-feature) rate linearly to the full 16,332-feature
+dataset gives ~91 hours as a **floor**, not an estimate, since the true scaling appears
+superlinear.
+**Why it matters**: Naively estimating "how long will SIRIUS take on N features" by
+linear extrapolation from a small run will badly underestimate large-batch runtime. The
+likely cause is SIRIUS's ZODIAC step, which scores features jointly against each other
+(a network computation across the whole batch) rather than independently per-feature —
+this is a property of the tool's algorithm, not this project's setup. Before committing
+to any large (>1000 feature) SIRIUS run, budget generously and/or plan to shard the
+batch rather than assuming linear scaling.
+**Related**: two other learnings in this file (SIGILL/AOT cache, CLI chaining order)
+already document SIRIUS's shared authenticated workspace (`~/.sirius-6.3`) breaking
+login under repeated/rapid CLI invocations against it — this is a second, independent
+reason (beyond raw compute time) to be cautious about naive multi-node parallelization
+of SIRIUS runs: sharding across concurrent SLURM array tasks would need a small pilot
+to confirm the shared auth token tolerates concurrent (not just rapid-serial) access
+before trusting a large array job against it.
+**Tags**: sirius, performance, tooling, metabolomics, slurm, scaling, zodiac
+**mitigation_type**: ambient-awareness
