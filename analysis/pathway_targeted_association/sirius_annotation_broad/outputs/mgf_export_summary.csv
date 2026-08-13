@@ -1,0 +1,264 @@
+feature_index,row_id,status,mzml_path,n_candidate_spectra,chosen_scan_id,chosen_tic,rt_window_widened
+9,10,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_46.mzML,2,controllerType=0 controllerNumber=1 scan=2987,86802975.203125,False
+36,37,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_1.mzML,0,,,True
+60,61,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_46.mzML,1,controllerType=0 controllerNumber=1 scan=3190,3675777.2416992188,True
+227,241,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_71.mzML,0,,,True
+394,425,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_322.mzML,2,controllerType=0 controllerNumber=1 scan=785,32895930.204101562,False
+488,541,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_46.mzML,0,,,True
+561,627,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_321.mzML,1,controllerType=0 controllerNumber=1 scan=3437,1409417.1032714844,False
+565,632,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_3.mzML,1,controllerType=0 controllerNumber=1 scan=3103,2052606.7197265625,False
+594,669,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_111.mzML,2,controllerType=0 controllerNumber=1 scan=3543,7445328.82421875,False
+703,795,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_259.mzML,1,controllerType=0 controllerNumber=1 scan=2902,1754406.9599609375,False
+774,881,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,1,controllerType=0 controllerNumber=1 scan=2310,3308398.5888671875,False
+852,980,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_236.mzML,1,controllerType=0 controllerNumber=1 scan=970,30967721.359375,False
+876,1008,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_46.mzML,0,,,True
+1010,1159,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_45.mzML,1,controllerType=0 controllerNumber=1 scan=284,4580649.0234375,False
+1505,1764,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_51.mzML,1,controllerType=0 controllerNumber=1 scan=472,4708791.357421875,False
+1584,1860,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_46.mzML,1,controllerType=0 controllerNumber=1 scan=586,7369698.450683594,False
+1600,1879,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_51.mzML,1,controllerType=0 controllerNumber=1 scan=3059,13565265.41796875,False
+1805,2128,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_321.mzML,2,controllerType=0 controllerNumber=1 scan=547,47933844.080078125,False
+1824,2148,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_28.mzML,2,controllerType=0 controllerNumber=1 scan=2754,14282519.9296875,False
+1903,2252,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_empty1.mzML,1,controllerType=0 controllerNumber=1 scan=134,16578236.36328125,False
+1922,2278,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_81.mzML,1,controllerType=0 controllerNumber=1 scan=3073,6824786.2421875,False
+2001,2370,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,0,,,True
+2006,2375,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_93.mzML,1,controllerType=0 controllerNumber=1 scan=857,9037874.14453125,False
+2049,2426,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_119.mzML,2,controllerType=0 controllerNumber=1 scan=3050,9954393.1015625,False
+2078,2467,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_65.mzML,1,controllerType=0 controllerNumber=1 scan=1745,12882673.766601562,False
+2167,2583,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_28.mzML,2,controllerType=0 controllerNumber=1 scan=2749,1929548.8757324219,False
+2246,2682,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,2,controllerType=0 controllerNumber=1 scan=2020,403127.7492675781,False
+2247,2684,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_205.mzML,0,,,True
+2280,2718,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_83.mzML,1,controllerType=0 controllerNumber=1 scan=2336,7417214.2900390625,False
+2286,2724,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_45.mzML,1,controllerType=0 controllerNumber=1 scan=3505,148185.28979492188,False
+2316,2763,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_empty1.mzML,2,controllerType=0 controllerNumber=1 scan=757,21998033.85546875,False
+2471,2955,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_155.mzML,0,,,True
+2511,3005,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_71.mzML,2,controllerType=0 controllerNumber=1 scan=2935,3434341.548828125,False
+2539,3043,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_45.mzML,1,controllerType=0 controllerNumber=1 scan=794,8592777.807617188,True
+2637,3168,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_80.mzML,0,,,True
+2720,3269,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_37.mzML,1,controllerType=0 controllerNumber=1 scan=2985,10048863.103515625,False
+2742,3294,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_1.mzML,1,controllerType=0 controllerNumber=1 scan=3555,333093.9060058594,False
+2749,3301,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,0,,,True
+2775,3337,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_81.mzML,1,controllerType=0 controllerNumber=1 scan=888,8222171.2705078125,False
+2807,3376,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_205.mzML,1,controllerType=0 controllerNumber=1 scan=1599,6403643.9697265625,False
+2826,3404,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_244.mzML,1,controllerType=0 controllerNumber=1 scan=4346,71759.5380859375,False
+2846,3426,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_205.mzML,1,controllerType=0 controllerNumber=1 scan=704,8056204.4462890625,False
+2852,3432,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_42.mzML,3,controllerType=0 controllerNumber=1 scan=776,18176220.330078125,False
+2876,3463,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_59.mzML,0,,,True
+2883,3474,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_9.mzML,1,controllerType=0 controllerNumber=1 scan=3868,883671.6259765625,False
+2901,3495,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_321.mzML,1,controllerType=0 controllerNumber=1 scan=3466,1023037.208984375,False
+3013,3626,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_37.mzML,2,controllerType=0 controllerNumber=1 scan=3140,5611601.95703125,False
+3066,3692,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_6.mzML,1,controllerType=0 controllerNumber=1 scan=583,19066353.19140625,False
+3117,3751,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_10.mzML,0,,,True
+3201,3858,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_34.mzML,1,controllerType=0 controllerNumber=1 scan=4552,711396.2768554688,False
+3316,3991,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,2,controllerType=0 controllerNumber=1 scan=2311,1180626.1567382812,False
+3335,4015,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_5.mzML,1,controllerType=0 controllerNumber=1 scan=152,13194646.869140625,False
+3341,4023,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_35.mzML,1,controllerType=0 controllerNumber=1 scan=4619,5967024.017578125,False
+3365,4055,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_111.mzML,2,controllerType=0 controllerNumber=1 scan=479,3316942.1689453125,False
+3460,4176,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_34.mzML,1,controllerType=0 controllerNumber=1 scan=4649,3992723.21484375,False
+3534,4277,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_13.mzML,1,controllerType=0 controllerNumber=1 scan=788,12698143.0703125,False
+3722,4512,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_81.mzML,1,controllerType=0 controllerNumber=1 scan=3051,1478177.66796875,False
+3732,4522,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_72.mzML,2,controllerType=0 controllerNumber=1 scan=1156,10102521.141601562,False
+3763,4563,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_46.mzML,1,controllerType=0 controllerNumber=1 scan=457,25534437.068359375,False
+3786,4598,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_8.mzML,1,controllerType=0 controllerNumber=1 scan=1399,6043486.328125,False
+3815,4630,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_57.mzML,1,controllerType=0 controllerNumber=1 scan=967,5078956.678955078,False
+3885,4715,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_13.mzML,0,,,True
+3894,4725,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_46.mzML,1,controllerType=0 controllerNumber=1 scan=356,24729006.072265625,False
+3912,4749,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_35.mzML,1,controllerType=0 controllerNumber=1 scan=835,10764878.6484375,False
+3978,4827,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_88.mzML,1,controllerType=0 controllerNumber=1 scan=1065,13650738.10546875,False
+4051,4918,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_88.mzML,1,controllerType=0 controllerNumber=1 scan=1171,7309905.6142578125,False
+4055,4923,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_4.mzML,1,controllerType=0 controllerNumber=1 scan=427,15082154.265625,False
+4186,5089,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_118.mzML,1,controllerType=0 controllerNumber=1 scan=2689,4091681.2568359375,False
+4204,5113,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_52.mzML,0,,,True
+4268,5196,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_51.mzML,1,controllerType=0 controllerNumber=1 scan=601,5016761.587890625,False
+4327,5267,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_242.mzML,1,controllerType=0 controllerNumber=1 scan=2849,7689821.076171875,False
+4374,5325,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_73.mzML,1,controllerType=0 controllerNumber=1 scan=885,7926244.0869140625,False
+4450,5419,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_54.mzML,1,controllerType=0 controllerNumber=1 scan=883,9318667.236328125,False
+4586,5595,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_46.mzML,1,controllerType=0 controllerNumber=1 scan=3013,7527544.8779296875,False
+4589,5600,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_244.mzML,0,,,True
+4675,5703,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_73.mzML,1,controllerType=0 controllerNumber=1 scan=554,9456111.801757812,False
+4716,5756,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_1.mzML,1,controllerType=0 controllerNumber=1 scan=3474,142666.25610351562,True
+4758,5810,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_66.mzML,1,controllerType=0 controllerNumber=1 scan=934,8733208.462890625,False
+4777,5838,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_65.mzML,1,controllerType=0 controllerNumber=1 scan=2312,4185510.2758789062,False
+4778,5839,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_15.mzML,1,controllerType=0 controllerNumber=1 scan=3639,2065711.2275390625,False
+4822,5897,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_56.mzML,1,controllerType=0 controllerNumber=1 scan=691,10454604.021484375,False
+4930,6037,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_127.mzML,2,controllerType=0 controllerNumber=1 scan=2657,1409907.1872558594,False
+5026,6158,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_12.mzML,1,controllerType=0 controllerNumber=1 scan=570,13578513.2890625,False
+5106,6263,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_14.mzML,1,controllerType=0 controllerNumber=1 scan=923,16955604.55078125,False
+5116,6274,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_71.mzML,1,controllerType=0 controllerNumber=1 scan=4388,680079.0375976562,False
+5194,6374,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_61.mzML,1,controllerType=0 controllerNumber=1 scan=2028,3696790.9619140625,False
+5208,6393,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_93.mzML,1,controllerType=0 controllerNumber=1 scan=658,6164491.755859375,False
+5249,6451,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_155.mzML,1,controllerType=0 controllerNumber=1 scan=3159,388253.84375,False
+5331,6568,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_244.mzML,0,,,True
+5335,6574,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_244.mzML,1,controllerType=0 controllerNumber=1 scan=4392,4157511.1884765625,False
+5344,6585,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_77.mzML,1,controllerType=0 controllerNumber=1 scan=1116,8831149.958984375,False
+5392,6658,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_77.mzML,1,controllerType=0 controllerNumber=1 scan=1194,6109890.599609375,False
+5409,6682,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_71.mzML,1,controllerType=0 controllerNumber=1 scan=3008,2670970.3129882812,False
+5515,6816,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_92.mzML,1,controllerType=0 controllerNumber=1 scan=1697,2372295.7153320312,False
+5524,6828,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_73.mzML,1,controllerType=0 controllerNumber=1 scan=2228,4003306.9702148438,False
+5566,6891,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_198.mzML,2,controllerType=0 controllerNumber=1 scan=726,994782.9006347656,False
+5587,6919,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_61.mzML,1,controllerType=0 controllerNumber=1 scan=919,8504573.37109375,False
+5624,6973,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_17.mzML,1,controllerType=0 controllerNumber=1 scan=1646,3977225.4907226562,False
+5654,7008,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_29.mzML,1,controllerType=0 controllerNumber=1 scan=303,6462284.947753906,False
+5687,7055,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_258.mzML,1,controllerType=0 controllerNumber=1 scan=989,3734997.5034179688,False
+5699,7067,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_69.mzML,1,controllerType=0 controllerNumber=1 scan=1001,10474460.151367188,False
+5716,7090,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_257.mzML,1,controllerType=0 controllerNumber=1 scan=1065,7090841.892578125,False
+5747,7135,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_65.mzML,0,,,True
+5763,7158,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_61.mzML,2,controllerType=0 controllerNumber=1 scan=2190,1299028.212890625,False
+5795,7199,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_205.mzML,1,controllerType=0 controllerNumber=1 scan=883,5362743.544921875,False
+5799,7203,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_2.mzML,0,,,True
+5857,7282,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_59.mzML,1,controllerType=0 controllerNumber=1 scan=2079,4514112.3115234375,True
+5888,7327,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_45.mzML,0,,,True
+5979,7447,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_35.mzML,1,controllerType=0 controllerNumber=1 scan=1532,4307223.4921875,False
+5995,7471,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_38.mzML,0,,,True
+6065,7572,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_35.mzML,1,controllerType=0 controllerNumber=1 scan=3203,4637972.4716796875,False
+6150,7700,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_186.mzML,0,,,True
+6172,7727,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_8.mzML,1,controllerType=0 controllerNumber=1 scan=3459,516006.21142578125,False
+6180,7737,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_81.mzML,2,controllerType=0 controllerNumber=1 scan=2625,248135.9326171875,False
+6194,7759,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_73.mzML,1,controllerType=0 controllerNumber=1 scan=1200,17121669.576171875,False
+6195,7760,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_34.mzML,0,,,True
+6196,7761,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_111.mzML,2,controllerType=0 controllerNumber=1 scan=1863,2358527.9443359375,False
+6262,7851,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_18.mzML,1,controllerType=0 controllerNumber=1 scan=1306,6003665.463378906,False
+6407,8058,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_12.mzML,0,,,True
+6543,8252,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_13.mzML,1,controllerType=0 controllerNumber=1 scan=1980,3227489.7158203125,False
+6569,8292,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_empty3.mzML,1,controllerType=0 controllerNumber=1 scan=1847,4088862.5537109375,False
+6576,8303,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_empty3.mzML,0,,,True
+6641,8401,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_58.mzML,1,controllerType=0 controllerNumber=1 scan=3302,1003744.0502929688,False
+6644,8404,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,2,controllerType=0 controllerNumber=1 scan=2008,651033.5517578125,False
+6646,8411,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_37.mzML,0,,,True
+6843,8743,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_55.mzML,0,,,True
+6852,8755,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_13.mzML,2,controllerType=0 controllerNumber=1 scan=3579,1178698.4880371094,False
+6882,8794,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_55.mzML,1,controllerType=0 controllerNumber=1 scan=3298,176479.60180664062,False
+6945,8907,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_66.mzML,1,controllerType=0 controllerNumber=1 scan=1660,54224206.6484375,False
+7036,9053,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_69.mzML,1,controllerType=0 controllerNumber=1 scan=1702,5626176.289550781,False
+7037,9056,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_5.mzML,0,,,True
+7073,9114,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_83.mzML,1,controllerType=0 controllerNumber=1 scan=1713,3285911.5209960938,False
+7077,9125,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_15.mzML,1,controllerType=0 controllerNumber=1 scan=3648,1298122.9565429688,False
+7155,9250,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_92.mzML,0,,,True
+7263,9412,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_149.mzML,1,controllerType=0 controllerNumber=1 scan=2764,2815469.8432617188,False
+7264,9417,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_268.mzML,1,controllerType=0 controllerNumber=1 scan=4359,1262787.3305664062,False
+7299,9485,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_28.mzML,0,,,True
+7364,9590,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_58.mzML,1,controllerType=0 controllerNumber=1 scan=1272,7826263.830078125,False
+7490,9812,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_8.mzML,2,controllerType=0 controllerNumber=1 scan=2975,2066930.2138671875,False
+7515,9852,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_8.mzML,1,controllerType=0 controllerNumber=1 scan=3456,833018.5366210938,False
+7521,9866,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_83.mzML,0,,,True
+7590,9986,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_233.mzML,1,controllerType=0 controllerNumber=1 scan=2904,2963848.7958984375,False
+7600,10003,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_35.mzML,1,controllerType=0 controllerNumber=1 scan=1145,2187361.0017089844,False
+7617,10034,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_19.mzML,1,controllerType=0 controllerNumber=1 scan=1466,4782844.2607421875,False
+7697,10168,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_71.mzML,1,controllerType=0 controllerNumber=1 scan=2949,4081543.744873047,False
+7699,10174,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,1,controllerType=0 controllerNumber=1 scan=2313,97293.41723632812,False
+7771,10313,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_139.mzML,1,controllerType=0 controllerNumber=1 scan=1290,4752066.4052734375,False
+7779,10335,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_6.mzML,1,controllerType=0 controllerNumber=1 scan=1006,18265759.166015625,False
+7787,10356,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_65.mzML,1,controllerType=0 controllerNumber=1 scan=3403,2258246.7993164062,False
+7795,10368,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_66.mzML,1,controllerType=0 controllerNumber=1 scan=3153,3070215.8422851562,False
+7801,10377,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_34.mzML,1,controllerType=0 controllerNumber=1 scan=3513,8233613.802734375,True
+7899,10550,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_60.mzML,1,controllerType=0 controllerNumber=1 scan=1501,4353458.978515625,False
+7944,10637,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_5.mzML,0,,,True
+8009,10769,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_104.mzML,0,,,True
+8144,11029,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_46.mzML,1,controllerType=0 controllerNumber=1 scan=222,2689648.2514648438,False
+8161,11056,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_57.mzML,1,controllerType=0 controllerNumber=1 scan=1857,1717451.5922851562,False
+8242,11234,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_233.mzML,1,controllerType=0 controllerNumber=1 scan=2906,3304586.529296875,False
+8246,11249,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_72.mzML,1,controllerType=0 controllerNumber=1 scan=2095,1722769.2641601562,False
+8321,11413,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_44.mzML,1,controllerType=0 controllerNumber=1 scan=3156,1018282.4741210938,False
+8350,11477,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_273.mzML,1,controllerType=0 controllerNumber=1 scan=3289,54940.3935546875,False
+8364,11516,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_58.mzML,1,controllerType=0 controllerNumber=1 scan=825,11726054.131835938,False
+8368,11520,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_86.mzML,0,,,True
+8635,12126,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_28.mzML,1,controllerType=0 controllerNumber=1 scan=2757,805166.8006591797,False
+8650,12157,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_65.mzML,1,controllerType=0 controllerNumber=1 scan=3316,806271.5900878906,False
+8683,12215,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_56.mzML,1,controllerType=0 controllerNumber=1 scan=3351,1377842.0561523438,False
+8807,12561,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_162.mzML,0,,,True
+8839,12619,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_214.mzML,2,controllerType=0 controllerNumber=1 scan=1771,1939069.8374023438,False
+8957,12896,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,1,controllerType=0 controllerNumber=1 scan=2316,2185832.6806640625,False
+9038,13106,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_13.mzML,0,,,True
+9049,13135,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_92.mzML,1,controllerType=0 controllerNumber=1 scan=866,6593444.38671875,False
+9121,13313,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_242.mzML,1,controllerType=0 controllerNumber=1 scan=3161,437158.41455078125,False
+9239,13649,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_1.mzML,1,controllerType=0 controllerNumber=1 scan=3342,224883.13647460938,False
+9252,13678,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_4.mzML,0,,,True
+9266,13710,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_193.mzML,0,,,True
+9324,13856,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_92.mzML,1,controllerType=0 controllerNumber=1 scan=3151,16161032.91796875,False
+9348,13917,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_111.mzML,0,,,True
+9464,14211,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_91.mzML,0,,,True
+9576,14554,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_233.mzML,1,controllerType=0 controllerNumber=1 scan=3178,598873.3498535156,False
+9765,15077,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_empty1.mzML,1,controllerType=0 controllerNumber=1 scan=1252,6481094.526611328,False
+9802,15189,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_54.mzML,0,,,True
+9834,15277,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_28.mzML,1,controllerType=0 controllerNumber=1 scan=2790,1320223.7700195312,False
+9839,15294,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_56.mzML,1,controllerType=0 controllerNumber=1 scan=2121,2203369.5786132812,False
+9892,15462,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_19.mzML,1,controllerType=0 controllerNumber=1 scan=2948,1147043.5639648438,False
+9976,15710,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_5.mzML,1,controllerType=0 controllerNumber=1 scan=3098,1281819.5783691406,False
+10007,15791,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_34.mzML,0,,,True
+10052,15908,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_66.mzML,0,,,True
+10067,15950,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_105.mzML,1,controllerType=0 controllerNumber=1 scan=2875,1827858.1813964844,False
+10129,16128,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_58.mzML,1,controllerType=0 controllerNumber=1 scan=789,6470691.1953125,False
+10604,17654,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_168.mzML,0,,,True
+10701,18018,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_71.mzML,1,controllerType=0 controllerNumber=1 scan=2784,2411324.285888672,False
+10715,18068,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_36.mzML,1,controllerType=0 controllerNumber=1 scan=3058,281833.3298339844,True
+10729,18110,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_5.mzML,0,,,True
+10889,18625,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_92.mzML,1,controllerType=0 controllerNumber=1 scan=1793,1868802.3083496094,False
+10928,18742,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_55.mzML,1,controllerType=0 controllerNumber=1 scan=3357,486632.1794433594,False
+11018,19115,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_5.mzML,1,controllerType=0 controllerNumber=1 scan=2786,519824.2058105469,False
+11225,19969,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_185.mzML,0,,,True
+11375,20555,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_81.mzML,1,controllerType=0 controllerNumber=1 scan=3067,27227.524658203125,False
+11398,20646,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_86.mzML,1,controllerType=0 controllerNumber=1 scan=3793,272533.9572753906,False
+11497,21039,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_10.mzML,0,,,True
+11506,21074,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_37.mzML,0,,,True
+11523,21139,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_10.mzML,1,controllerType=0 controllerNumber=1 scan=972,2226498.38671875,False
+11564,21315,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_64.mzML,1,controllerType=0 controllerNumber=1 scan=3355,988356.7004394531,False
+11589,21414,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_322.mzML,0,,,True
+11661,21745,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_71.mzML,0,,,True
+11857,22588,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_65.mzML,1,controllerType=0 controllerNumber=1 scan=2033,1215670.7658691406,False
+11995,23217,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_9.mzML,1,controllerType=0 controllerNumber=1 scan=3687,239670.76586914062,False
+12243,24522,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_255.mzML,1,controllerType=0 controllerNumber=1 scan=2953,28618420.5859375,False
+12362,25097,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_50.mzML,0,,,True
+12635,26444,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_155.mzML,1,controllerType=0 controllerNumber=1 scan=3538,296178.24169921875,False
+12718,26859,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_12.mzML,1,controllerType=0 controllerNumber=1 scan=469,4070219.3291015625,False
+12756,27092,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_8.mzML,1,controllerType=0 controllerNumber=1 scan=2981,746389.5954589844,False
+12764,27135,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_20.mzML,0,,,True
+12767,27161,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_198.mzML,2,controllerType=0 controllerNumber=1 scan=774,228114.27856445312,False
+12808,27413,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_242.mzML,0,,,True
+12915,27928,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_65.mzML,1,controllerType=0 controllerNumber=1 scan=2387,676527.7661132812,False
+12958,28218,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_7.mzML,2,controllerType=0 controllerNumber=1 scan=3326,800253.6040039062,False
+12960,28236,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_17.mzML,0,,,True
+12969,28303,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_37.mzML,1,controllerType=0 controllerNumber=1 scan=3550,315482.33935546875,False
+13174,29524,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_310.mzML,0,,,True
+13193,29618,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_287.mzML,1,controllerType=0 controllerNumber=1 scan=2014,104977.43774414062,False
+13211,29697,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_18.mzML,0,,,True
+13230,29791,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_5.mzML,0,,,True
+13233,29797,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_232.mzML,1,controllerType=0 controllerNumber=1 scan=486,556818.1879882812,False
+13258,29926,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_65.mzML,1,controllerType=0 controllerNumber=1 scan=2099,819351.6833496094,False
+13326,30276,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_58.mzML,1,controllerType=0 controllerNumber=1 scan=3126,519769.8186035156,False
+13373,30594,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_21.mzML,1,controllerType=0 controllerNumber=1 scan=2808,1207771.6970214844,False
+13448,31061,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_15.mzML,0,,,True
+13488,31365,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_242.mzML,0,,,True
+13677,32584,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_73.mzML,0,,,True
+13871,33858,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_21.mzML,1,controllerType=0 controllerNumber=1 scan=3244,299002.21142578125,False
+13900,34037,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_191.mzML,1,controllerType=0 controllerNumber=1 scan=3156,4629667.0439453125,False
+13919,34189,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_46.mzML,0,,,True
+14042,35030,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_263.mzML,1,controllerType=0 controllerNumber=1 scan=2611,533120.8061523438,False
+14051,35119,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_14.mzML,1,controllerType=0 controllerNumber=1 scan=4443,4011009.7763671875,False
+14071,35255,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_57.mzML,0,,,True
+14086,35370,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_13.mzML,0,,,True
+14109,35469,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_22.mzML,1,controllerType=0 controllerNumber=1 scan=4462,300499.1875,False
+14189,35980,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_46.mzML,1,controllerType=0 controllerNumber=1 scan=222,2689648.2514648438,False
+14260,36452,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_221.mzML,1,controllerType=0 controllerNumber=1 scan=3006,341861.84423828125,False
+14364,37119,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_321.mzML,3,controllerType=0 controllerNumber=1 scan=3437,1409417.1032714844,True
+14367,37158,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_139.mzML,1,controllerType=0 controllerNumber=1 scan=2566,715113.1254882812,False
+14491,38045,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_311.mzML,2,controllerType=0 controllerNumber=1 scan=4064,3562508.4755859375,False
+14687,39685,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_111.mzML,1,controllerType=0 controllerNumber=1 scan=1714,65203.04150390625,False
+15041,42268,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_73.mzML,1,controllerType=0 controllerNumber=1 scan=343,78585.10791015625,False
+15058,42405,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_232.mzML,3,controllerType=0 controllerNumber=1 scan=4078,1000427.7885742188,True
+15075,42545,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_21.mzML,0,,,True
+15121,42970,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_92.mzML,1,controllerType=0 controllerNumber=1 scan=2620,1216682.5451660156,False
+15130,42998,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_61.mzML,1,controllerType=0 controllerNumber=1 scan=3057,69542.29711914062,False
+15279,44299,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_307.mzML,1,controllerType=0 controllerNumber=1 scan=2889,393615.89111328125,True
+15320,44617,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_246.mzML,1,controllerType=0 controllerNumber=1 scan=998,263284.2126464844,False
+15396,45186,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_66.mzML,1,controllerType=0 controllerNumber=1 scan=3173,161468.86572265625,False
+15403,45234,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_11.mzML,0,,,True
+15695,47621,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_117.mzML,1,controllerType=0 controllerNumber=1 scan=2495,1440034.8723144531,False
+15811,48724,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_empty1.mzML,1,controllerType=0 controllerNumber=1 scan=3279,162237.0732421875,False
+15964,50065,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_74.mzML,1,controllerType=0 controllerNumber=1 scan=3705,306146.6130371094,False
+15984,50270,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_93.mzML,1,controllerType=0 controllerNumber=1 scan=3717,152442.77221679688,False
+16004,50464,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_10.mzML,2,controllerType=0 controllerNumber=1 scan=4193,312026.18896484375,False
+16090,51130,no_ms2_match,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_98.mzML,0,,,True
+16092,51152,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_211.mzML,1,controllerType=0 controllerNumber=1 scan=2625,219425.1083984375,False
+16156,51845,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_37.mzML,1,controllerType=0 controllerNumber=1 scan=4263,141129.32641601562,False
+16167,51915,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_58.mzML,1,controllerType=0 controllerNumber=1 scan=2649,501933.24365234375,False
+16195,52137,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/mzML/C_227.mzML,2,controllerType=0 controllerNumber=1 scan=406,299517.607421875,False
+16214,52310,exported,/bigdata/stajichlab/shared/projects/Rhodotorula/Rhodotorula_Metabolites/ExFab_Supernatant/SUP_66.mzML,1,controllerType=0 controllerNumber=1 scan=2807,411783.88720703125,False
